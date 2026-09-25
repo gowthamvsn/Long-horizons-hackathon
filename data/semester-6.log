@@ -1,0 +1,12 @@
+◇ injected env (16) from .env.local
+▶ run "semester-6": 0/30 done, covers off
+✔ session  1 | transcript "The Great Dinosaur Train" (dinosaurs, L2) acc 1 376 tok | chapters "The Great Dinosaur Feast" (Dinosaurs eating, L2) acc 1 519 tok | 6 changes, 1 recalls, 7 tools | 24s
+✔ session  2 | transcript "Maya's Dinosaur Treasure Hunt" (dinosaurs, L2) acc 1 1850 tok | chapters "The Dinosaur's Big Meal" (dinosaurs eating, L2) acc 1 700 tok | 6 changes, 2 recalls, 7 tools, janitor 0 archived/1 flagged | 49s
+✔ session  3 | transcript "The Stegosaurus's Spiky Day" (dinosaurs, L2) acc 1 3451 tok | chapters "The Dinosaur's Dream" (dinosaurs, sleep, L2) acc 1 768 tok | 4 changes, 0 recalls, 5 tools | 25s
+✔ session  4 | transcript "The Triceratops and the Rain" (dinosaurs, L2) acc 1 5206 tok | chapters "The Dinosaur's Team" (dinosaurs, L2) acc 1 774 tok | 6 changes, 2 recalls, 8 tools, janitor 0 archived/0 flagged | 37s
+✔ session  5 | transcript "Petra's Floating Boat" (dinosaurs, L2) acc 1 7156 tok | chapters "The Dinosaur's Treat" (dinosaurs, food, L2) acc 1 724 tok | 5 changes, 1 recalls, 6 tools | 28s
+✔ session  6 | transcript "Rex Learns to Roar" (dinosaurs, L2) acc 1 8982 tok | chapters "The Dinosaur's Meal" (Dinosaurs eating, L2) acc 1 737 tok | 5 changes, 0 recalls, 5 tools, janitor 0 archived/0 flagged | 33s
+✔ session  7 | transcript "The Long Neck's Great Feast" (dinosaurs, L2) acc 0.67 10897 tok | chapters "The Dinosaur's Dream" (dinosaurs, L2) acc 0.67 748 tok | 6 changes, 3 recalls, 9 tools | 35s
+✔ session  8 | transcript "The Speedy Raptor's Race" (dinosaurs, L2) acc 0.67 12861 tok | chapters "The Dinosaur's Sail" (Dinosaurs, L2) acc 0.67 743 tok | 5 changes, 2 recalls, 7 tools, janitor 0 archived/0 flagged | 35s
+✔ session  9 | transcript "The Ankylosaurus and the Storm" (dinosaurs, L2) acc 0.67 14916 tok | chapters "The Trail" (Dinosaur tracks, L2) acc 0.67 811 tok | 5 changes, 1 recalls, 6 tools | 25s
+✔ session 10 | transcript "The Pteranodon's Sky Art" (dinosaurs, L2) acc 0.33 16884 tok | chapters "The Goat and the Boat" (Animals, Adventure, L2) acc 0.33 799 tok | 7 changes, 1 recalls, 9 tools, janitor 0 archived/0 flagged | 36s
