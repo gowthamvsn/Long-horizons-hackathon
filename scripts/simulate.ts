@@ -107,9 +107,12 @@ async function cover(book: Book): Promise<string> {
   }
 }
 
-const tag = (row: object) => ({ run_id: RUN, ts: new Date().toISOString(), ...row });
-
 async function archive(rec: SessionRecord) {
+  // batch = one attempt at one session; readers keep only the latest batch per session,
+  // so a crash after a partial insert never double-counts.
+  const batch = `${RUN}-${rec.session}-${Date.now()}`;
+  const ts = new Date().toISOString();
+  const tag = (row: object) => ({ run_id: RUN, batch, ts, ...row });
   const both = ["transcript", "chapters"] as const;
   await insert(
     "sessions",

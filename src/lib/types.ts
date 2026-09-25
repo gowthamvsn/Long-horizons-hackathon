@@ -71,3 +71,47 @@ export interface Score {
   accuracy: number; // mean of the three
   stale_reason: string;
 }
+
+export interface CallLog {
+  tutor: TutorName;
+  session: number;
+  purpose: string;
+  model: string;
+  prompt_tokens: number;
+  completion_tokens: number;
+  cost_usd: number;
+  latency_ms: number;
+}
+
+export interface StateChange {
+  session: number;
+  action: "added" | "updated" | "resolved" | "archived";
+  kind: "level" | "skill" | "misconception" | "interest" | "what_works";
+  key: string;
+  value: string;
+  reason: string;
+  by: "tutor" | "curator";
+}
+
+type PerTutor<T> = Record<TutorName, T>;
+
+/** One session as the UI replays it. */
+export interface SessionView {
+  session: number;
+  truth: Truth;
+  books: PerTutor<Book>;
+  events: PerTutor<ReadingEvents>;
+  scores: PerTutor<Score>;
+  tokens: PerTutor<number>; // prompt tokens of the book-writing call
+  cost: PerTutor<number>; // $ spent this session
+  model: LearnerModel; // chapters learner model after the session
+  changes: StateChange[];
+}
+
+export interface SemesterData {
+  run: string;
+  source: "rawtree" | "local" | "mock";
+  student: { name: string; age: number };
+  milestones: { session: number; label: string }[];
+  sessions: SessionView[];
+}

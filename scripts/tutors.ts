@@ -2,33 +2,14 @@ import type Anthropic from "@anthropic-ai/sdk";
 import { llm, parseJson, type LlmResult } from "../src/lib/llm";
 import { curate } from "../src/lib/curator";
 import { assertReadOnly, query } from "../src/lib/rawtree";
-import type { Book, LearnerModel, ReadingEvents, Skill, TutorName } from "../src/lib/types";
+import type { Book, CallLog, LearnerModel, ReadingEvents, Skill, StateChange, TutorName } from "../src/lib/types";
+
+export type { CallLog, StateChange };
 import { STUDENT } from "./student";
 
 // Both tutors share the book-writing step. They differ only in what goes in the prompt:
 //   transcript -> the whole conversation so far
 //   chapters   -> a small learner model it edits with tools; the rest lives in RawTree
-
-export interface CallLog {
-  tutor: TutorName;
-  session: number;
-  purpose: string;
-  model: string;
-  prompt_tokens: number;
-  completion_tokens: number;
-  cost_usd: number;
-  latency_ms: number;
-}
-
-export interface StateChange {
-  session: number;
-  action: "added" | "updated" | "resolved" | "archived";
-  kind: "level" | "skill" | "misconception" | "interest" | "what_works";
-  key: string;
-  value: string;
-  reason: string;
-  by: "tutor" | "curator";
-}
 
 function logCall(tutor: TutorName, session: number, purpose: string, r: LlmResult): CallLog {
   return {
