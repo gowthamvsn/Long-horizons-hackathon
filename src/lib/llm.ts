@@ -52,13 +52,15 @@ function price(model: string, input: number, output: number): number {
 export async function llm(call: LlmCall): Promise<LlmResult> {
   const model = modelId();
   const effort = (process.env.LLM_EFFORT || "low") as "low" | "medium" | "high";
+  // Haiku 4.5 (and older models) reject output_config.effort entirely.
+  const supportsEffort = !/haiku-4-5|haiku|sonnet-4-5|opus-4-5$/.test(model);
   const base = {
     model,
     max_tokens: call.maxTokens ?? 16000,
     system: call.system,
     messages: call.messages,
     tools: call.tools,
-    output_config: { effort },
+    ...(supportsEffort ? { output_config: { effort } } : {}),
   };
   const started = Date.now();
   let message: Anthropic.Message;
