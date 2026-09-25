@@ -5,9 +5,11 @@ import type { SemesterData, TutorName } from "@/lib/types";
 import { BookModal } from "./BookModal";
 import { Charts } from "./Charts";
 import { Gauges } from "./Gauges";
+import { Hud, MilestoneBanner } from "./Hud";
 import { Mind } from "./Mind";
 import { Scrubber } from "./Scrubber";
 import { Shelf } from "./Shelf";
+import { TrailMap } from "./TrailMap";
 
 export function Dashboard({ data, initialSession = 1, askSlot }: { data: SemesterData; initialSession?: number; askSlot?: React.ReactNode }) {
   const n = data.sessions.length;
@@ -65,6 +67,20 @@ export function Dashboard({ data, initialSession = 1, askSlot }: { data: Semeste
           <Avatar name={data.student.name} />
         </div>
       </header>
+
+      <Hud sessions={data.sessions} idx={idx} />
+
+      <div className="relative">
+        <MilestoneBanner session={session} />
+        <TrailMap
+          sessions={data.sessions}
+          idx={idx}
+          onPick={(v) => {
+            setPlaying(false);
+            setSession(v);
+          }}
+        />
+      </div>
 
       <div className="paper-card rounded-2xl px-5 py-2">
         <Scrubber

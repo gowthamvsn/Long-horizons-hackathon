@@ -5,8 +5,8 @@ import type { Book, Score, TutorName } from "@/lib/types";
 import { Cover } from "./Cover";
 
 const META: Record<TutorName, { name: string; sub: string; color: string }> = {
-  transcript: { name: "Transcript tutor", sub: "Remembers everything, verbatim", color: "var(--clay)" },
-  chapters: { name: "Chapters", sub: "Remembers what matters now", color: "var(--sage)" },
+  transcript: { name: "🦉 Transcript Owl", sub: "Remembers everything, verbatim", color: "var(--clay)" },
+  chapters: { name: "🦊 Chapters Fox", sub: "Remembers what matters now", color: "var(--sage)" },
 };
 
 export function Shelf({ tutor, book, score, onOpen }: { tutor: TutorName; book: Book; score: Score; onOpen: () => void }) {

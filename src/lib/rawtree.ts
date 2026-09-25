@@ -16,7 +16,7 @@ function rt(): RawTree {
 }
 
 function db(): string {
-  return process.env.RAWTREE_DATABASE || "chapters";
+  return process.env.RAWTREE_DATABASE || "default";
 }
 
 /** Table name as used in SQL (the client already pins the database). */

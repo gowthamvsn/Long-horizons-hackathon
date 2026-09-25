@@ -1,0 +1,893 @@
+{
+ "run": "test",
+ "done": 3,
+ "transcript": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "Session 1. Write the next book.\nReal current fact you can use (from https://kids.nationalgeographic.com/animals/prehistoric): \"Dinosaurs - National Geographic Kids. Get news, facts, games, and more! Explore the incredible world of dinosaurs through fascinating facts, amazing art, and the latest science.\""
+   },
+   {
+    "role": "assistant",
+    "content": "{\"title\":\"The Dino Team by the Sea\",\"level\":2,\"topic\":\"dinosaurs\",\"target_skill\":\"vowel_teams\",\"text\":\"Maya reads about dinosaurs each day.\\n\\nToday she reads a tale by the sea.\\n\\nA big dino eats green leaves. She has a long neck and a long tail. Her name is Bea.\\n\\nBea sees a boat on the waves. A small dino sits in the boat. His name is Coal.\\n\\n\\\"Wait!\\\" calls Bea. \\\"The rain is coming!\\\"\\n\\nRain! Drip, drop. The road is wet. The sea is gray.\\n\\nCoal rows the boat to the beach. Bea helps him up the trail.\\n\\nThey find a cave. It is dry and warm. They eat leaves and seeds.\\n\\nSoon the rain goes away. A rainbow paints the sky.\\n\\n\\\"What a team!\\\" says Coal.\\n\\nBea and Coal walk back down the trail. They leave big tracks in the sand.\\n\\nReal scientists find tracks like that! They learn new dino facts each year.\\n\\nMaya reads the last page and smiles. She will read it again.\",\"cover_scene\":\"A long-necked green dinosaur and a small dark dinosaur stand on a sandy beach beside a little boat, with a rainbow arching over the sea behind them.\"}"
+   },
+   {
+    "role": "user",
+    "content": "Reading results for session 1: {\"session\":1,\"tutor\":\"transcript\",\"words_attempted\":151,\"words_missed\":[\"reads\",\"sea\",\"tail\",\"bea\",\"bea\",\"boat\",\"coal\",\"bea\",\"rain\",\"rain\",\"trail\",\"eat\",\"rainbow\",\"trail\",\"real\",\"each\",\"year\",\"reads\",\"she\"],\"missed_by_skill\":{\"vowel_teams\":18,\"digraphs\":1},\"response_time_ms\":5873,\"enjoyment\":4,\"comment\":\"More dinosaurs please!\"}"
+   },
+   {
+    "role": "assistant",
+    "content": "Noted."
+   },
+   {
+    "role": "user",
+    "content": "Session 2. Write the next book.\nReal current fact you can use (from https://kids.nationalgeographic.com/animals/prehistoric): \"Dinosaurs - National Geographic Kids. Get news, facts, games, and more! Explore the incredible world of dinosaurs through fascinating facts, amazing art, and the latest science.\""
+   },
+   {
+    "role": "assistant",
+    "content": "{\"title\":\"Ray the Dino Eats\",\"level\":2,\"topic\":\"baby dinosaur\",\"target_skill\":\"vowel_teams\",\"text\":\"Ray is a baby dino.\\n\\nRay can eat and eat!\\n\\nRay eats leaves. Leaves are green.\\n\\nRay eats a big meal. Then Ray eats a snack.\\n\\n\\\"Wait for me!\\\" says Gail.\\n\\nGail is Ray's mom. Gail is tall.\\n\\nGail eats leaves too. She eats the leaves way up high.\\n\\nRay is small. Ray eats the leaves down low.\\n\\nRain! The rain drips on Ray.\\n\\nRay runs to Gail. Gail has a long tail.\\n\\nRay sits by that tail. The tail keeps Ray dry.\\n\\nSoon the rain stops.\\n\\nRay and Gail take a trail to the lake.\\n\\nRay gets a drink. Gail gets a drink.\\n\\nThen Ray eats more leaves!\\n\\n\\\"Ray, you eat all day,\\\" says Gail.\\n\\nRay grins. A baby dino must eat to get tall.\\n\\nSome day Ray will be as tall as Gail.\\n\\nSome day Ray will eat the leaves way up high, too.\",\"cover_scene\":\"A small green baby dinosaur munching leafy branches while its tall long-necked mother reaches high into a treetop, soft rain clouds above.\"}"
+   },
+   {
+    "role": "user",
+    "content": "Reading results for session 2: {\"session\":2,\"tutor\":\"transcript\",\"words_attempted\":146,\"words_missed\":[\"ray\",\"eats\",\"leaves\",\"gail\",\"gail\",\"leaves\",\"leaves\",\"rain\",\"rain\",\"on\",\"gail\",\"sits\",\"by\",\"gail\",\"trail\",\"eats\",\"gail\",\"some\",\"ray\",\"gail\"],\"missed_by_skill\":{\"vowel_teams\":14,\"silent_e\":1},\"response_time_ms\":6117,\"enjoyment\":4,\"comment\":\"More dinosaurs please!\"}"
+   },
+   {
+    "role": "assistant",
+    "content": "Noted."
+   },
+   {
+    "role": "user",
+    "content": "Session 3. Write the next book.\nReal current fact you can use (from https://www.youtube.com/watch?v=lQpHj2WQrqw): \"Baby Dinos & Giant T-Rex Morning Routine with Stephi: Feeding & Caring. Sleepy Stephi cares for her playful baby dinosaurs in a chaotic morning full of feeding, calming and funny surprises. From tiny breakfasts to a giant T-Rex m...\""
+   },
+   {
+    "role": "assistant",
+    "content": "{\"title\":\"Sam Feeds the Baby Dinos\",\"level\":2,\"topic\":\"baby dinos\",\"target_skill\":\"vowel_teams\",\"text\":\"Sam wakes up at sunup.\\n\\nThree baby dinos need food!\\n\\nThe first one wants meat. Sam gets the meat.\\n\\nThe next one wants beans. Sam gets the beans.\\n\\nThe last one wants oats! Sam gets a big bowl of oats.\\n\\nThe babies eat. Munch, munch.\\n\\nNow Sam must clean up. What a mess!\\n\\nOne dino spills the oats on the mat.\\n\\nOne dino tips the beans in the sink.\\n\\nOne dino naps in Sam's boat.\\n\\n\\\"Wake up, sleepy one,\\\" says Sam.\\n\\nThen a big roar! It is the T. rex.\\n\\nThe T. rex wants food too. T. rex wants a lot of meat!\\n\\nSam gets a big load of meat. Plop!\\n\\nThe T. rex eats it all. Then the T. rex takes a nap.\\n\\nAt last, Sam can eat.\\n\\nSam has oats. Sam has toast. Sam has tea.\\n\\nWhat a day! And it is not yet ten.\",\"cover_scene\":\"A cheerful kid in pajamas holding a big bowl while three tiny baby dinosaurs bounce around and a friendly giant T. rex peeks in through the window.\"}"
+   },
+   {
+    "role": "user",
+    "content": "Reading results for session 3: {\"session\":3,\"tutor\":\"transcript\",\"words_attempted\":147,\"words_missed\":[\"wakes\",\"up\",\"meat\",\"beans\",\"the\",\"oats\",\"oats\",\"clean\",\"boat\",\"roar\",\"meat\",\"meat\",\"can\",\"eat\"],\"missed_by_skill\":{\"vowel_teams\":10,\"digraphs\":1},\"response_time_ms\":4786,\"enjoyment\":4,\"comment\":\"More dinosaurs please!\"}"
+   },
+   {
+    "role": "assistant",
+    "content": "Noted."
+   }
+  ],
+  "lastTopic": "baby dinos"
+ },
+ "model": {
+  "level": 2,
+  "skills": {
+   "vowel_teams": {
+    "mastery": 0.1,
+    "evidence": [
+     1,
+     2,
+     3
+    ],
+    "last_seen": 3
+   }
+  },
+  "misconceptions": [
+   {
+    "what": "reads ea/ai/oa as two separate sounds",
+    "since": 0,
+    "status": "active"
+   },
+   {
+    "what": "struggles with ai words (rain, wait, trail)",
+    "since": 1,
+    "status": "active"
+   },
+   {
+    "what": "ai words with final -l (trail, tail, snail, gail)",
+    "since": 2,
+    "status": "active"
+   },
+   {
+    "what": "misses 'snail' repeatedly even after exposure",
+    "since": 3,
+    "status": "active"
+   }
+  ],
+  "interests": [
+   {
+    "topic": "dinosaurs",
+    "strength": 1,
+    "last_signal": 3
+   }
+  ],
+  "what_works": [
+   "Dinosaur themes keep engagement high",
+   "High engagement but ai words need explicit pre-teaching",
+   "Repeated ai words in story alone don't fix decoding"
+  ]
+ },
+ "sessions": [
+  {
+   "session": 1,
+   "truth": {
+    "session": 1,
+    "level": 2,
+    "interest": "dinosaurs",
+    "weak_skill": "vowel_teams"
+   },
+   "books": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 1,
+     "title": "The Dino Team by the Sea",
+     "level": 2,
+     "topic": "dinosaurs",
+     "target_skill": "vowel_teams",
+     "text": "Maya reads about dinosaurs each day.\n\nToday she reads a tale by the sea.\n\nA big dino eats green leaves. She has a long neck and a long tail. Her name is Bea.\n\nBea sees a boat on the waves. A small dino sits in the boat. His name is Coal.\n\n\"Wait!\" calls Bea. \"The rain is coming!\"\n\nRain! Drip, drop. The road is wet. The sea is gray.\n\nCoal rows the boat to the beach. Bea helps him up the trail.\n\nThey find a cave. It is dry and warm. They eat leaves and seeds.\n\nSoon the rain goes away. A rainbow paints the sky.\n\n\"What a team!\" says Coal.\n\nBea and Coal walk back down the trail. They leave big tracks in the sand.\n\nReal scientists find tracks like that! They learn new dino facts each year.\n\nMaya reads the last page and smiles. She will read it again.",
+     "cover_scene": "A long-necked green dinosaur and a small dark dinosaur stand on a sandy beach beside a little boat, with a rainbow arching over the sea behind them.",
+     "cover": "",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 1,
+     "title": "The Dino Team by the Sea",
+     "level": 2,
+     "topic": "dinosaurs",
+     "target_skill": "vowel_teams",
+     "text": "Maya reads a book about dinosaurs. The book says real scientists still find new bones each year!\n\nIn the book, a dino team walks by the sea. Big Rain is a long-neck. She eats green leaves all day. She can reach the tall oak tree.\n\nSoap the small dino leads the way. He sees a trail in the sand. The trail goes to the beach.\n\n\"Wait!\" says Rain. \"I hear a squeak!\"\n\nIn a deep nest lay one egg. The egg starts to crack. Out peeks a tiny snout!\n\nThe baby dino wants to eat. Rain gets leaves. Soap gets seeds. The baby eats and eats.\n\nThe sun goes down. The team naps in the soft green grass. Rain keeps the baby near.\n\nMaya shuts her book. She dreams of a dino team by the sea. She dreams she can float on the waves with them.",
+     "cover_scene": "A friendly long-necked dinosaur and a small green dinosaur stand on a sunny beach beside a nest with a cracking egg, ocean waves behind them.",
+     "cover": "",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    }
+   },
+   "events": {
+    "transcript": {
+     "session": 1,
+     "tutor": "transcript",
+     "words_attempted": 151,
+     "words_missed": [
+      "reads",
+      "sea",
+      "tail",
+      "bea",
+      "bea",
+      "boat",
+      "coal",
+      "bea",
+      "rain",
+      "rain",
+      "trail",
+      "eat",
+      "rainbow",
+      "trail",
+      "real",
+      "each",
+      "year",
+      "reads",
+      "she"
+     ],
+     "missed_by_skill": {
+      "vowel_teams": 18,
+      "digraphs": 1
+     },
+     "response_time_ms": 5873,
+     "enjoyment": 4,
+     "comment": "More dinosaurs please!"
+    },
+    "chapters": {
+     "session": 1,
+     "tutor": "chapters",
+     "words_attempted": 147,
+     "words_missed": [
+      "the",
+      "real",
+      "each",
+      "year",
+      "in",
+      "team",
+      "eats",
+      "reach",
+      "oak",
+      "soap",
+      "he",
+      "trail",
+      "wait",
+      "rain",
+      "squeak",
+      "rain",
+      "leaves",
+      "soap",
+      "team",
+      "rain",
+      "team",
+      "float"
+     ],
+     "missed_by_skill": {
+      "digraphs": 1,
+      "vowel_teams": 19
+     },
+     "response_time_ms": 6412,
+     "enjoyment": 4,
+     "comment": "More dinosaurs please!"
+    }
+   },
+   "scores": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 1,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 1,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    }
+   },
+   "prompt_tokens": {
+    "transcript": 450,
+    "chapters": 578
+   },
+   "model": {
+    "level": 2,
+    "skills": {
+     "vowel_teams": {
+      "mastery": 0.15,
+      "evidence": [
+       1
+      ],
+      "last_seen": 1
+     }
+    },
+    "misconceptions": [
+     {
+      "what": "reads ea/ai/oa as two separate sounds",
+      "since": 0,
+      "status": "active"
+     },
+     {
+      "what": "struggles with ai words (rain, wait, trail)",
+      "since": 1,
+      "status": "active"
+     }
+    ],
+    "interests": [
+     {
+      "topic": "dinosaurs",
+      "strength": 1,
+      "last_signal": 1
+     }
+    ],
+    "what_works": [
+     "Dinosaur themes keep engagement high"
+    ]
+   },
+   "changes": [
+    {
+     "session": 1,
+     "action": "updated",
+     "kind": "skill",
+     "key": "vowel_teams",
+     "value": "0.15",
+     "reason": "19 vowel-team misses out of 147 words (ea, ai, oa)",
+     "by": "tutor"
+    },
+    {
+     "session": 1,
+     "action": "updated",
+     "kind": "interest",
+     "key": "dinosaurs",
+     "value": "1",
+     "reason": "\"More dinosaurs please!\", enjoyment 4",
+     "by": "tutor"
+    },
+    {
+     "session": 1,
+     "action": "added",
+     "kind": "misconception",
+     "key": "struggles with ai words (rain, wait, trail)",
+     "value": "active",
+     "reason": "repeated misses on ai words, especially \"rain\" three times",
+     "by": "tutor"
+    },
+    {
+     "session": 1,
+     "action": "added",
+     "kind": "what_works",
+     "key": "Dinosaur themes keep engagement high",
+     "value": "",
+     "reason": "tutor insight",
+     "by": "tutor"
+    }
+   ],
+   "calls": [
+    {
+     "tutor": "transcript",
+     "session": 1,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 450,
+     "completion_tokens": 470,
+     "cost_usd": 0.014,
+     "latency_ms": 7769
+    },
+    {
+     "tutor": "chapters",
+     "session": 1,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 578,
+     "completion_tokens": 441,
+     "cost_usd": 0.013915,
+     "latency_ms": 8270
+    },
+    {
+     "tutor": "chapters",
+     "session": 1,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 1743,
+     "completion_tokens": 424,
+     "cost_usd": 0.019315,
+     "latency_ms": 5500
+    },
+    {
+     "tutor": "chapters",
+     "session": 1,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 2301,
+     "completion_tokens": 63,
+     "cost_usd": 0.01308,
+     "latency_ms": 1924
+    },
+    {
+     "tutor": "chapters",
+     "session": 1,
+     "purpose": "curate",
+     "model": "ollama:hf.co/LiquidAI/LFM2-1.2B-GGUF:Q4_K_M",
+     "prompt_tokens": 241,
+     "completion_tokens": 93,
+     "cost_usd": 0,
+     "latency_ms": 21082
+    }
+   ],
+   "recalls": []
+  },
+  {
+   "session": 2,
+   "truth": {
+    "session": 2,
+    "level": 2,
+    "interest": "dinosaurs",
+    "weak_skill": "vowel_teams"
+   },
+   "books": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 2,
+     "title": "Ray the Dino Eats",
+     "level": 2,
+     "topic": "baby dinosaur",
+     "target_skill": "vowel_teams",
+     "text": "Ray is a baby dino.\n\nRay can eat and eat!\n\nRay eats leaves. Leaves are green.\n\nRay eats a big meal. Then Ray eats a snack.\n\n\"Wait for me!\" says Gail.\n\nGail is Ray's mom. Gail is tall.\n\nGail eats leaves too. She eats the leaves way up high.\n\nRay is small. Ray eats the leaves down low.\n\nRain! The rain drips on Ray.\n\nRay runs to Gail. Gail has a long tail.\n\nRay sits by that tail. The tail keeps Ray dry.\n\nSoon the rain stops.\n\nRay and Gail take a trail to the lake.\n\nRay gets a drink. Gail gets a drink.\n\nThen Ray eats more leaves!\n\n\"Ray, you eat all day,\" says Gail.\n\nRay grins. A baby dino must eat to get tall.\n\nSome day Ray will be as tall as Gail.\n\nSome day Ray will eat the leaves way up high, too.",
+     "cover_scene": "A small green baby dinosaur munching leafy branches while its tall long-necked mother reaches high into a treetop, soft rain clouds above.",
+     "cover": "",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 2,
+     "title": "The Dino Trail in the Rain",
+     "level": 2,
+     "topic": "dinosaurs",
+     "target_skill": "vowel_teams",
+     "text": "Gail is a small dino. She likes the rain.\n\nToday, rain taps the trees. Tap, tap, tap. Gail will not wait. She runs to the trail.\n\nThe trail is wet. Gail sees a big paw print in the mud. Whose print is it?\n\nGail sniffs the air. She sees a tail! A long, long tail.\n\nIt is Rain, her pal. Rain has a snail on his nose. The snail is slow.\n\n\"Wait for me!\" says Gail.\n\nThey run on the trail in the rain. They splash. They play. Mud paints their feet.\n\nSoon the rain stops. The sun is out. The trail is bright.\n\nGail sees a big, big bone by the trail. Real dino kids find bones like this!\n\nScience pals dig up bones to learn dino facts.\n\n\"Wait till Mom sees this!\" says Gail.\n\nGail and Rain run home on the long, wet trail.",
+     "cover_scene": "A small green dinosaur and a bigger blue dinosaur splashing along a muddy forest trail in soft rain, with a tiny snail perched on the blue dinosaur's nose.",
+     "cover": "",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    }
+   },
+   "events": {
+    "transcript": {
+     "session": 2,
+     "tutor": "transcript",
+     "words_attempted": 146,
+     "words_missed": [
+      "ray",
+      "eats",
+      "leaves",
+      "gail",
+      "gail",
+      "leaves",
+      "leaves",
+      "rain",
+      "rain",
+      "on",
+      "gail",
+      "sits",
+      "by",
+      "gail",
+      "trail",
+      "eats",
+      "gail",
+      "some",
+      "ray",
+      "gail"
+     ],
+     "missed_by_skill": {
+      "vowel_teams": 14,
+      "silent_e": 1
+     },
+     "response_time_ms": 6117,
+     "enjoyment": 4,
+     "comment": "More dinosaurs please!"
+    },
+    "chapters": {
+     "session": 2,
+     "tutor": "chapters",
+     "words_attempted": 146,
+     "words_missed": [
+      "gail",
+      "wait",
+      "runs",
+      "trail",
+      "trail",
+      "print",
+      "air",
+      "tail",
+      "long",
+      "tail",
+      "rain",
+      "snail",
+      "wait",
+      "trail",
+      "rain",
+      "paints",
+      "trail",
+      "real",
+      "dig",
+      "learn",
+      "wait",
+      "gail"
+     ],
+     "missed_by_skill": {
+      "vowel_teams": 18,
+      "blends": 1
+     },
+     "response_time_ms": 6683,
+     "enjoyment": 4,
+     "comment": "More dinosaurs please!"
+    }
+   },
+   "scores": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 2,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 2,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    }
+   },
+   "prompt_tokens": {
+    "transcript": 1180,
+    "chapters": 650
+   },
+   "model": {
+    "level": 2,
+    "skills": {
+     "vowel_teams": {
+      "mastery": 0.1,
+      "evidence": [
+       1,
+       2
+      ],
+      "last_seen": 2
+     }
+    },
+    "misconceptions": [
+     {
+      "what": "reads ea/ai/oa as two separate sounds",
+      "since": 0,
+      "status": "active"
+     },
+     {
+      "what": "struggles with ai words (rain, wait, trail)",
+      "since": 1,
+      "status": "active"
+     },
+     {
+      "what": "ai words with final -l (trail, tail, snail, gail)",
+      "since": 2,
+      "status": "active"
+     }
+    ],
+    "interests": [
+     {
+      "topic": "dinosaurs",
+      "strength": 1,
+      "last_signal": 2
+     }
+    ],
+    "what_works": [
+     "Dinosaur themes keep engagement high",
+     "High engagement but ai words need explicit pre-teaching"
+    ]
+   },
+   "changes": [
+    {
+     "session": 2,
+     "action": "updated",
+     "kind": "skill",
+     "key": "vowel_teams",
+     "value": "0.1",
+     "reason": "18 vowel team misses in 146 words, mostly ai",
+     "by": "tutor"
+    },
+    {
+     "session": 2,
+     "action": "updated",
+     "kind": "interest",
+     "key": "dinosaurs",
+     "value": "1",
+     "reason": "\"More dinosaurs please!\", enjoyment 4",
+     "by": "tutor"
+    },
+    {
+     "session": 2,
+     "action": "added",
+     "kind": "misconception",
+     "key": "ai words with final -l (trail, tail, snail, gail)",
+     "value": "active",
+     "reason": "Repeated misses on trail/tail/snail/gail",
+     "by": "tutor"
+    },
+    {
+     "session": 2,
+     "action": "added",
+     "kind": "what_works",
+     "key": "High engagement but ai words need explicit pre-teaching",
+     "value": "",
+     "reason": "tutor insight",
+     "by": "tutor"
+    }
+   ],
+   "calls": [
+    {
+     "tutor": "transcript",
+     "session": 2,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 1180,
+     "completion_tokens": 507,
+     "cost_usd": 0.018575,
+     "latency_ms": 8321
+    },
+    {
+     "tutor": "chapters",
+     "session": 2,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 650,
+     "completion_tokens": 452,
+     "cost_usd": 0.01455,
+     "latency_ms": 8190
+    },
+    {
+     "tutor": "chapters",
+     "session": 2,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 1818,
+     "completion_tokens": 420,
+     "cost_usd": 0.01959,
+     "latency_ms": 4362
+    },
+    {
+     "tutor": "chapters",
+     "session": 2,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 2374,
+     "completion_tokens": 59,
+     "cost_usd": 0.013345,
+     "latency_ms": 1144
+    },
+    {
+     "tutor": "chapters",
+     "session": 2,
+     "purpose": "curate",
+     "model": "ollama:hf.co/LiquidAI/LFM2-1.2B-GGUF:Q4_K_M",
+     "prompt_tokens": 285,
+     "completion_tokens": 131,
+     "cost_usd": 0,
+     "latency_ms": 1658
+    }
+   ],
+   "recalls": []
+  },
+  {
+   "session": 3,
+   "truth": {
+    "session": 3,
+    "level": 2,
+    "interest": "dinosaurs",
+    "weak_skill": "vowel_teams"
+   },
+   "books": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 3,
+     "title": "Sam Feeds the Baby Dinos",
+     "level": 2,
+     "topic": "baby dinos",
+     "target_skill": "vowel_teams",
+     "text": "Sam wakes up at sunup.\n\nThree baby dinos need food!\n\nThe first one wants meat. Sam gets the meat.\n\nThe next one wants beans. Sam gets the beans.\n\nThe last one wants oats! Sam gets a big bowl of oats.\n\nThe babies eat. Munch, munch.\n\nNow Sam must clean up. What a mess!\n\nOne dino spills the oats on the mat.\n\nOne dino tips the beans in the sink.\n\nOne dino naps in Sam's boat.\n\n\"Wake up, sleepy one,\" says Sam.\n\nThen a big roar! It is the T. rex.\n\nThe T. rex wants food too. T. rex wants a lot of meat!\n\nSam gets a big load of meat. Plop!\n\nThe T. rex eats it all. Then the T. rex takes a nap.\n\nAt last, Sam can eat.\n\nSam has oats. Sam has toast. Sam has tea.\n\nWhat a day! And it is not yet ten.",
+     "cover_scene": "A cheerful kid in pajamas holding a big bowl while three tiny baby dinosaurs bounce around and a friendly giant T. rex peeks in through the window.",
+     "cover": "",
+     "fact_title": "Baby Dinos & Giant T-Rex Morning Routine with Stephi: Feeding & Caring",
+     "fact_url": "https://www.youtube.com/watch?v=lQpHj2WQrqw"
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 3,
+     "title": "The Snail on the Dino Trail",
+     "level": 2,
+     "topic": "dinosaurs",
+     "target_skill": "vowel_teams",
+     "text": "Say it like this: a-i says AY. One sound!\n\nA snail sat on a trail. A big dino came. His name was Gail.\n\n\"Wait!\" said the snail. \"Do not step on my tail!\"\n\nGail did wait. Gail was not mean.\n\nRain fell on the trail. Drip, drip, drip. The snail did not like rain.\n\n\"Hop on my tail,\" said Gail.\n\nThe snail slid up the tail. Now the snail was safe. Gail ran fast in the rain.\n\nThey came to a cave. Bats hung in a chain. The snail and Gail did not go in!\n\nThey sat and ate. Gail ate leaves. The snail ate one leaf.\n\nSun came. The trail was dry.\n\n\"You are my pal,\" said the snail.\n\nDid you know? Real kids can see dino art and facts at Nat Geo Kids. Scientists still find new dinos!\n\nSay them again: snail, trail, tail, rain, wait, Gail.",
+     "cover_scene": "A tiny smiling snail riding on the tail of a friendly green dinosaur along a muddy path in light rain.",
+     "cover": "",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    }
+   },
+   "events": {
+    "transcript": {
+     "session": 3,
+     "tutor": "transcript",
+     "words_attempted": 147,
+     "words_missed": [
+      "wakes",
+      "up",
+      "meat",
+      "beans",
+      "the",
+      "oats",
+      "oats",
+      "clean",
+      "boat",
+      "roar",
+      "meat",
+      "meat",
+      "can",
+      "eat"
+     ],
+     "missed_by_skill": {
+      "vowel_teams": 10,
+      "digraphs": 1
+     },
+     "response_time_ms": 4786,
+     "enjoyment": 4,
+     "comment": "More dinosaurs please!"
+    },
+    "chapters": {
+     "session": 3,
+     "tutor": "chapters",
+     "words_attempted": 150,
+     "words_missed": [
+      "ay",
+      "trail",
+      "gail",
+      "wait",
+      "said",
+      "was",
+      "the",
+      "trail",
+      "snail",
+      "hop",
+      "tail",
+      "snail",
+      "chain",
+      "leaf",
+      "snail",
+      "real",
+      "kids",
+      "scientists",
+      "snail",
+      "wait"
+     ],
+     "missed_by_skill": {
+      "vowel_teams": 14,
+      "digraphs": 1
+     },
+     "response_time_ms": 5959,
+     "enjoyment": 4,
+     "comment": "More dinosaurs please!"
+    }
+   },
+   "scores": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 3,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 3,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    }
+   },
+   "prompt_tokens": {
+    "transcript": 1987,
+    "chapters": 725
+   },
+   "model": {
+    "level": 2,
+    "skills": {
+     "vowel_teams": {
+      "mastery": 0.1,
+      "evidence": [
+       1,
+       2,
+       3
+      ],
+      "last_seen": 3
+     }
+    },
+    "misconceptions": [
+     {
+      "what": "reads ea/ai/oa as two separate sounds",
+      "since": 0,
+      "status": "active"
+     },
+     {
+      "what": "struggles with ai words (rain, wait, trail)",
+      "since": 1,
+      "status": "active"
+     },
+     {
+      "what": "ai words with final -l (trail, tail, snail, gail)",
+      "since": 2,
+      "status": "active"
+     },
+     {
+      "what": "misses 'snail' repeatedly even after exposure",
+      "since": 3,
+      "status": "active"
+     }
+    ],
+    "interests": [
+     {
+      "topic": "dinosaurs",
+      "strength": 1,
+      "last_signal": 3
+     }
+    ],
+    "what_works": [
+     "Dinosaur themes keep engagement high",
+     "High engagement but ai words need explicit pre-teaching",
+     "Repeated ai words in story alone don't fix decoding"
+    ]
+   },
+   "changes": [
+    {
+     "session": 3,
+     "action": "updated",
+     "kind": "skill",
+     "key": "vowel_teams",
+     "value": "0.1",
+     "reason": "14 vowel-team misses again in session 3 (trail, snail, wait, chain, leaf, real)",
+     "by": "tutor"
+    },
+    {
+     "session": 3,
+     "action": "added",
+     "kind": "misconception",
+     "key": "misses 'snail' repeatedly even after exposure",
+     "value": "active",
+     "reason": "snail missed 4 times in one book",
+     "by": "tutor"
+    },
+    {
+     "session": 3,
+     "action": "updated",
+     "kind": "interest",
+     "key": "dinosaurs",
+     "value": "1",
+     "reason": "\"More dinosaurs please!\", enjoyment 4",
+     "by": "tutor"
+    },
+    {
+     "session": 3,
+     "action": "added",
+     "kind": "what_works",
+     "key": "Repeated ai words in story alone don't fix decoding",
+     "value": "",
+     "reason": "tutor insight",
+     "by": "tutor"
+    }
+   ],
+   "calls": [
+    {
+     "tutor": "transcript",
+     "session": 3,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 1987,
+     "completion_tokens": 560,
+     "cost_usd": 0.023935,
+     "latency_ms": 10196
+    },
+    {
+     "tutor": "chapters",
+     "session": 3,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 725,
+     "completion_tokens": 449,
+     "cost_usd": 0.01485,
+     "latency_ms": 6782
+    },
+    {
+     "tutor": "chapters",
+     "session": 3,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 1891,
+     "completion_tokens": 447,
+     "cost_usd": 0.02063,
+     "latency_ms": 6175
+    },
+    {
+     "tutor": "chapters",
+     "session": 3,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 2474,
+     "completion_tokens": 50,
+     "cost_usd": 0.01362,
+     "latency_ms": 1945
+    },
+    {
+     "tutor": "chapters",
+     "session": 3,
+     "purpose": "curate",
+     "model": "ollama:hf.co/LiquidAI/LFM2-1.2B-GGUF:Q4_K_M",
+     "prompt_tokens": 323,
+     "completion_tokens": 166,
+     "cost_usd": 0,
+     "latency_ms": 2136
+    }
+   ],
+   "recalls": []
+  }
+ ]
+}
