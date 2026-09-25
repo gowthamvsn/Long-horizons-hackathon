@@ -1,0 +1,65 @@
+◇ injected env (16) from .env.local
+▶ run "semester-4": 0/30 done, covers off
+✔ session  1 | transcript "The Dino Team by the Sea" (dinosaurs, L2) acc 1 511 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 1 639 tok | 3 changes, 0 recalls | 18s
+✔ session  2 | transcript "Coach Toad and the Dino Race" (dinosaur race, L2) acc 1 2211 tok | chapters "Rain on the Dino Trail" (dinosaurs, L2) acc 1 700 tok | 2 changes, 0 recalls | 21s
+✔ session  3 | transcript "Dean Digs Up a Dino Egg" (dinosaur fossils, L2) acc 1 3986 tok | chapters "The Dino Boat Goes Green" (dinosaurs, L2) acc 1 739 tok | 2 changes, 0 recalls | 25s
+✔ session  4 | transcript "The Dino Bone Hunt at the Museum" (dinosaur museum, L2) acc 1 5751 tok | chapters "Dino Seeds on the Green Hill" (dinosaurs, L2) acc 1 782 tok | 2 changes, 0 recalls | 22s
+✔ session  5 | transcript "Maya Draws a Dinosaur" (drawing dinosaurs, L2) acc 1 7403 tok | chapters "The Dino Team Reads the Facts" (dinosaurs, L2) acc 1 814 tok | 4 changes, 0 recalls | 21s
+✔ session  6 | transcript "Spike the Sail-Back Dino" (spinosaurus, L2) acc 1 9167 tok | chapters "Dino Beak and the Big Feast" (dinosaurs, L2) acc 1 864 tok | 3 changes, 0 recalls | 19s
+✔ session  7 | transcript "Spiney Goes Fishing" (spinosaurus fishing, L2) acc 0.67 10890 tok | chapters "Dino Beach Team Clean-Up" (dinosaurs, L2) acc 0.67 872 tok | 7 changes, 1 recalls | 23s
+  ↻ transcript write failed (Expected ',' or '}' after property value in JSON at position 516 (line 1 column 517)), retry 1
+✔ session  8 | transcript "The Big Dig in the Sand" (dinosaur dig, L2) acc 0.67 12580 tok | chapters "Dino Dave Makes a Cave" (dinosaurs, L2) acc 0.67 776 tok | 3 changes, 1 recalls | 41s
+✔ session  9 | transcript "Stomp, Stomp, Skeleton!" (dinosaur skeleton, L2) acc 0.67 14319 tok | chapters "Chomp the Dino Checks the Shells" (dinosaurs, L2) acc 1 825 tok | 6 changes, 0 recalls | 33s
+✔ session 10 | transcript "Which Dino Is Which?" (dinosaur match, L2) acc 0.67 15961 tok | chapters "Shep the Dino and the Thick Fish Path" (dinosaurs, L2) acc 0.67 934 tok | 5 changes, 0 recalls | 28s
+✔ session 11 | transcript "The Dino Shell and the Octopus" (sea dinosaurs, L2) acc 1 17670 tok | chapters "Shelly the Sea Turtle" (sea turtles, L2) acc 1 982 tok | 5 changes, 0 recalls | 30s
+✔ session 12 | transcript "Five Giants of the Deep" (sea giants, L2) acc 0.67 19348 tok | chapters "The Fish with a Wish" (baby frogfish, L2) acc 0.67 1006 tok | 6 changes, 0 recalls | 26s
+✔ session 13 | transcript "Three Hearts and a Big Blue Whale" (ocean giants, L2) acc 0.33 20951 tok | chapters "Chip the Octopus and the Shell Shop" (octopuses, L2) acc 0.33 991 tok | 8 changes, 1 recalls | 28s
+✔ session 14 | transcript "The Orca Pod Plan" (orcas, L3) acc 0.67 22613 tok | chapters "The Crab and the Flip Club" (dolphins, L2) acc 0.67 1040 tok | 5 changes, 1 recalls | 27s
+✔ session 15 | transcript "The Orca and the Ice" (orcas, L2) acc 0 24355 tok | chapters "Flip the Baby Dolphin" (dolphins, L2) acc 0.67 1119 tok | 5 changes, 0 recalls | 38s
+✔ session 16 | transcript "The Dinosaur That Swam With Orcas" (dinosaurs, L3) acc 0.33 26015 tok | chapters "Glad the Dolphin and the Blue Clam" (dolphins, L2) acc 0.67 1173 tok | 4 changes, 0 recalls | 35s
+✔ session 17 | transcript "Night at the Dinosaur Hall" (dinosaur museum, L3) acc 0.33 27723 tok | chapters "Plip the Sea Turtle's Big Plan" (sea turtles, L2) acc 0 1202 tok | 15 changes, 1 recalls | 51s
+✔ session 18 | transcript "Louder Than Thunder" (rockets, L3) acc 0.67 29501 tok | chapters "Jane and the Bubble Rocket" (rockets, L2) acc 0.67 1160 tok | 4 changes, 2 recalls | 31s
+  ↻ chapters write failed (400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anth), retry 1
+  ↻ chapters write failed (400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anth), retry 2
+BadRequestError: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CfQgtjxa4wig8fuLC4Ke6"}
+    at Function.generate (D:\hackathon_sep25\node_modules\@anthropic-ai\sdk\src\core\error.ts:75:14)
+    at Anthropic.makeStatusError (D:\hackathon_sep25\node_modules\@anthropic-ai\sdk\src\client.ts:976:28)
+    at Anthropic.makeRequest (D:\hackathon_sep25\node_modules\@anthropic-ai\sdk\src\client.ts:1280:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async llm (D:\hackathon_sep25\src\lib\llm.ts:72:16)
+    at async chaptersWrite (D:\hackathon_sep25\scripts\tutors.ts:117:13)
+    at async retry (D:\hackathon_sep25\scripts\simulate.ts:71:14)
+    at async Promise.all (index 1)
+    at async main (D:\hackathon_sep25\scripts\simulate.ts:177:22) {
+  status: 400,
+  headers: Headers {
+    date: 'Fri, 25 Sep 2026 19:12:13 GMT',
+    'content-type': 'application/json',
+    'transfer-encoding': 'chunked',
+    connection: 'keep-alive',
+    'x-should-retry': 'false',
+    server: 'cloudflare',
+    'request-id': 'req_011CfQgtjxa4wig8fuLC4Ke6',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'anthropic-organization-id': '412df8c3-c0bd-4276-8c79-94d8eb4ebd5e',
+    'anthropic-workspace-id': 'wrkspc_017QuRT1BG9Pg1cdaUxw8psS',
+    traceresponse: '00-0da729fac84589cad1428bd8f4d10a08-e12a3335043ee6ab-01',
+    vary: 'Accept-Encoding',
+    'content-encoding': 'br',
+    'x-robots-tag': 'none',
+    'content-security-policy': "default-src 'none'; frame-ancestors 'none'",
+    'cf-cache-status': 'DYNAMIC',
+    'cf-ray': 'a40c56d28d0cddff-SJC'
+  },
+  requestID: 'req_011CfQgtjxa4wig8fuLC4Ke6',
+  workspaceID: 'wrkspc_017QuRT1BG9Pg1cdaUxw8psS',
+  error: {
+    type: 'error',
+    error: {
+      type: 'invalid_request_error',
+      message: 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'
+    },
+    request_id: 'req_011CfQgtjxa4wig8fuLC4Ke6'
+  },
+  type: 'invalid_request_error'
+}

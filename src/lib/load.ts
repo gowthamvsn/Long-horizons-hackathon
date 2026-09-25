@@ -7,7 +7,7 @@ import type { Book, CallLog, LearnerModel, ReadingEvents, Score, SemesterData, S
 
 // Where the UI's data comes from, in order: RawTree -> local checkpoint -> mock.
 
-export const RUN = process.env.RUN_ID || "semester-4";
+export const RUN = process.env.RUN_ID || "semester-5";
 type Row = Record<string, unknown>;
 const TUTORS: TutorName[] = ["transcript", "chapters"];
 

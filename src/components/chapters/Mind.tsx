@@ -7,24 +7,42 @@ import type { LearnerModel, SessionView, StateChange } from "@/lib/types";
 
 // "The tutor's mind": Chapters' hot learner model as cards; archived facts drop into the RawTree drawer.
 
-interface Fact {
+interface Card {
   id: string;
   kind: string;
   title: string;
   detail: string;
   meter?: number;
+  confidence?: number;
+  left?: number;
+  pinned?: boolean;
+  flag?: string;
   tone?: "sage" | "clay" | "gold" | "sky";
 }
 
-function facts(m: LearnerModel): Fact[] {
-  const out: Fact[] = [{ id: "level", kind: "Reading level", title: `Level ${m.level}`, detail: "sets sentence length and vocabulary", tone: "sky" }];
-  for (const i of [...(m.interests ?? [])].sort((a, b) => b.strength - a.strength))
-    out.push({ id: `interest:${i.topic}`, kind: "Interest", title: i.topic, detail: `last signal · session ${i.last_signal}`, meter: i.strength, tone: "gold" });
-  for (const [k, s] of Object.entries(m.skills ?? {}))
-    if (s) out.push({ id: `skill:${k}`, kind: "Skill", title: k.replace("_", " "), detail: `evidence · s${s.evidence.join(", s") || "–"}`, meter: s.mastery, tone: "sage" });
-  for (const x of m.misconceptions ?? [])
-    out.push({ id: `misconception:${x.what}`, kind: x.status === "resolved" ? "Resolved confusion" : "Confusion", title: x.what, detail: `since session ${x.since}`, tone: "clay" });
-  for (const w of m.what_works ?? []) out.push({ id: `what_works:${w}`, kind: "What works", title: w, detail: "", tone: "sage" });
+const KIND_LABEL: Record<string, string> = { level: "Reading level", skill: "Skill", interest: "Interest", misconception: "Confusion", what_works: "What works" };
+const KIND_TONE: Record<string, Card["tone"]> = { level: "sky", skill: "sage", interest: "gold", misconception: "clay", what_works: "sage" };
+const ORDER = ["level", "interest", "skill", "misconception", "what_works"];
+
+function cards(m: LearnerModel, session: number): Card[] {
+  const out: Card[] = [];
+  if (m.plan) out.push({ id: "plan", kind: "Plan", title: m.plan, detail: "", tone: "gold" });
+  const facts = [...(m.facts ?? [])].sort((a, b) => ORDER.indexOf(a.kind) - ORDER.indexOf(b.kind) || Number(b.value) - Number(a.value));
+  for (const f of facts) {
+    const numeric = typeof f.value === "number" && f.kind !== "level";
+    out.push({
+      id: f.id,
+      kind: KIND_LABEL[f.kind] ?? f.kind,
+      title: f.kind === "level" ? `Level ${f.value}` : f.key.replace("_", " "),
+      detail: `from ${f.source}`,
+      meter: numeric ? Number(f.value) : undefined,
+      confidence: f.confidence,
+      left: f.ttl - (session - f.last_confirmed),
+      pinned: f.pinned,
+      flag: f.flag,
+      tone: KIND_TONE[f.kind],
+    });
+  }
   if (m.recent_books?.length) out.push({ id: "recent", kind: "Recent books", title: m.recent_books.join(" · "), detail: "so stories never repeat", tone: "sky" });
   return out;
 }
@@ -33,20 +51,21 @@ const TONE = { sage: "var(--sage)", clay: "var(--clay)", gold: "var(--gold)", sk
 
 export function Mind({ sessions, idx }: { sessions: SessionView[]; idx: number }) {
   const cur = sessions[idx];
-  const cards = useMemo(() => facts(cur.model), [cur]);
+  const list = useMemo(() => cards(cur.model, cur.session), [cur]);
   const archived = useMemo(() => sessions.slice(0, idx + 1).flatMap((s) => s.changes.filter((c) => c.action === "archived")), [sessions, idx]);
-  const edits = cur.changes.filter((c) => c.action !== "archived");
+  const edits = cur.changes.filter((c) => c.action !== "archived" && c.action !== "planned" && !c.reason.startsWith("re-confirmed"));
+  const jan = cur.janitor;
 
   return (
     <section className="paper-card flex min-h-0 flex-col rounded-2xl p-5">
       <header className="mb-3">
         <h2 className="font-display text-xl font-medium">The tutor&apos;s mind</h2>
-        <p className="text-xs text-[var(--ink-soft)]">Everything Chapters keeps in its prompt. Nothing else.</p>
+        <p className="text-xs text-[var(--ink-soft)]">Hot state: the only memory in the Fox&apos;s prompt. Facts fade unless evidence re-confirms them.</p>
       </header>
 
       <div className="relative min-h-0 flex-1 space-y-2 overflow-y-auto pr-1">
         <AnimatePresence initial={false} mode="popLayout">
-          {cards.map((f) => (
+          {list.map((f) => (
             <motion.div
               key={f.id}
               layout
@@ -58,22 +77,43 @@ export function Mind({ sessions, idx }: { sessions: SessionView[]; idx: number }
               style={{ borderLeft: `3px solid ${TONE[f.tone ?? "sage"]}` }}
             >
               <div className="flex items-baseline justify-between gap-2">
-                <span className="text-[10px] tracking-wider text-[var(--ink-soft)] uppercase">{f.kind}</span>
+                <span className="text-[10px] tracking-wider text-[var(--ink-soft)] uppercase">
+                  {f.pinned && "📌 "}
+                  {f.kind}
+                </span>
                 {f.meter !== undefined && <span className="text-[10px] tabular-nums text-[var(--ink-soft)]">{Math.round(f.meter * 100)}%</span>}
               </div>
-              <div className="text-sm leading-snug font-medium capitalize-first">{f.title}</div>
+              <div className="text-sm leading-snug font-medium">{f.title}</div>
               {f.meter !== undefined && (
                 <div className="mt-1.5 h-1 rounded-full bg-[var(--paper-deep)]">
-                  <motion.div className="h-full rounded-full" style={{ background: TONE[f.tone ?? "sage"] }} animate={{ width: `${f.meter * 100}%` }} />
+                  <motion.div className="h-full rounded-full" style={{ background: TONE[f.tone ?? "sage"] }} initial={false} animate={{ width: `${f.meter * 100}%` }} />
                 </div>
               )}
-              {f.detail && <div className="mt-1 text-[10px] text-[var(--ink-soft)]">{f.detail}</div>}
+              {f.flag && <div className="mt-1 rounded bg-[var(--clay-soft)] px-1.5 py-0.5 text-[10px] text-[var(--ribbon)]">⚠ janitor: {f.flag}</div>}
+              {f.confidence !== undefined && (
+                <div className="mt-1 flex items-center gap-2 text-[10px] text-[var(--ink-soft)]">
+                  <span className="truncate">{f.detail}</span>
+                  <span className="ml-auto shrink-0 tabular-nums" title="confidence">
+                    conf {Math.round(f.confidence * 100)}%
+                  </span>
+                  <span className={`shrink-0 tabular-nums ${f.left !== undefined && f.left <= 1 ? "text-[var(--ribbon)]" : ""}`} title="sessions until this fact expires">
+                    ⏳{Math.max(0, f.left ?? 0)}
+                  </span>
+                </div>
+              )}
+              {f.confidence === undefined && f.detail && <div className="mt-1 text-[10px] text-[var(--ink-soft)]">{f.detail}</div>}
             </motion.div>
           ))}
         </AnimatePresence>
       </div>
 
       <EditLog edits={edits} />
+      {jan && (
+        <motion.div key={jan.session} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mt-2 rounded-lg border border-dashed border-[var(--line)] px-3 py-1.5 text-[11px] text-[var(--ink-soft)]">
+          🧹 <b className="text-[var(--ink)]">Janitor</b> (Liquid LFM2, local, {(jan.latency_ms / 1000).toFixed(1)}s) scored {jan.scores.length} facts ·{" "}
+          {jan.scores.filter((x) => x.decision === "archive").length} archived · {jan.scores.filter((x) => x.decision === "flag").length} flagged
+        </motion.div>
+      )}
       <ArchiveDrawer archived={archived} fresh={cur.changes.filter((c) => c.action === "archived")} />
     </section>
   );

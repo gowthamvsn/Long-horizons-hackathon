@@ -3,30 +3,27 @@
 export type Skill = "vowel_teams" | "silent_e" | "digraphs" | "blends";
 export type TutorName = "transcript" | "chapters";
 
-export interface SkillState {
-  mastery: number; // 0..1
-  evidence: number[]; // session ids
-  last_seen: number;
+export type FactKind = "level" | "skill" | "interest" | "misconception" | "what_works";
+
+/** One fact in the Fox's hot state. Everything it knows about the child is a HotFact. */
+export interface HotFact {
+  id: string; // `${kind}:${key}`
+  kind: FactKind;
+  key: string; // "digraphs", "ocean", "level", free text for misconceptions / what_works
+  value: number | string; // mastery 0-1 | strength 0-1 | level 2/3 | text
+  source: string; // where it came from: "s7 reading log", "s10 remark", ...
+  since: number; // session first recorded
+  last_confirmed: number; // session last supported by evidence
+  confidence: number; // 0-1, decays each session it isn't re-confirmed
+  ttl: number; // sessions after last_confirmed before it expires
+  pinned?: boolean;
+  flag?: string; // janitor: contradiction noticed, for the tutor to resolve
 }
 
-export interface Misconception {
-  what: string;
-  since: number;
-  status: "active" | "resolved";
-}
-
-export interface Interest {
-  topic: string;
-  strength: number; // 0..1
-  last_signal: number;
-}
-
+/** Hot state: the only memory in the Fox's prompt. Roughly constant in size. */
 export interface LearnerModel {
-  level: number;
-  skills: Partial<Record<Skill, SkillState>>;
-  misconceptions: Misconception[];
-  interests: Interest[];
-  what_works: string[];
+  facts: HotFact[];
+  plan: string; // what the next couple of books should do
   recent_books?: string[]; // last 3 titles, so stories don't repeat
 }
 
@@ -87,12 +84,21 @@ export interface CallLog {
 
 export interface StateChange {
   session: number;
-  action: "added" | "updated" | "resolved" | "archived";
-  kind: "level" | "skill" | "misconception" | "interest" | "what_works";
+  action: "added" | "updated" | "resolved" | "archived" | "pinned" | "flagged" | "planned";
+  kind: FactKind | "plan";
   key: string;
   value: string;
   reason: string;
-  by: "tutor" | "curator";
+  by: "tutor" | "curator" | "janitor";
+}
+
+/** One janitor (LFM2) pass: per-fact scores and what it decided. */
+export interface JanitorRun {
+  session: number;
+  model: string;
+  latency_ms: number;
+  fallback: boolean; // true when the small model's output was unusable and rules decided alone
+  scores: { id: string; staleness: number; relevance: number; contradiction: string; decision: "keep" | "archive" | "flag" }[];
 }
 
 type PerTutor<T> = Record<TutorName, T>;
@@ -108,6 +114,7 @@ export interface SessionView {
   cost: PerTutor<number>; // $ spent this session
   model: LearnerModel; // chapters learner model after the session
   changes: StateChange[];
+  janitor?: JanitorRun | null;
 }
 
 export interface SemesterData {

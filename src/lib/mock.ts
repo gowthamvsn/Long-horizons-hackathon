@@ -1,5 +1,5 @@
 import { MILESTONES, SESSIONS, STUDENT, read, score, truth } from "../../scripts/student";
-import type { Book, LearnerModel, SemesterData, SessionView, Skill, StateChange, TutorName } from "./types";
+import type { Book, HotFact, LearnerModel, SemesterData, SessionView, Skill, StateChange, TutorName } from "./types";
 
 // Plausible stand-in semester so the UI can be built before the real run lands.
 // Shape is identical to what the RawTree loader returns.
@@ -41,71 +41,34 @@ function book(tutor: TutorName, session: number, topic: string, level: number, t
 
 export function mockSemester(): SemesterData {
   const sessions: SessionView[] = [];
-  const model: LearnerModel = {
-    level: 2,
-    skills: { vowel_teams: { mastery: 0.2, evidence: [], last_seen: 0 } },
-    misconceptions: [{ what: "reads ea/ai/oa as two separate sounds", since: 0, status: "active" }],
-    interests: [{ topic: "dinosaurs", strength: 0.9, last_signal: 0 }],
-    what_works: [],
-  };
-
   for (let s = 1; s <= SESSIONS; s++) {
     const changes: StateChange[] = [];
-    const ch = (c: Omit<StateChange, "session">) => changes.push({ session: s, ...c });
-
-    // Chapters' beliefs lag reality by about a session.
-    const cTopic = s >= 20 ? "space rockets" : "dinosaurs";
-    const cLevel = s >= 26 ? 3 : 2;
-    const cSkill: Skill = s <= 8 ? "vowel_teams" : s >= 16 ? "silent_e" : "blends";
+    // Chapters' beliefs lag reality by one session.
+    const seen = truth(Math.max(1, s - 1));
+    const cTopic = seen.interest;
+    const cLevel = seen.level;
+    const cSkill = (seen.weak_skill ?? "none") as Skill | "none";
     const tBook = book("transcript", s, "dinosaurs", 2, "vowel_teams");
     const cBook = book("chapters", s, cTopic, cLevel, cSkill);
-
-    // Learner model edits.
-    const vt = model.skills.vowel_teams!;
-    if (s <= 9) {
-      vt.mastery = Math.min(0.95, 0.2 + s * 0.09);
-      vt.evidence = [...vt.evidence, s].slice(-5);
-      vt.last_seen = s;
-      ch({ action: "updated", kind: "skill", key: "vowel_teams", value: vt.mastery.toFixed(2), reason: "fewer ea/ai/oa misses", by: "tutor" });
-    }
-    if (s === 8) {
-      model.misconceptions[0].status = "resolved";
-      ch({ action: "resolved", kind: "misconception", key: model.misconceptions[0].what, value: "resolved", reason: "0 vowel-team misses two sessions running", by: "tutor" });
-    }
-    if (s === 9) {
-      const m = model.misconceptions.shift()!;
-      ch({ action: "archived", kind: "misconception", key: m.what, value: JSON.stringify(m), reason: "resolved, no longer needed in context", by: "curator" });
-      model.skills.blends = { mastery: 0.6, evidence: [9], last_seen: 9 };
-      ch({ action: "added", kind: "skill", key: "blends", value: "0.6", reason: "next skill to stretch", by: "tutor" });
-    }
-    if (s === 16) {
-      model.misconceptions.push({ what: "reads silent-e words with a short vowel (cake → cak)", since: 16, status: "active" });
-      model.skills.silent_e = { mastery: 0.3, evidence: [15, 16], last_seen: 16 };
-      ch({ action: "added", kind: "misconception", key: "reads silent-e words with a short vowel (cake → cak)", value: "active", reason: "missed cake, bone, kite", by: "tutor" });
-    }
-    if (s === 19) {
-      model.interests.push({ topic: "space", strength: 0.6, last_signal: 19 });
-      ch({ action: "added", kind: "interest", key: "space", value: "0.6", reason: '"Can we read about rockets sometime?"', by: "tutor" });
-    }
-    if (s === 20) {
-      model.interests = model.interests.map((i) => (i.topic === "space" ? { ...i, strength: 0.9, last_signal: 20 } : { ...i, strength: 0.4 }));
-      ch({ action: "updated", kind: "interest", key: "dinosaurs", value: "0.4", reason: "enjoyment dropped on dinosaur books", by: "tutor" });
-    }
-    if (s === 22) {
-      const d = model.interests.find((i) => i.topic === "dinosaurs")!;
-      d.strength = 0.2;
-      model.interests = model.interests.filter((i) => i.topic !== "dinosaurs");
-      ch({ action: "archived", kind: "interest", key: "dinosaurs", value: JSON.stringify(d), reason: "faded (strength 0.2)", by: "curator" });
-    }
-    if (s === 26) {
-      model.level = 3;
-      ch({ action: "updated", kind: "level", key: "level", value: "3", reason: '"That one was too easy!" + 1 miss in 150 words', by: "tutor" });
-    }
-    if (s === 12 || s === 24) {
-      const w = s === 12 ? "Rhyming pairs help her hear vowel teams" : "Short chapters with a cliffhanger";
-      model.what_works.push(w);
-      ch({ action: "added", kind: "what_works", key: w, value: "", reason: "tutor insight", by: "tutor" });
-    }
+    const fact = (kind: HotFact["kind"], key: string, value: number | string, since: number): HotFact => ({
+      id: kind === "level" ? "level" : `${kind}:${key}`,
+      kind,
+      key,
+      value,
+      source: `s${since} reading log`,
+      since,
+      last_confirmed: s,
+      confidence: 0.8,
+      ttl: 5,
+    });
+    const model: LearnerModel = {
+      facts: [fact("level", "level", cLevel, s), fact("interest", cTopic, 0.9, s), fact("skill", String(cSkill), 0.3, s)],
+      plan: `${cTopic} stories at level ${cLevel} practicing ${String(cSkill).replace("_", " ")}`,
+      recent_books: [],
+    };
+    const prev = truth(Math.max(1, s - 2));
+    if (prev.interest !== seen.interest)
+      changes.push({ session: s, action: "archived", kind: "interest", key: prev.interest, value: "", reason: "stale 0.8, relevance 0.2", by: "janitor" });
 
     const tTok = 1100 + (s - 1) * 720;
     const cTok = 980 + ((s * 37) % 140);

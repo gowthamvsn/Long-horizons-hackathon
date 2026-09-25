@@ -3,7 +3,7 @@ import { RawTree } from "@rawtree/sdk";
 // RawTree = the archive + every number on the dashboard. Tables auto-create on first insert.
 // SQL dialect is ClickHouse.
 
-export const TABLES = ["sessions", "events", "books", "state_changes", "llm_calls", "scores"] as const;
+export const TABLES = ["sessions", "events", "books", "state_changes", "llm_calls", "scores", "tool_calls", "nimble_fetches", "janitor_runs"] as const;
 export type Table = (typeof TABLES)[number];
 
 let client: RawTree | null = null;

@@ -4,22 +4,10 @@ import path from "node:path";
 import { insert } from "../src/lib/rawtree";
 import { fetchFact } from "../src/lib/nimble";
 import { generateCover } from "../src/lib/flux";
-import type { Book, LearnerModel, ReadingEvents, Score, Truth } from "../src/lib/types";
+import type { Book, JanitorRun, LearnerModel, ReadingEvents, Score, Truth } from "../src/lib/types";
 import { SESSIONS, STUDENT, read, score, truth } from "./student";
-import {
-  chaptersUpdate,
-  chaptersWrite,
-  curateModel,
-  newLearnerModel,
-  newTranscript,
-  topInterest,
-  transcriptObserve,
-  transcriptWrite,
-  type CallLog,
-  type Fact,
-  type StateChange,
-  type TranscriptState,
-} from "./tutors";
+import { newTranscript, transcriptObserve, transcriptWrite, type CallLog, type StateChange, type TranscriptState, type WebFact } from "./tutors";
+import { JANITOR_EVERY, chaptersUpdate, chaptersWrite, janitor, newLearnerModel, topInterest, type ToolCallLog } from "./chapters";
 
 // npm run simulate -- [--run semester-1] [--sessions 30] [--no-covers]
 // Resumable: progress is checkpointed to data/runs/<run>.json after every completed session.
@@ -29,7 +17,7 @@ const flag = (name: string, dflt: string) => {
   const i = args.indexOf(`--${name}`);
   return i >= 0 ? args[i + 1] : dflt;
 };
-const RUN = flag("run", "semester-4");
+const RUN = flag("run", "semester-5");
 const UNTIL = Number(flag("sessions", String(SESSIONS)));
 const COVERS = !args.includes("--no-covers");
 
@@ -44,6 +32,9 @@ export interface SessionRecord {
   changes: StateChange[];
   calls: CallLog[];
   recalls: string[];
+  toolCalls: ToolCallLog[];
+  janitor: JanitorRun | null;
+  web: { transcript: { topic: string; fact: WebFact | null }; chapters: { topic: string; fact: WebFact | null } };
 }
 
 interface Checkpoint {
@@ -78,8 +69,8 @@ async function retry<T>(label: string, fn: () => Promise<T>, tries = 3): Promise
 }
 
 // Nimble facts cached per topic+session so reruns don't spend credits.
-const facts = load<Record<string, Fact | null>>(FACTS_FILE, {});
-async function fact(topic: string, session: number): Promise<Fact | null> {
+const facts = load<Record<string, WebFact | null>>(FACTS_FILE, {});
+async function fact(topic: string, session: number): Promise<WebFact | null> {
   const key = `${topic.toLowerCase()}:${session}`;
   if (key in facts) return facts[key];
   try {
@@ -139,6 +130,16 @@ async function archive(rec: SessionRecord) {
   );
   await insert("scores", both.map((t) => tag({ ...rec.scores[t] })));
   await insert("llm_calls", rec.calls.map((c) => tag({ ...c })));
+  await insert("tool_calls", (rec.toolCalls ?? []).map((c) => tag({ tutor: "chapters", ...c })));
+  await insert(
+    "nimble_fetches",
+    both.map((t) => tag({ session: rec.session, tutor: t, topic: rec.web?.[t].topic ?? "", title: rec.web?.[t].fact?.title ?? "", url: rec.web?.[t].fact?.url ?? "", snippet: rec.web?.[t].fact?.snippet ?? "" })),
+  );
+  if (rec.janitor)
+    await insert(
+      "janitor_runs",
+      rec.janitor.scores.map((sc) => tag({ session: rec.session, model: rec.janitor!.model, latency_ms: rec.janitor!.latency_ms, fallback: rec.janitor!.fallback ? 1 : 0, ...sc })),
+    );
   await insert("state_changes", rec.changes.map((c) => tag({ tutor: "chapters", ...c })));
 }
 
@@ -168,7 +169,9 @@ async function main() {
     const tr = truth(session);
     const calls: CallLog[] = [];
 
-    const [tFact, cFact] = await Promise.all([fact(cp.transcript.lastTopic, session), fact(topInterest(cp.model), session)]);
+    const tTopic = cp.transcript.lastTopic;
+    const cTopic = topInterest(cp.model);
+    const [tFact, cFact] = await Promise.all([fact(tTopic, session), fact(cTopic, session)]);
 
     // Work on copies so a crash mid-session leaves the checkpoint untouched.
     const transcript = structuredClone(cp.transcript);
@@ -198,8 +201,12 @@ async function main() {
     });
     Object.assign(model, upd.scratch);
     calls.push(...upd.calls);
-    const cur = await retry("curator", () => curateModel(model, session), 2);
-    calls.push(cur.call);
+    let jan: Awaited<ReturnType<typeof janitor>> | null = null;
+    if (session % JANITOR_EVERY === 0) {
+      const recent = [...cp.sessions.slice(-(JANITOR_EVERY - 1)).map((r) => r.events.chapters), events.chapters];
+      jan = await retry("janitor", () => janitor(model, session, recent), 2);
+      calls.push(jan.call);
+    }
 
     const rec: SessionRecord = {
       session,
@@ -209,9 +216,12 @@ async function main() {
       scores: { transcript: score(books.transcript), chapters: score(books.chapters) },
       prompt_tokens: { transcript: tw.promptTokens, chapters: cw.promptTokens },
       model: structuredClone(model),
-      changes: [...upd.changes, ...cur.changes],
+      changes: [...upd.changes, ...(jan?.changes ?? [])],
       calls,
       recalls: upd.recalls,
+      toolCalls: upd.toolCalls,
+      janitor: jan?.run ?? null,
+      web: { transcript: { topic: tTopic, fact: tFact }, chapters: { topic: cTopic, fact: cFact } },
     };
 
     if (process.env.RAWTREE_API_KEY) await retry("rawtree insert", () => archive(rec));
@@ -227,7 +237,7 @@ async function main() {
     console.log(
       `✔ session ${String(session).padStart(2)} | transcript "${books.transcript.title}" (${books.transcript.topic}, L${books.transcript.level}) acc ${s.transcript.accuracy} ${tw.promptTokens} tok` +
         ` | chapters "${books.chapters.title}" (${books.chapters.topic}, L${books.chapters.level}) acc ${s.chapters.accuracy} ${cw.promptTokens} tok` +
-        ` | ${rec.changes.length} changes, ${upd.recalls.length} recalls | ${((Date.now() - t0) / 1000).toFixed(0)}s`,
+        ` | ${rec.changes.length} changes, ${upd.recalls.length} recalls, ${upd.toolCalls.length} tools${jan ? `, janitor ${jan.changes.filter((c) => c.action === "archived").length} archived/${jan.changes.filter((c) => c.action === "flagged").length} flagged${jan.run.fallback ? " (fallback)" : ""}` : ""} | ${((Date.now() - t0) / 1000).toFixed(0)}s`,
     );
   }
   console.log("■ done");
