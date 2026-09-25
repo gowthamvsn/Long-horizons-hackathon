@@ -60,6 +60,7 @@ export interface ReadingEvents {
   response_time_ms: number;
   enjoyment: number; // 1..5
   comment: string;
+  reading_log?: [word: string, ms: number, correct: 0 | 1][];
 }
 
 export interface Score {
@@ -112,6 +113,6 @@ export interface SemesterData {
   run: string;
   source: "rawtree" | "local" | "mock";
   student: { name: string; age: number };
-  milestones: { session: number; label: string }[];
+  milestones: { session: number; label: string; emoji?: string }[];
   sessions: SessionView[];
 }

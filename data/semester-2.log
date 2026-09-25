@@ -1,0 +1,8 @@
+◇ injected env (16) from .env.local
+▶ run "semester-2": 0/30 done, covers on
+✔ session  1 | transcript "The Dino Team by the Sea" (dinosaurs, L2) acc 1 450 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 1 578 tok | 2 changes, 0 recalls | 57s
+✔ session  2 | transcript "The Dino Train on Rain Road" (dinosaurs, L2) acc 1 2176 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 1 584 tok | 3 changes, 0 recalls | 31s
+  ↻ flux transcript 3 failed (fetch failed), retry 1
+✔ session  3 | transcript "Dino Digs in the Coal Cave" (dinosaur fossils, L2) acc 1 3969 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 1 617 tok | 4 changes, 0 recalls | 41s
+◇ injected env (16) from .env.local
+▶ run "semester-2": 3/30 done, covers off

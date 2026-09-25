@@ -5,7 +5,7 @@ import { assertReadOnly, query } from "../src/lib/rawtree";
 import type { Book, CallLog, LearnerModel, ReadingEvents, Skill, StateChange, TutorName } from "../src/lib/types";
 
 export type { CallLog, StateChange };
-import { STUDENT } from "./student";
+import { STUDENT, rawObservation } from "./student";
 
 // Both tutors share the book-writing step. They differ only in what goes in the prompt:
 //   transcript -> the whole conversation so far
@@ -89,7 +89,7 @@ export function transcriptObserve(state: TranscriptState, ev: ReadingEvents) {
   // Raw reading log appended verbatim: this is what makes the transcript grow.
   state.messages.push({
     role: "user",
-    content: `Reading results for session ${ev.session}: ${JSON.stringify(ev)}`,
+    content: `Reading results for session ${ev.session}: ${JSON.stringify(rawObservation(ev))}`,
   });
   state.messages.push({ role: "assistant", content: "Noted." });
 }
@@ -185,9 +185,14 @@ const TOOLS: Anthropic.Tool[] = [
   },
 ];
 
-const UPDATER_SYSTEM = `You maintain a compact learner model for one child. After each reading session, update it with the tools so the next book fits the child exactly.
-Update only what the evidence supports. Watch for: skills mastered (few misses over sessions), new confusions (clusters of missed words sharing a pattern), interest changes (comments, enjoyment), and level (too easy / too hard comments, very few misses).
-Use recall only when you need past history. When done, reply with one short sentence summarizing what changed.`;
+const UPDATER_SYSTEM = `You maintain a compact learner model for one child. After each reading session, update it with the tools so the next book fits the child exactly as they are NOW.
+The reading log lists every word as [word, milliseconds, correct 1/0]. Work out which phonics patterns the missed and slow words share: vowel_teams (ea, ai, oa), silent_e (cake, bone, kite), digraphs (sh, ch, th, wh), blends (st, tr, bl...).
+Children change and regress. Things to watch every session:
+- a skill that looks solid now (few misses on its words) -> raise mastery, resolve related misconceptions
+- a skill that was mastered but whose words are being missed again -> lower mastery; use recall to check its history in the archive
+- level: many misses and "hard" remarks -> lower level; almost no misses and "easy" remarks -> raise level
+- interests: remarks about a new topic -> add it strongly; low enjoyment on the current topic -> lower its strength
+Update only what the evidence supports, and keep the model small. When done, reply with one short sentence summarizing what changed.`;
 
 function applyTool(
   model: LearnerModel,
@@ -255,7 +260,7 @@ export async function chaptersUpdate(model: LearnerModel, book: Book, ev: Readin
   const messages: Anthropic.MessageParam[] = [
     {
       role: "user",
-      content: `Run id: ${runId}. Session ${book.session}.\nLearner model:\n${JSON.stringify(model, null, 1)}\n\nBook given: ${JSON.stringify({ title: book.title, level: book.level, topic: book.topic, target_skill: book.target_skill })}\nReading results: ${JSON.stringify(ev)}`,
+      content: `Run id: ${runId}. Session ${book.session}.\nLearner model:\n${JSON.stringify(model, null, 1)}\n\nBook given: ${JSON.stringify({ title: book.title, level: book.level, topic: book.topic, target_skill: book.target_skill })}\nReading results (raw): ${JSON.stringify(rawObservation(ev))}`,
     },
   ];
 

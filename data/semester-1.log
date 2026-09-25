@@ -23,3 +23,13 @@
 ✔ session 21 | transcript "The Moon Turns Red" (space moon, L2) acc 1 15159 tok | chapters "Maya and the Bubble Rocket" (rockets, L2) acc 1 1405 tok | 4 changes, 0 recalls | 21s
 ✔ session 22 | transcript "Dave Rides to Space" (space ride, L2) acc 1 15872 tok | chapters "Jake and the Bubble Rocket" (rockets, L2) acc 1 1406 tok | 5 changes, 0 recalls | 27s
 ✔ session 23 | transcript "The Puff Planet" (space planets, L2) acc 1 16638 tok | chapters "Nine, Eight, Ride!" (rockets, L2) acc 1 1358 tok | 5 changes, 0 recalls | 24s
+✔ session 24 | transcript "Jane and the Space Scope" (space telescope, L2) acc 1 17356 tok | chapters "The Bubble Rocket" (rockets, L2) acc 1 1503 tok | 5 changes, 0 recalls | 23s
+  ↻ transcript write failed (Expected ',' or '}' after property value in JSON at position 268 (line 1 column 269)), retry 1
+✔ session 25 | transcript "Dave and the Space Rock" (space rock, L2) acc 0.67 18093 tok | chapters "Maya Can Make a Rocket" (rockets, L2) acc 0.67 1557 tok | 5 changes, 0 recalls | 36s
+  ↻ transcript write failed (Expected ',' or '}' after property value in JSON at position 181 (line 1 column 182)), retry 1
+✔ session 26 | transcript "The Nine Mile Space Kite" (space kite, L3) acc 1 18793 tok | chapters "Rex and the Big Red Rocket" (dinosaur rocket, L2) acc 0.67 1530 tok | 5 changes, 0 recalls | 35s
+✔ session 27 | transcript "Five Space Rules" (space rules, L2) acc 0.67 19517 tok | chapters "Jade and the Bubble Rocket" (rockets, L2) acc 0.67 1658 tok | 5 changes, 0 recalls | 27s
+✔ session 28 | transcript "The Lost Space Probe" (space probe, L3) acc 1 20274 tok | chapters "The Dino Bone Hunt" (dinosaurs, L2) acc 0.33 1635 tok | 8 changes, 0 recalls | 26s
+✔ session 29 | transcript "The Ice Lake on Mars" (mars ice, L3) acc 1 20984 tok | chapters "The Bubble Rocket Ride" (bubble rockets, L2) acc 0.67 1761 tok | 5 changes, 0 recalls | 25s
+✔ session 30 | transcript "Mars Is a Wild Place" (mars facts, L2) acc 0.67 21716 tok | chapters "The Planet with No Sun" (planets, L2) acc 0.67 1824 tok | 5 changes, 0 recalls | 22s
+■ done

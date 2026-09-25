@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useMemo } from "react";
 import type { SessionView } from "@/lib/types";
+import { truth } from "../../../scripts/student";
 
 // The semester as a board-game trail. Maya hops stone to stone; the Owl (transcript tutor)
 // hauls an ever-growing backpack of history, the Fox (Chapters) carries a small notebook and
@@ -10,7 +11,7 @@ import type { SessionView } from "@/lib/types";
 
 const W = 1400;
 const H = 380;
-const SPACE_FROM = 20;
+const N = 30;
 
 function stonePos(i: number, n: number) {
   const t = n <= 1 ? 0 : i / (n - 1);
@@ -19,12 +20,26 @@ function stonePos(i: number, n: number) {
   return { x, y };
 }
 
-const LANDMARKS: Record<number, { emoji: string; label: string; dy: number }> = {
-  8: { emoji: "🌉", label: "Vowel Bridge", dy: -58 },
-  15: { emoji: "🐸", label: "Silent-E Swamp", dy: 62 },
-  20: { emoji: "🚀", label: "Launchpad", dy: -62 },
-  25: { emoji: "🏰", label: "Level 3 Tower", dy: 62 },
+// Landscape follows what Maya is into: jungle -> ocean -> space -> jungle again.
+const ZONE: Record<string, { top: string; bottom: string; land: string; scenery: string[] }> = {
+  dinosaurs: { top: "#eef3de", bottom: "#f6ecd2", land: "#a9c592", scenery: ["🌴", "🦕", "🌋", "🌿"] },
+  ocean: { top: "#d6ecef", bottom: "#a9d3dc", land: "#7fb6c4", scenery: ["🐠", "🐙", "🐚", "🌊"] },
+  space: { top: "#3f4f74", bottom: "#b7a6cf", land: "#8d86b4", scenery: ["🪐", "🛰️", "☄️", "🌙"] },
 };
+
+function zones(interests: string[]) {
+  const out: { interest: string; from: number; to: number }[] = [];
+  interests.forEach((it, i) => {
+    const last = out[out.length - 1];
+    if (last && last.interest === it) last.to = i;
+    else out.push({ interest: it, from: i, to: i });
+  });
+  return out.map((z) => ({
+    ...z,
+    x0: z.from === 0 ? 0 : stonePos(z.from - 0.5, N).x,
+    x1: z.to === N - 1 ? W : stonePos(z.to + 0.5, N).x,
+  }));
+}
 
 function stars(acc: number) {
   return Math.round(acc * 3);
@@ -33,12 +48,15 @@ function stars(acc: number) {
 export function TrailMap({
   sessions,
   idx,
+  milestones,
   onPick,
 }: {
   sessions: SessionView[];
   idx: number;
+  milestones: { session: number; label: string; emoji?: string }[];
   onPick: (session: number) => void;
 }) {
+  const zs = useMemo(() => zones(Array.from({ length: N }, (_, i) => truth(i + 1).interest)), []);
   const n = sessions.length;
   const pts = useMemo(() => sessions.map((_, i) => stonePos(i, Math.max(n, 30))), [sessions, n]);
   const path = useMemo(() => {
@@ -58,18 +76,20 @@ export function TrailMap({
   const packHot = cur.tokens.transcript / maxTok > 0.55;
   const archived = sessions.slice(0, idx + 1).flatMap((s) => s.changes.filter((c) => c.action === "archived"));
   const freshLeaves = cur.changes.filter((c) => c.action === "archived").length;
-  const spaceX = stonePos(SPACE_FROM - 1.5, 30).x;
 
   return (
     <div className="relative overflow-hidden rounded-2xl border border-[var(--line)] shadow-[0_18px_40px_-24px_rgba(60,40,10,0.5)]">
       <svg viewBox={`0 0 ${W} ${H}`} className="block h-auto w-full select-none">
         <defs>
-          <linearGradient id="sky" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stopColor="#e9f0da" />
-            <stop offset={`${(spaceX / W) * 0.85}`} stopColor="#f6ecd2" />
-            <stop offset={`${spaceX / W}`} stopColor="#c9b7d6" />
-            <stop offset="1" stopColor="#3f4f74" />
-          </linearGradient>
+          {Object.entries(ZONE).map(([k, z]) => (
+            <linearGradient key={k} id={`sky-${k}`} x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stopColor={z.top} />
+              <stop offset="1" stopColor={z.bottom} />
+            </linearGradient>
+          ))}
+          <filter id="blend" x="-10%" y="0" width="120%" height="100%">
+            <feGaussianBlur stdDeviation="28 0" />
+          </filter>
           <filter id="paper" x="0" y="0" width="100%" height="100%">
             <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" result="n" />
             <feColorMatrix in="n" values="0 0 0 0 0.4  0 0 0 0 0.3  0 0 0 0 0.2  0 0 0 0.06 0" />
@@ -84,24 +104,53 @@ export function TrailMap({
           </radialGradient>
         </defs>
 
-        {/* sky + land */}
-        <rect width={W} height={H} fill="url(#sky)" />
-        {Array.from({ length: 26 }, (_, i) => (
-          <circle key={i} cx={spaceX + 40 + ((i * 137) % (W - spaceX - 60))} cy={20 + ((i * 71) % 150)} r={i % 3 === 0 ? 1.8 : 1.1} fill="#fff" opacity={0.85} />
-        ))}
-        <circle cx={W - 120} cy={60} r={26} fill="#f7ecc9" opacity={0.95} />
-        <circle cx={W - 110} cy={54} r={24} fill="#3f4f74" opacity={0.25} />
-        <path d={`M0 ${H - 90} C 200 ${H - 150}, 380 ${H - 60}, 620 ${H - 110} S 1000 ${H - 60}, ${W} ${H - 120} L ${W} ${H} L 0 ${H} Z`} fill="#b9cf9f" opacity={0.55} filter="url(#soft)" />
-        <path d={`M0 ${H - 40} C 260 ${H - 90}, 520 ${H - 20}, 820 ${H - 70} S 1200 ${H - 30}, ${W} ${H - 60} L ${W} ${H} L 0 ${H} Z`} fill="#94b384" opacity={0.5} />
+        {/* sky: one soft-edged band per interest */}
+        <rect width={W} height={H} fill="#f6ecd2" />
+        <g filter="url(#blend)">
+          {zs.map((z) => (
+            <rect key={z.from} x={z.x0 - 20} y={0} width={z.x1 - z.x0 + 40} height={H} fill={`url(#sky-${z.interest})`} />
+          ))}
+        </g>
+        {zs
+          .filter((z) => z.interest === "space")
+          .map((z) =>
+            Array.from({ length: 16 }, (_, i) => (
+              <circle key={`${z.from}-${i}`} cx={z.x0 + 30 + ((i * 97) % Math.max(40, z.x1 - z.x0 - 60))} cy={18 + ((i * 53) % 130)} r={i % 3 === 0 ? 1.8 : 1.1} fill="#fff" opacity={0.85} />
+            )),
+          )}
+        {zs
+          .filter((z) => z.interest === "ocean")
+          .map((z) =>
+            [0, 1, 2].map((i) => (
+              <path
+                key={`${z.from}-w${i}`}
+                d={`M ${z.x0 + 20 + i * 60} ${58 + i * 28} q 20 -10 40 0 t 40 0 t 40 0 t 40 0`}
+                fill="none"
+                stroke="#fff"
+                strokeWidth={2}
+                opacity={0.6}
+              />
+            )),
+          )}
+        {/* rolling land tinted by zone */}
+        <g filter="url(#blend)" opacity={0.55}>
+          {zs.map((z) => (
+            <rect key={z.from} x={z.x0 - 20} y={H - 110} width={z.x1 - z.x0 + 40} height={110} fill={ZONE[z.interest].land} />
+          ))}
+        </g>
+        <path d={`M0 ${H - 40} C 260 ${H - 90}, 520 ${H - 20}, 820 ${H - 70} S 1200 ${H - 30}, ${W} ${H - 60} L ${W} ${H} L 0 ${H} Z`} fill="#94b384" opacity={0.35} />
 
-        {/* scenery */}
-        <g fontSize="34" opacity={0.9}>
-          <text x={150} y={90}>🌴</text>
-          <text x={330} y={H - 30}>🦕</text>
-          <text x={520} y={80}>🌋</text>
-          <text x={640} y={H - 25}>🌿</text>
-          <text x={spaceX + 90} y={H - 30}>🛰️</text>
-          <text x={spaceX + 250} y={80}>🪐</text>
+        {/* scenery per zone */}
+        <g fontSize="32" opacity={0.9}>
+          {zs.flatMap((z) => {
+            const span = z.x1 - z.x0;
+            const items = ZONE[z.interest].scenery.slice(0, span > 300 ? 4 : 2);
+            return items.map((e, i) => (
+              <text key={`${z.from}-${i}`} x={z.x0 + 30 + (i * span) / items.length} y={i % 2 ? H - 26 : 74}>
+                {e}
+              </text>
+            ));
+          })}
         </g>
 
         {/* RawTree: archived facts become leaves */}
@@ -144,16 +193,17 @@ export function TrailMap({
         <path d={path} fill="none" stroke="#c9b690" strokeWidth={2} strokeDasharray="2 10" strokeLinecap="round" />
 
         {/* landmarks */}
-        {Object.entries(LANDMARKS).map(([s, l]) => {
-          const p = stonePos(Number(s) - 1, 30);
-          const reached = idx + 1 >= Number(s);
+        {milestones.map((m, k) => {
+          const p = stonePos(m.session - 1, N);
+          const up = k % 2 === 0;
+          const reached = idx + 1 >= m.session;
           return (
-            <g key={s} transform={`translate(${p.x}, ${p.y + l.dy})`} opacity={reached ? 1 : 0.55}>
-              <text textAnchor="middle" fontSize="30" y={10}>
-                {l.emoji}
+            <g key={m.session} transform={`translate(${p.x}, ${p.y + (up ? -62 : 64)})`} opacity={reached ? 1 : 0.5}>
+              <text textAnchor="middle" fontSize="26" y={9}>
+                {m.emoji ?? "⭐"}
               </text>
-              <text textAnchor="middle" y={l.dy < 0 ? -22 : 32} fontSize="11" fill="#2b2622" className="font-display">
-                {l.label}
+              <text textAnchor="middle" y={up ? -20 : 30} fontSize="11" fill="#2b2622" className="font-display" paintOrder="stroke" stroke="#fffdf7" strokeWidth={3}>
+                {m.label}
               </text>
             </g>
           );

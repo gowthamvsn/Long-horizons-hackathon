@@ -59,15 +59,9 @@ export function Hud({ sessions, idx }: { sessions: SessionView[]; idx: number })
   );
 }
 
-const BANNERS: Record<number, string> = {
-  8: "Maya mastered vowel teams! 🎉",
-  15: "Uh oh, silent e is tricky now 🐸",
-  20: "Maya's into SPACE now! 🚀",
-  25: "Level up! Maya reads at level 3 🏰",
-};
-
-export function MilestoneBanner({ session }: { session: number }) {
-  const text = BANNERS[session];
+export function MilestoneBanner({ session, milestones }: { session: number; milestones: { session: number; label: string; emoji?: string }[] }) {
+  const m = milestones.find((x) => x.session === session);
+  const text = m ? `${m.emoji ?? "⭐"}  ${m.label}` : "";
   return (
     <div className="pointer-events-none absolute inset-x-0 top-4 z-10 flex justify-center">
       <AnimatePresence>

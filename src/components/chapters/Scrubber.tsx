@@ -29,13 +29,13 @@ export function Scrubber({
         {playing ? <Pause className="size-4" /> : <Play className="ml-0.5 size-4" />}
       </button>
 
-      <div className="relative flex-1 pt-7 pb-6">
+      <div className="relative flex-1 pt-7 pb-10">
         {/* milestone labels */}
-        {milestones.map((m) => (
+        {milestones.map((m, k) => (
           <button
             key={m.session}
             onClick={() => onChange(m.session)}
-            className="absolute top-0 -translate-x-1/2 text-[11px] whitespace-nowrap text-[var(--ink-soft)] transition hover:text-[var(--ink)]"
+            className={`absolute -translate-x-1/2 text-[11px] whitespace-nowrap text-[var(--ink-soft)] transition hover:text-[var(--ink)] ${k % 2 ? "top-[2.6rem]" : "top-0"}`}
             style={{ left: `${pct(m.session)}%` }}
           >
             <span className={value >= m.session ? "font-medium text-[var(--ink)]" : ""}>{m.label}</span>

@@ -71,10 +71,11 @@ export function Dashboard({ data, initialSession = 1, askSlot }: { data: Semeste
       <Hud sessions={data.sessions} idx={idx} />
 
       <div className="relative">
-        <MilestoneBanner session={session} />
+        <MilestoneBanner session={session} milestones={data.milestones} />
         <TrailMap
           sessions={data.sessions}
           idx={idx}
+          milestones={data.milestones}
           onPick={(v) => {
             setPlaying(false);
             setSession(v);

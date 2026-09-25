@@ -1,24 +1,59 @@
 import type { Book, ReadingEvents, Score, Skill, Truth, TutorName } from "../src/lib/types";
 
 // Maya, the simulated reader. Deterministic ground truth + rule-based reading with seeded noise.
+// The semester is deliberately full of reversals: skills are mastered and then slip, her level
+// goes up, down and up again, and an old interest comes back. Signals are quiet and raw, like
+// a real classroom: a per-word reading log, an enjoyment rating, and the odd remark.
 
 export const STUDENT = { name: "Maya", age: 7 };
 export const SESSIONS = 30;
 
-export const MILESTONES = [
-  { session: 8, label: "Masters vowel teams" },
-  { session: 15, label: "Starts mixing up silent e" },
-  { session: 20, label: "Dinosaurs → space" },
-  { session: 25, label: "Moves up to level 3" },
+type Span<T> = [from: number, to: number, value: T];
+
+const INTERESTS: Span<string>[] = [
+  [1, 9, "dinosaurs"],
+  [10, 16, "ocean"],
+  [17, 22, "space"],
+  [23, 30, "dinosaurs"],
+];
+const LEVELS: Span<number>[] = [
+  [1, 11, 2],
+  [12, 18, 3],
+  [19, 22, 2],
+  [23, 30, 3],
+];
+const WEAK: Span<Skill>[] = [
+  [1, 6, "vowel_teams"],
+  [7, 12, "digraphs"],
+  [13, 16, "blends"],
+  [17, 21, "silent_e"],
+  [22, 26, "vowel_teams"],
+  [27, 30, "silent_e"],
 ];
 
+export const MILESTONES = [
+  { session: 7, label: "Vowel teams mastered", emoji: "🌉" },
+  { session: 10, label: "Dinosaurs → ocean", emoji: "🐙" },
+  { session: 12, label: "Up to level 3", emoji: "🏰" },
+  { session: 17, label: "Ocean → space", emoji: "🚀" },
+  { session: 19, label: "Tough patch: level 2", emoji: "🌧️" },
+  { session: 22, label: "Break: vowel teams slip", emoji: "🐸" },
+  { session: 23, label: "Dinos are back · level 3", emoji: "🦕" },
+  { session: 27, label: "Silent e relapse", emoji: "🌀" },
+];
+
+const at = <T>(spans: Span<T>[], s: number): T => (spans.find(([a, b]) => s >= a && s <= b) ?? spans[spans.length - 1])[2];
+
 export function truth(session: number): Truth {
-  return {
-    session,
-    level: session >= 25 ? 3 : 2,
-    interest: session >= 20 ? "space" : "dinosaurs",
-    weak_skill: session < 8 ? "vowel_teams" : session >= 15 ? "silent_e" : null,
-  };
+  return { session, level: at(LEVELS, session), interest: at(INTERESTS, session), weak_skill: at(WEAK, session) };
+}
+
+/** Skills she has mastered by this session (weak before, not weak now). */
+function mastered(session: number): Set<Skill> {
+  const out = new Set<Skill>();
+  for (const [a, b, sk] of WEAK) if (b < session) out.add(sk);
+  out.delete(truth(session).weak_skill as Skill);
+  return out;
 }
 
 // mulberry32
@@ -34,8 +69,9 @@ function rng(seed: number) {
 }
 
 const TOPIC_WORDS: Record<string, RegExp> = {
-  dinosaurs: /dino|saur|fossil|t-?rex|raptor|jurassic|triceratops/i,
-  space: /space|rocket|planet|star|moon|astronaut|galaxy|comet|mars|orbit/i,
+  dinosaurs: /dino|saur|fossil|t-?rex|raptor|jurassic|triceratops|prehistoric/i,
+  space: /space|rocket|planet|star|moon|astronaut|galaxy|comet|mars|orbit|solar/i,
+  ocean: /ocean|sea\b|shark|whale|fish|octopus|coral|reef|dolphin|underwater|turtle|crab|jellyfish/i,
 };
 
 export function topicMatches(topic: string, interest: string): boolean {
@@ -51,36 +87,55 @@ export function skillOf(word: string): Skill | null {
   return null;
 }
 
+// One-off remarks the week an interest changes. Quiet on purpose.
+const NEW_INTEREST_REMARKS: Record<number, string> = {
+  10: "We went to the aquarium! I saw a real octopus.",
+  12: "Octopuses have three hearts.",
+  17: "Did you know rockets are louder than thunder?",
+  19: "I want to be an astronaut.",
+  23: "Grandpa took me to the dinosaur museum again!",
+  25: "The T. rex skeleton was SO big.",
+};
+
+const HAPPY = ["I liked it!", "Can I read it again?", "", "That was fun.", "", "I like this one."];
+
 /** Maya reads a book. Pure function of (book, session, tutor). */
 export function read(book: Book, tutor: TutorName): ReadingEvents {
   const tr = truth(book.session);
+  const done = mastered(book.session);
   const rand = rng(book.session * 7919 + (tutor === "chapters" ? 1 : 2));
   const words = book.text.toLowerCase().match(/[a-z']+/g) ?? [];
   const levelGap = book.level - tr.level; // >0 too hard, <0 too easy
 
   const missed: string[] = [];
   const missedBySkill: Partial<Record<Skill, number>> = {};
+  const log: [string, number, 0 | 1][] = [];
   for (const w of words) {
     const skill = skillOf(w);
-    let p = 0.02 + Math.max(0, levelGap) * 0.12 + Math.max(0, w.length - 7) * 0.02;
-    if (skill && skill === tr.weak_skill) p += 0.45;
-    if (rand() < p) {
+    let p = 0.015 + Math.max(0, levelGap) * 0.12 + Math.max(0, w.length - 7) * 0.02;
+    if (levelGap < 0) p *= 0.3;
+    if (skill && skill === tr.weak_skill) p += 0.42;
+    else if (skill && !done.has(skill) && skill !== tr.weak_skill) p += 0.04;
+    const miss = rand() < p;
+    const ms = Math.round(260 + w.length * 45 + (miss ? 900 + rand() * 900 : rand() * 250) + Math.max(0, levelGap) * 150);
+    log.push([w, ms, miss ? 0 : 1]);
+    if (miss) {
       missed.push(w);
       if (skill) missedBySkill[skill] = (missedBySkill[skill] ?? 0) + 1;
     }
   }
 
   const onTopic = topicMatches(book.topic, tr.interest);
-  let enjoyment = 2 + (onTopic ? 2 : 0) + (levelGap === 0 ? 1 : 0) - (missed.length > 8 ? 1 : 0);
+  let enjoyment = 2 + (onTopic ? 2 : 0) + (levelGap === 0 ? 1 : 0) - (missed.length > 12 ? 1 : 0);
   enjoyment = Math.max(1, Math.min(5, enjoyment + (rand() < 0.2 ? -1 : 0)));
 
-  let comment = "";
-  if (book.session >= 18 && !topicMatches(book.topic, "space"))
-    comment = book.session >= 20 ? "Dinosaurs again? Can we read about rockets and planets?" : "Can we read about rockets sometime?";
-  else if (levelGap < 0) comment = "That one was too easy!";
-  else if (levelGap > 0) comment = "That was really hard...";
-  else if (onTopic) comment = tr.interest === "space" ? "I love space books!" : "More dinosaurs please!";
-  else comment = "It was okay.";
+  let comment = NEW_INTEREST_REMARKS[book.session] ?? "";
+  if (!comment) {
+    if (levelGap < 0 && rand() < 0.6) comment = "That was easy.";
+    else if (levelGap > 0 && rand() < 0.6) comment = "That was hard...";
+    else if (!onTopic) comment = rand() < 0.4 ? "It was okay." : "";
+    else comment = HAPPY[Math.floor(rand() * HAPPY.length)];
+  }
 
   return {
     session: book.session,
@@ -88,9 +143,20 @@ export function read(book: Book, tutor: TutorName): ReadingEvents {
     words_attempted: words.length,
     words_missed: missed,
     missed_by_skill: missedBySkill,
-    response_time_ms: Math.round(900 + missed.length * 250 + levelGap * 300 + rand() * 400),
+    response_time_ms: Math.round(log.reduce((a, [, ms]) => a + ms, 0) / Math.max(1, log.length)),
     enjoyment,
     comment,
+    reading_log: log,
+  };
+}
+
+/** What the tutors are shown after a reading: the raw signal, no pre-computed skill labels. */
+export function rawObservation(ev: ReadingEvents) {
+  return {
+    session: ev.session,
+    enjoyment_1_to_5: ev.enjoyment,
+    remark: ev.comment || "(none)",
+    reading_log_word_ms_correct: ev.reading_log,
   };
 }
 
@@ -99,17 +165,21 @@ export function score(book: Book): Score {
   const tr = truth(book.session);
   const level_fit = book.level === tr.level ? 1 : 0;
   const topic_fit = topicMatches(book.topic, tr.interest) ? 1 : 0;
-  const skill_fit = tr.weak_skill ? (book.target_skill === tr.weak_skill ? 1 : 0) : book.target_skill === "vowel_teams" ? 0 : 1;
+  const skill_fit = book.target_skill === tr.weak_skill ? 1 : 0;
   const reasons: string[] = [];
-  if (!topic_fit)
-    reasons.push(
-      topicMatches(book.topic, "dinosaurs") ? "still thinks: loves dinosaurs" : `off-topic: ${book.topic} (she loves ${tr.interest})`,
-    );
+  if (!topic_fit) {
+    const old = INTERESTS.map(([, , i]) => i).find((i) => i !== tr.interest && topicMatches(book.topic, i));
+    reasons.push(old ? `still thinks: loves ${old}` : `off-topic: ${book.topic} (she loves ${tr.interest})`);
+  }
   if (!level_fit) reasons.push(book.level < tr.level ? "level too easy" : "level too hard");
-  if (!skill_fit)
+  if (!skill_fit) {
+    const target = book.target_skill.replace("_", " ");
     reasons.push(
-      tr.weak_skill ? `missed her ${tr.weak_skill.replace("_", " ")} struggle` : "drilling a skill she already mastered",
+      mastered(book.session).has(book.target_skill as Skill)
+        ? `drilling ${target}, already mastered`
+        : `missed her ${tr.weak_skill?.replace("_", " ")} struggle`,
     );
+  }
   return {
     tutor: book.tutor,
     session: book.session,

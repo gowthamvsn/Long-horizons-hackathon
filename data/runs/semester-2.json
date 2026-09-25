@@ -1,0 +1,5124 @@
+{
+ "run": "semester-2",
+ "done": 3,
+ "transcript": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "Session 1. Write the next book.\nReal current fact you can use (from https://kids.nationalgeographic.com/animals/prehistoric): \"Dinosaurs - National Geographic Kids. Get news, facts, games, and more! Explore the incredible world of dinosaurs through fascinating facts, amazing art, and the latest science.\""
+   },
+   {
+    "role": "assistant",
+    "content": "{\"title\":\"The Dino Team by the Sea\",\"level\":2,\"topic\":\"dinosaurs\",\"target_skill\":\"vowel_teams\",\"text\":\"Maya reads about dinosaurs each day.\\n\\nShe reads that a big dino had a long neck. It ate leaves from the treetops. Its feet were the size of a road sign!\\n\\nToday Maya has a dream. She is on a boat at sea. A dino swims by. It has a green tail and a wide, flat snout.\\n\\n\\\"Wait for me!\\\" Maya calls.\\n\\nThe dino leads the boat to a beach. On the sand, three baby dinos peep and squeak. They need a meal.\\n\\nMaya lays out a pile of leaves. Each baby eats and eats. Then they nap in the heat.\\n\\nA big dino roars. It is not mean. It is a thank-you roar!\\n\\nMaya waves. \\\"See you soon, dino team!\\\"\\n\\nThen she wakes up. Her book is on her lap.\\n\\n\\\"Dinosaurs are real,\\\" Maya says. \\\"They lived long ago. And I can read all about them!\\\"\",\"cover_scene\":\"A girl in a small boat near a sunny beach waves at a friendly green long-necked dinosaur while three baby dinosaurs peek from the sand.\"}"
+   },
+   {
+    "role": "user",
+    "content": "Reading results for session 1: {\"session\":1,\"enjoyment_1_to_5\":4,\"remark\":\"(none)\",\"reading_log_word_ms_correct\":[[\"maya\",523,1],[\"reads\",659,1],[\"about\",587,1],[\"dinosaurs\",820,1],[\"each\",508,1],[\"day\",439,1],[\"she\",482,1],[\"reads\",560,1],[\"that\",660,1],[\"a\",438,1],[\"big\",554,1],[\"dino\",594,1],[\"had\",573,1],[\"a\",524,1],[\"long\",630,1],[\"neck\",515,1],[\"it\",455,1],[\"ate\",440,1],[\"leaves\",579,1],[\"from\",454,1],[\"the\",479,1],[\"treetops\",659,1],[\"its\",427,1],[\"feet\",497,1],[\"were\",602,1],[\"the\",552,1],[\"size\",492,1],[\"of\",353,1],[\"a\",310,1],[\"road\",1458,0],[\"sign\",499,1],[\"today\",587,1],[\"maya\",517,1],[\"has\",523,1],[\"a\",438,1],[\"dream\",1420,0],[\"she\",457,1],[\"is\",480,1],[\"on\",492,1],[\"a\",427,1],[\"boat\",1569,0],[\"at\",486,1],[\"sea\",546,1],[\"a\",323,1],[\"dino\",598,1],[\"swims\",725,1],[\"by\",569,1],[\"it\",413,1],[\"has\",461,1],[\"a\",549,1],[\"green\",1918,0],[\"tail\",1786,0],[\"and\",526,1],[\"a\",404,1],[\"wide\",672,1],[\"flat\",627,1],[\"snout\",625,1],[\"wait\",1483,0],[\"for\",452,1],[\"me\",391,1],[\"maya\",638,1],[\"calls\",529,1],[\"the\",416,1],[\"dino\",533,1],[\"leads\",617,1],[\"the\",542,1],[\"boat\",2066,0],[\"to\",453,1],[\"a\",355,1],[\"beach\",1407,0],[\"on\",552,1],[\"the\",569,1],[\"sand\",586,1],[\"three\",1817,0],[\"baby\",545,1],[\"dinos\",637,1],[\"peep\",639,1],[\"and\",567,1],[\"squeak\",602,1],[\"they\",1985,0],[\"need\",577,1],[\"a\",341,1],[\"meal\",473,1],[\"maya\",509,1],[\"lays\",527,1],[\"out\",640,1],[\"a\",539,1],[\"pile\",560,1],[\"of\",554,1],[\"leaves\",747,1],[\"each\",475,1],[\"baby\",472,1],[\"eats\",1954,0],[\"and\",403,1],[\"eats\",465,1],[\"then\",501,1],[\"they\",536,1],[\"nap\",1812,0],[\"in\",502,1],[\"the\",524,1],[\"heat\",522,1],[\"a\",472,1],[\"big\",404,1],[\"dino\",687,1],[\"roars\",671,1],[\"it\",433,1],[\"is\",579,1],[\"not\",644,1],[\"mean\",2115,0],[\"it\",434,1],[\"is\",449,1],[\"a\",324,1],[\"thank\",624,1],[\"you\",575,1],[\"roar\",1770,0],[\"maya\",626,1],[\"waves\",508,1],[\"see\",520,1],[\"you\",531,1],[\"soon\",503,1],[\"dino\",465,1],[\"team\",643,1],[\"then\",633,1],[\"she\",435,1],[\"wakes\",698,1],[\"up\",582,1],[\"her\",446,1],[\"book\",572,1],[\"is\",518,1],[\"on\",400,1],[\"her\",628,1],[\"lap\",550,1],[\"dinosaurs\",866,1],[\"are\",440,1],[\"real\",1882,0],[\"maya\",639,1],[\"says\",475,1],[\"they\",532,1],[\"lived\",672,1],[\"long\",609,1],[\"ago\",606,1],[\"and\",613,1],[\"i\",357,1],[\"can\",542,1],[\"read\",656,1],[\"all\",487,1],[\"about\",661,1],[\"them\",590,1]]}"
+   },
+   {
+    "role": "assistant",
+    "content": "Noted."
+   },
+   {
+    "role": "user",
+    "content": "Session 2. Write the next book.\nReal current fact you can use (from https://kids.nationalgeographic.com/animals/prehistoric): \"Dinosaurs - National Geographic Kids. Get news, facts, games, and more! Explore the incredible world of dinosaurs through fascinating facts, amazing art, and the latest science.\""
+   },
+   {
+    "role": "assistant",
+    "content": "{\"title\":\"The Dino Train on Rain Road\",\"level\":2,\"topic\":\"dinosaurs\",\"target_skill\":\"vowel_teams\",\"text\":\"Maya reads a fact: scientists still find new dinosaurs each year!\\n\\nToday Maya plays dino train. Her train goes down Rain Road.\\n\\nToot! Toot! A dino waits by the road. It has a long tail and big toes.\\n\\n\\\"Climb in!\\\" Maya calls. \\\"Do not be afraid.\\\"\\n\\nThe dino climbs in. Rain falls on the train. The road is wet.\\n\\nSoon they meet a goat. The goat has a coat of white hair.\\n\\n\\\"May I ride?\\\" says the goat.\\n\\n\\\"Wait for us!\\\" peep three small dinos.\\n\\nThey all sail down Rain Road. The train goes past a boat. It goes past a beach. It goes past a big oak tree.\\n\\nAt last the rain stops. The sun is bright.\\n\\nMaya hands out a meal. Green leaves for the dinos. Oats for the goat. Toast for Maya.\\n\\n\\\"This is real fun,\\\" says Maya.\\n\\nThe dino gives a loud roar. It means thank you!\",\"cover_scene\":\"A girl drives a bright toy-like train down a rainy road with a long-tailed dinosaur, three baby dinosaurs, and a white goat riding along.\"}"
+   },
+   {
+    "role": "user",
+    "content": "Reading results for session 2: {\"session\":2,\"enjoyment_1_to_5\":3,\"remark\":\"I like this one.\",\"reading_log_word_ms_correct\":[[\"maya\",467,1],[\"reads\",721,1],[\"a\",426,1],[\"fact\",652,1],[\"scientists\",907,1],[\"still\",1488,0],[\"find\",532,1],[\"new\",478,1],[\"dinosaurs\",837,1],[\"each\",559,1],[\"year\",689,1],[\"today\",649,1],[\"maya\",602,1],[\"plays\",672,1],[\"dino\",542,1],[\"train\",592,1],[\"her\",574,1],[\"train\",703,1],[\"goes\",448,1],[\"down\",630,1],[\"rain\",1457,0],[\"road\",1944,0],[\"toot\",532,1],[\"toot\",564,1],[\"a\",447,1],[\"dino\",466,1],[\"waits\",670,1],[\"by\",509,1],[\"the\",1667,0],[\"road\",1763,0],[\"it\",426,1],[\"has\",1986,0],[\"a\",443,1],[\"long\",611,1],[\"tail\",1895,0],[\"and\",407,1],[\"big\",616,1],[\"toes\",440,1],[\"climb\",635,1],[\"in\",579,1],[\"maya\",592,1],[\"calls\",661,1],[\"do\",591,1],[\"not\",630,1],[\"be\",467,1],[\"afraid\",703,1],[\"the\",474,1],[\"dino\",543,1],[\"climbs\",545,1],[\"in\",540,1],[\"rain\",656,1],[\"falls\",573,1],[\"on\",584,1],[\"the\",546,1],[\"train\",726,1],[\"the\",519,1],[\"road\",621,1],[\"is\",423,1],[\"wet\",454,1],[\"soon\",482,1],[\"they\",522,1],[\"meet\",596,1],[\"a\",382,1],[\"goat\",1789,0],[\"the\",2109,0],[\"goat\",488,1],[\"has\",465,1],[\"a\",427,1],[\"coat\",509,1],[\"of\",549,1],[\"white\",608,1],[\"hair\",664,1],[\"may\",618,1],[\"i\",440,1],[\"ride\",667,1],[\"says\",686,1],[\"the\",544,1],[\"goat\",1660,0],[\"wait\",534,1],[\"for\",527,1],[\"us\",564,1],[\"peep\",624,1],[\"three\",627,1],[\"small\",630,1],[\"dinos\",690,1],[\"they\",630,1],[\"all\",452,1],[\"sail\",2177,0],[\"down\",677,1],[\"rain\",1423,0],[\"road\",471,1],[\"the\",2066,0],[\"train\",489,1],[\"goes\",445,1],[\"past\",593,1],[\"a\",356,1],[\"boat\",677,1],[\"it\",446,1],[\"goes\",640,1],[\"past\",613,1],[\"a\",486,1],[\"beach\",1748,0],[\"it\",411,1],[\"goes\",574,1],[\"past\",481,1],[\"a\",516,1],[\"big\",586,1],[\"oak\",511,1],[\"tree\",677,1],[\"at\",507,1],[\"last\",671,1],[\"the\",467,1],[\"rain\",582,1],[\"stops\",651,1],[\"the\",401,1],[\"sun\",444,1],[\"is\",494,1],[\"bright\",727,1],[\"maya\",592,1],[\"hands\",577,1],[\"out\",603,1],[\"a\",402,1],[\"meal\",568,1],[\"green\",533,1],[\"leaves\",639,1],[\"for\",405,1],[\"the\",550,1],[\"dinos\",627,1],[\"oats\",2053,0],[\"for\",473,1],[\"the\",589,1],[\"goat\",1980,0],[\"toast\",2006,0],[\"for\",480,1],[\"maya\",601,1],[\"this\",514,1],[\"is\",485,1],[\"real\",2201,0],[\"fun\",424,1],[\"says\",523,1],[\"maya\",478,1],[\"the\",413,1],[\"dino\",576,1],[\"gives\",713,1],[\"a\",489,1],[\"loud\",498,1],[\"roar\",1662,0],[\"it\",567,1],[\"means\",514,1],[\"thank\",727,1],[\"you\",463,1]]}"
+   },
+   {
+    "role": "assistant",
+    "content": "Noted."
+   },
+   {
+    "role": "user",
+    "content": "Session 3. Write the next book.\nReal current fact you can use (from https://kids.nationalgeographic.com/animals/prehistoric): \"Dinosaurs - National Geographic Kids. Get news, facts, games, and more! Explore the incredible world of dinosaurs through fascinating facts, amazing art, and the latest science.\""
+   },
+   {
+    "role": "assistant",
+    "content": "{\"title\":\"Dino Digs in the Coal Cave\",\"level\":2,\"topic\":\"dinosaur fossils\",\"target_skill\":\"vowel_teams\",\"text\":\"Maya is a fossil hunter today. Real hunters dig up dino bones and give them names!\\n\\nMaya takes her pail and a coat. The trail goes up a hill to a dark cave.\\n\\n\\\"Wait,\\\" says Maya. \\\"I see something!\\\"\\n\\nA big bone sits in the coal. It is as long as an oar.\\n\\nMaya digs. She digs by the goat trail. She digs in the rain. Her nails get black.\\n\\nThen — a huge dino skull! It has teeth like nails.\\n\\n\\\"I will call it Roar Toe,\\\" says Maya. She paints the name on a sign.\\n\\nMaya loads the bones on a cart. The cart rolls down the road. A goat trails her all the way.\\n\\nAt home, Maya lays each bone on a mat. She soaks them clean.\\n\\n\\\"Roar Toe is real,\\\" Maya says. \\\"And I found him!\\\"\\n\\nThe goat gives a soft bleat. It means: good job, Maya.\",\"cover_scene\":\"A girl in a coat holds a pail and a big dinosaur skull at the mouth of a dark cave, with a goat standing on the rocky trail behind her.\"}"
+   },
+   {
+    "role": "user",
+    "content": "Reading results for session 3: {\"session\":3,\"enjoyment_1_to_5\":5,\"remark\":\"I like this one.\",\"reading_log_word_ms_correct\":[[\"maya\",441,1],[\"is\",428,1],[\"a\",446,1],[\"fossil\",561,1],[\"hunter\",536,1],[\"today\",563,1],[\"real\",469,1],[\"hunters\",822,1],[\"dig\",524,1],[\"up\",555,1],[\"dino\",478,1],[\"bones\",527,1],[\"and\",642,1],[\"give\",597,1],[\"them\",1773,0],[\"names\",573,1],[\"maya\",449,1],[\"takes\",619,1],[\"her\",508,1],[\"pail\",501,1],[\"and\",509,1],[\"a\",348,1],[\"coat\",635,1],[\"the\",466,1],[\"trail\",1585,0],[\"goes\",615,1],[\"up\",591,1],[\"a\",419,1],[\"hill\",561,1],[\"to\",593,1],[\"a\",392,1],[\"dark\",687,1],[\"cave\",659,1],[\"wait\",466,1],[\"says\",526,1],[\"maya\",667,1],[\"i\",499,1],[\"see\",431,1],[\"something\",740,1],[\"a\",494,1],[\"big\",452,1],[\"bone\",678,1],[\"sits\",664,1],[\"in\",404,1],[\"the\",1758,0],[\"coal\",481,1],[\"it\",530,1],[\"is\",536,1],[\"as\",425,1],[\"long\",602,1],[\"as\",371,1],[\"an\",382,1],[\"oar\",549,1],[\"maya\",673,1],[\"digs\",499,1],[\"she\",412,1],[\"digs\",601,1],[\"by\",426,1],[\"the\",636,1],[\"goat\",1875,0],[\"trail\",676,1],[\"she\",526,1],[\"digs\",494,1],[\"in\",355,1],[\"the\",609,1],[\"rain\",630,1],[\"her\",402,1],[\"nails\",524,1],[\"get\",535,1],[\"black\",701,1],[\"then\",507,1],[\"a\",539,1],[\"huge\",446,1],[\"dino\",585,1],[\"skull\",673,1],[\"it\",456,1],[\"has\",469,1],[\"teeth\",521,1],[\"like\",664,1],[\"nails\",1738,0],[\"i\",429,1],[\"will\",468,1],[\"call\",658,1],[\"it\",447,1],[\"roar\",489,1],[\"toe\",420,1],[\"says\",607,1],[\"maya\",631,1],[\"she\",605,1],[\"paints\",746,1],[\"the\",588,1],[\"name\",684,1],[\"on\",572,1],[\"a\",552,1],[\"sign\",470,1],[\"maya\",628,1],[\"loads\",1655,0],[\"the\",431,1],[\"bones\",510,1],[\"on\",481,1],[\"a\",401,1],[\"cart\",581,1],[\"the\",500,1],[\"cart\",653,1],[\"rolls\",713,1],[\"down\",528,1],[\"the\",645,1],[\"road\",599,1],[\"a\",368,1],[\"goat\",500,1],[\"trails\",709,1],[\"her\",445,1],[\"all\",455,1],[\"the\",520,1],[\"way\",531,1],[\"at\",455,1],[\"home\",602,1],[\"maya\",579,1],[\"lays\",678,1],[\"each\",2067,0],[\"bone\",563,1],[\"on\",395,1],[\"a\",536,1],[\"mat\",571,1],[\"she\",551,1],[\"soaks\",544,1],[\"them\",624,1],[\"clean\",572,1],[\"roar\",483,1],[\"toe\",470,1],[\"is\",371,1],[\"real\",577,1],[\"maya\",613,1],[\"says\",687,1],[\"and\",608,1],[\"i\",359,1],[\"found\",638,1],[\"him\",628,1],[\"the\",544,1],[\"goat\",499,1],[\"gives\",557,1],[\"a\",432,1],[\"soft\",500,1],[\"bleat\",531,1],[\"it\",375,1],[\"means\",545,1],[\"good\",619,1],[\"job\",458,1],[\"maya\",622,1]]}"
+   },
+   {
+    "role": "assistant",
+    "content": "Noted."
+   }
+  ],
+  "lastTopic": "dinosaur fossils"
+ },
+ "model": {
+  "level": 2,
+  "skills": {
+   "vowel_teams": {
+    "mastery": 0.35,
+    "evidence": [
+     1,
+     2,
+     3
+    ],
+    "last_seen": 3
+   }
+  },
+  "misconceptions": [
+   {
+    "what": "reads ea/ai/oa as two separate sounds",
+    "since": 0,
+    "status": "active"
+   },
+   {
+    "what": "same vowel-team word read right once, missed later (bean, sea, toad)",
+    "since": 3,
+    "status": "active"
+   }
+  ],
+  "interests": [
+   {
+    "topic": "dinosaurs",
+    "strength": 0.8,
+    "last_signal": 3
+   }
+  ],
+  "what_works": [
+   "Dino story with repeated vowel-team words boosts accuracy",
+   "Rereading favorite dino story builds vowel-team consistency"
+  ]
+ },
+ "sessions": [
+  {
+   "session": 1,
+   "truth": {
+    "session": 1,
+    "level": 2,
+    "interest": "dinosaurs",
+    "weak_skill": "vowel_teams"
+   },
+   "books": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 1,
+     "title": "The Dino Team by the Sea",
+     "level": 2,
+     "topic": "dinosaurs",
+     "target_skill": "vowel_teams",
+     "text": "Maya reads about dinosaurs each day.\n\nShe reads that a big dino had a long neck. It ate leaves from the treetops. Its feet were the size of a road sign!\n\nToday Maya has a dream. She is on a boat at sea. A dino swims by. It has a green tail and a wide, flat snout.\n\n\"Wait for me!\" Maya calls.\n\nThe dino leads the boat to a beach. On the sand, three baby dinos peep and squeak. They need a meal.\n\nMaya lays out a pile of leaves. Each baby eats and eats. Then they nap in the heat.\n\nA big dino roars. It is not mean. It is a thank-you roar!\n\nMaya waves. \"See you soon, dino team!\"\n\nThen she wakes up. Her book is on her lap.\n\n\"Dinosaurs are real,\" Maya says. \"They lived long ago. And I can read all about them!\"",
+     "cover_scene": "A girl in a small boat near a sunny beach waves at a friendly green long-necked dinosaur while three baby dinosaurs peek from the sand.",
+     "cover": "/covers/semester-2-transcript-01.jpg",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 1,
+     "title": "The Dino Team by the Sea",
+     "level": 2,
+     "topic": "dinosaurs",
+     "target_skill": "vowel_teams",
+     "text": "Maya sees a dino team by the sea.\n\nBig Rex eats meat. He has a loud roar. Little Pea eats leaves and beans. She is neat and sweet.\n\n\"Let's go!\" says Pea. The team takes a trail.\n\nRain drops fall. Drip, drip! The trail is wet. Pea will not wail. She can wait.\n\nRex sees a boat. The boat can float! The team gets on. They sail on the sea.\n\nA seal peeks up. \"Meet my team!\" says the seal. The seal eats fish.\n\nThe sun heats the day. The team naps in the heat.\n\nBack home, Maya reads a book about dinosaurs. Real scientists dig up dino bones and teach us cool facts each year!\n\nMaya can read each word: sea, team, rain, trail, boat, float.\n\nTwo letters, one sound! Maya is a reading star.",
+     "cover_scene": "A small green dinosaur and a big friendly red dinosaur ride a wooden boat on a sunny blue sea while a seal peeks out of the water.",
+     "cover": "/covers/semester-2-chapters-01.jpg",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    }
+   },
+   "events": {
+    "transcript": {
+     "session": 1,
+     "tutor": "transcript",
+     "words_attempted": 148,
+     "words_missed": [
+      "road",
+      "dream",
+      "boat",
+      "green",
+      "tail",
+      "wait",
+      "boat",
+      "beach",
+      "three",
+      "they",
+      "eats",
+      "nap",
+      "mean",
+      "roar",
+      "real"
+     ],
+     "missed_by_skill": {
+      "vowel_teams": 11,
+      "blends": 1,
+      "digraphs": 2
+     },
+     "response_time_ms": 659,
+     "enjoyment": 4,
+     "comment": "",
+     "reading_log": [
+      [
+       "maya",
+       523,
+       1
+      ],
+      [
+       "reads",
+       659,
+       1
+      ],
+      [
+       "about",
+       587,
+       1
+      ],
+      [
+       "dinosaurs",
+       820,
+       1
+      ],
+      [
+       "each",
+       508,
+       1
+      ],
+      [
+       "day",
+       439,
+       1
+      ],
+      [
+       "she",
+       482,
+       1
+      ],
+      [
+       "reads",
+       560,
+       1
+      ],
+      [
+       "that",
+       660,
+       1
+      ],
+      [
+       "a",
+       438,
+       1
+      ],
+      [
+       "big",
+       554,
+       1
+      ],
+      [
+       "dino",
+       594,
+       1
+      ],
+      [
+       "had",
+       573,
+       1
+      ],
+      [
+       "a",
+       524,
+       1
+      ],
+      [
+       "long",
+       630,
+       1
+      ],
+      [
+       "neck",
+       515,
+       1
+      ],
+      [
+       "it",
+       455,
+       1
+      ],
+      [
+       "ate",
+       440,
+       1
+      ],
+      [
+       "leaves",
+       579,
+       1
+      ],
+      [
+       "from",
+       454,
+       1
+      ],
+      [
+       "the",
+       479,
+       1
+      ],
+      [
+       "treetops",
+       659,
+       1
+      ],
+      [
+       "its",
+       427,
+       1
+      ],
+      [
+       "feet",
+       497,
+       1
+      ],
+      [
+       "were",
+       602,
+       1
+      ],
+      [
+       "the",
+       552,
+       1
+      ],
+      [
+       "size",
+       492,
+       1
+      ],
+      [
+       "of",
+       353,
+       1
+      ],
+      [
+       "a",
+       310,
+       1
+      ],
+      [
+       "road",
+       1458,
+       0
+      ],
+      [
+       "sign",
+       499,
+       1
+      ],
+      [
+       "today",
+       587,
+       1
+      ],
+      [
+       "maya",
+       517,
+       1
+      ],
+      [
+       "has",
+       523,
+       1
+      ],
+      [
+       "a",
+       438,
+       1
+      ],
+      [
+       "dream",
+       1420,
+       0
+      ],
+      [
+       "she",
+       457,
+       1
+      ],
+      [
+       "is",
+       480,
+       1
+      ],
+      [
+       "on",
+       492,
+       1
+      ],
+      [
+       "a",
+       427,
+       1
+      ],
+      [
+       "boat",
+       1569,
+       0
+      ],
+      [
+       "at",
+       486,
+       1
+      ],
+      [
+       "sea",
+       546,
+       1
+      ],
+      [
+       "a",
+       323,
+       1
+      ],
+      [
+       "dino",
+       598,
+       1
+      ],
+      [
+       "swims",
+       725,
+       1
+      ],
+      [
+       "by",
+       569,
+       1
+      ],
+      [
+       "it",
+       413,
+       1
+      ],
+      [
+       "has",
+       461,
+       1
+      ],
+      [
+       "a",
+       549,
+       1
+      ],
+      [
+       "green",
+       1918,
+       0
+      ],
+      [
+       "tail",
+       1786,
+       0
+      ],
+      [
+       "and",
+       526,
+       1
+      ],
+      [
+       "a",
+       404,
+       1
+      ],
+      [
+       "wide",
+       672,
+       1
+      ],
+      [
+       "flat",
+       627,
+       1
+      ],
+      [
+       "snout",
+       625,
+       1
+      ],
+      [
+       "wait",
+       1483,
+       0
+      ],
+      [
+       "for",
+       452,
+       1
+      ],
+      [
+       "me",
+       391,
+       1
+      ],
+      [
+       "maya",
+       638,
+       1
+      ],
+      [
+       "calls",
+       529,
+       1
+      ],
+      [
+       "the",
+       416,
+       1
+      ],
+      [
+       "dino",
+       533,
+       1
+      ],
+      [
+       "leads",
+       617,
+       1
+      ],
+      [
+       "the",
+       542,
+       1
+      ],
+      [
+       "boat",
+       2066,
+       0
+      ],
+      [
+       "to",
+       453,
+       1
+      ],
+      [
+       "a",
+       355,
+       1
+      ],
+      [
+       "beach",
+       1407,
+       0
+      ],
+      [
+       "on",
+       552,
+       1
+      ],
+      [
+       "the",
+       569,
+       1
+      ],
+      [
+       "sand",
+       586,
+       1
+      ],
+      [
+       "three",
+       1817,
+       0
+      ],
+      [
+       "baby",
+       545,
+       1
+      ],
+      [
+       "dinos",
+       637,
+       1
+      ],
+      [
+       "peep",
+       639,
+       1
+      ],
+      [
+       "and",
+       567,
+       1
+      ],
+      [
+       "squeak",
+       602,
+       1
+      ],
+      [
+       "they",
+       1985,
+       0
+      ],
+      [
+       "need",
+       577,
+       1
+      ],
+      [
+       "a",
+       341,
+       1
+      ],
+      [
+       "meal",
+       473,
+       1
+      ],
+      [
+       "maya",
+       509,
+       1
+      ],
+      [
+       "lays",
+       527,
+       1
+      ],
+      [
+       "out",
+       640,
+       1
+      ],
+      [
+       "a",
+       539,
+       1
+      ],
+      [
+       "pile",
+       560,
+       1
+      ],
+      [
+       "of",
+       554,
+       1
+      ],
+      [
+       "leaves",
+       747,
+       1
+      ],
+      [
+       "each",
+       475,
+       1
+      ],
+      [
+       "baby",
+       472,
+       1
+      ],
+      [
+       "eats",
+       1954,
+       0
+      ],
+      [
+       "and",
+       403,
+       1
+      ],
+      [
+       "eats",
+       465,
+       1
+      ],
+      [
+       "then",
+       501,
+       1
+      ],
+      [
+       "they",
+       536,
+       1
+      ],
+      [
+       "nap",
+       1812,
+       0
+      ],
+      [
+       "in",
+       502,
+       1
+      ],
+      [
+       "the",
+       524,
+       1
+      ],
+      [
+       "heat",
+       522,
+       1
+      ],
+      [
+       "a",
+       472,
+       1
+      ],
+      [
+       "big",
+       404,
+       1
+      ],
+      [
+       "dino",
+       687,
+       1
+      ],
+      [
+       "roars",
+       671,
+       1
+      ],
+      [
+       "it",
+       433,
+       1
+      ],
+      [
+       "is",
+       579,
+       1
+      ],
+      [
+       "not",
+       644,
+       1
+      ],
+      [
+       "mean",
+       2115,
+       0
+      ],
+      [
+       "it",
+       434,
+       1
+      ],
+      [
+       "is",
+       449,
+       1
+      ],
+      [
+       "a",
+       324,
+       1
+      ],
+      [
+       "thank",
+       624,
+       1
+      ],
+      [
+       "you",
+       575,
+       1
+      ],
+      [
+       "roar",
+       1770,
+       0
+      ],
+      [
+       "maya",
+       626,
+       1
+      ],
+      [
+       "waves",
+       508,
+       1
+      ],
+      [
+       "see",
+       520,
+       1
+      ],
+      [
+       "you",
+       531,
+       1
+      ],
+      [
+       "soon",
+       503,
+       1
+      ],
+      [
+       "dino",
+       465,
+       1
+      ],
+      [
+       "team",
+       643,
+       1
+      ],
+      [
+       "then",
+       633,
+       1
+      ],
+      [
+       "she",
+       435,
+       1
+      ],
+      [
+       "wakes",
+       698,
+       1
+      ],
+      [
+       "up",
+       582,
+       1
+      ],
+      [
+       "her",
+       446,
+       1
+      ],
+      [
+       "book",
+       572,
+       1
+      ],
+      [
+       "is",
+       518,
+       1
+      ],
+      [
+       "on",
+       400,
+       1
+      ],
+      [
+       "her",
+       628,
+       1
+      ],
+      [
+       "lap",
+       550,
+       1
+      ],
+      [
+       "dinosaurs",
+       866,
+       1
+      ],
+      [
+       "are",
+       440,
+       1
+      ],
+      [
+       "real",
+       1882,
+       0
+      ],
+      [
+       "maya",
+       639,
+       1
+      ],
+      [
+       "says",
+       475,
+       1
+      ],
+      [
+       "they",
+       532,
+       1
+      ],
+      [
+       "lived",
+       672,
+       1
+      ],
+      [
+       "long",
+       609,
+       1
+      ],
+      [
+       "ago",
+       606,
+       1
+      ],
+      [
+       "and",
+       613,
+       1
+      ],
+      [
+       "i",
+       357,
+       1
+      ],
+      [
+       "can",
+       542,
+       1
+      ],
+      [
+       "read",
+       656,
+       1
+      ],
+      [
+       "all",
+       487,
+       1
+      ],
+      [
+       "about",
+       661,
+       1
+      ],
+      [
+       "them",
+       590,
+       1
+      ]
+     ]
+    },
+    "chapters": {
+     "session": 1,
+     "tutor": "chapters",
+     "words_attempted": 136,
+     "words_missed": [
+      "dino",
+      "team",
+      "eats",
+      "meat",
+      "eats",
+      "beans",
+      "team",
+      "trail",
+      "trail",
+      "wail",
+      "boat",
+      "team",
+      "seal",
+      "seal",
+      "heats",
+      "the",
+      "heat",
+      "reads",
+      "teach",
+      "year",
+      "team",
+      "float",
+      "reading"
+     ],
+     "missed_by_skill": {
+      "vowel_teams": 21,
+      "digraphs": 1
+     },
+     "response_time_ms": 755,
+     "enjoyment": 3,
+     "comment": "",
+     "reading_log": [
+      [
+       "maya",
+       646,
+       1
+      ],
+      [
+       "sees",
+       482,
+       1
+      ],
+      [
+       "a",
+       533,
+       1
+      ],
+      [
+       "dino",
+       2216,
+       0
+      ],
+      [
+       "team",
+       1589,
+       0
+      ],
+      [
+       "by",
+       555,
+       1
+      ],
+      [
+       "the",
+       409,
+       1
+      ],
+      [
+       "sea",
+       487,
+       1
+      ],
+      [
+       "big",
+       397,
+       1
+      ],
+      [
+       "rex",
+       514,
+       1
+      ],
+      [
+       "eats",
+       1697,
+       0
+      ],
+      [
+       "meat",
+       1660,
+       0
+      ],
+      [
+       "he",
+       433,
+       1
+      ],
+      [
+       "has",
+       521,
+       1
+      ],
+      [
+       "a",
+       463,
+       1
+      ],
+      [
+       "loud",
+       561,
+       1
+      ],
+      [
+       "roar",
+       593,
+       1
+      ],
+      [
+       "little",
+       666,
+       1
+      ],
+      [
+       "pea",
+       498,
+       1
+      ],
+      [
+       "eats",
+       1371,
+       0
+      ],
+      [
+       "leaves",
+       584,
+       1
+      ],
+      [
+       "and",
+       512,
+       1
+      ],
+      [
+       "beans",
+       1859,
+       0
+      ],
+      [
+       "she",
+       405,
+       1
+      ],
+      [
+       "is",
+       576,
+       1
+      ],
+      [
+       "neat",
+       529,
+       1
+      ],
+      [
+       "and",
+       398,
+       1
+      ],
+      [
+       "sweet",
+       523,
+       1
+      ],
+      [
+       "let's",
+       670,
+       1
+      ],
+      [
+       "go",
+       382,
+       1
+      ],
+      [
+       "says",
+       602,
+       1
+      ],
+      [
+       "pea",
+       528,
+       1
+      ],
+      [
+       "the",
+       543,
+       1
+      ],
+      [
+       "team",
+       2010,
+       0
+      ],
+      [
+       "takes",
+       628,
+       1
+      ],
+      [
+       "a",
+       441,
+       1
+      ],
+      [
+       "trail",
+       1776,
+       0
+      ],
+      [
+       "rain",
+       632,
+       1
+      ],
+      [
+       "drops",
+       502,
+       1
+      ],
+      [
+       "fall",
+       485,
+       1
+      ],
+      [
+       "drip",
+       638,
+       1
+      ],
+      [
+       "drip",
+       517,
+       1
+      ],
+      [
+       "the",
+       443,
+       1
+      ],
+      [
+       "trail",
+       1631,
+       0
+      ],
+      [
+       "is",
+       421,
+       1
+      ],
+      [
+       "wet",
+       572,
+       1
+      ],
+      [
+       "pea",
+       586,
+       1
+      ],
+      [
+       "will",
+       578,
+       1
+      ],
+      [
+       "not",
+       624,
+       1
+      ],
+      [
+       "wail",
+       1655,
+       0
+      ],
+      [
+       "she",
+       583,
+       1
+      ],
+      [
+       "can",
+       458,
+       1
+      ],
+      [
+       "wait",
+       458,
+       1
+      ],
+      [
+       "rex",
+       567,
+       1
+      ],
+      [
+       "sees",
+       567,
+       1
+      ],
+      [
+       "a",
+       544,
+       1
+      ],
+      [
+       "boat",
+       1485,
+       0
+      ],
+      [
+       "the",
+       501,
+       1
+      ],
+      [
+       "boat",
+       478,
+       1
+      ],
+      [
+       "can",
+       409,
+       1
+      ],
+      [
+       "float",
+       664,
+       1
+      ],
+      [
+       "the",
+       640,
+       1
+      ],
+      [
+       "team",
+       2081,
+       0
+      ],
+      [
+       "gets",
+       482,
+       1
+      ],
+      [
+       "on",
+       554,
+       1
+      ],
+      [
+       "they",
+       657,
+       1
+      ],
+      [
+       "sail",
+       469,
+       1
+      ],
+      [
+       "on",
+       595,
+       1
+      ],
+      [
+       "the",
+       408,
+       1
+      ],
+      [
+       "sea",
+       454,
+       1
+      ],
+      [
+       "a",
+       405,
+       1
+      ],
+      [
+       "seal",
+       1745,
+       0
+      ],
+      [
+       "peeks",
+       641,
+       1
+      ],
+      [
+       "up",
+       599,
+       1
+      ],
+      [
+       "meet",
+       482,
+       1
+      ],
+      [
+       "my",
+       364,
+       1
+      ],
+      [
+       "team",
+       649,
+       1
+      ],
+      [
+       "says",
+       609,
+       1
+      ],
+      [
+       "the",
+       582,
+       1
+      ],
+      [
+       "seal",
+       530,
+       1
+      ],
+      [
+       "the",
+       628,
+       1
+      ],
+      [
+       "seal",
+       1919,
+       0
+      ],
+      [
+       "eats",
+       567,
+       1
+      ],
+      [
+       "fish",
+       613,
+       1
+      ],
+      [
+       "the",
+       602,
+       1
+      ],
+      [
+       "sun",
+       614,
+       1
+      ],
+      [
+       "heats",
+       2203,
+       0
+      ],
+      [
+       "the",
+       566,
+       1
+      ],
+      [
+       "day",
+       533,
+       1
+      ],
+      [
+       "the",
+       1616,
+       0
+      ],
+      [
+       "team",
+       674,
+       1
+      ],
+      [
+       "naps",
+       496,
+       1
+      ],
+      [
+       "in",
+       404,
+       1
+      ],
+      [
+       "the",
+       643,
+       1
+      ],
+      [
+       "heat",
+       1592,
+       0
+      ],
+      [
+       "back",
+       579,
+       1
+      ],
+      [
+       "home",
+       621,
+       1
+      ],
+      [
+       "maya",
+       629,
+       1
+      ],
+      [
+       "reads",
+       1704,
+       0
+      ],
+      [
+       "a",
+       483,
+       1
+      ],
+      [
+       "book",
+       491,
+       1
+      ],
+      [
+       "about",
+       629,
+       1
+      ],
+      [
+       "dinosaurs",
+       870,
+       1
+      ],
+      [
+       "real",
+       571,
+       1
+      ],
+      [
+       "scientists",
+       891,
+       1
+      ],
+      [
+       "dig",
+       584,
+       1
+      ],
+      [
+       "up",
+       489,
+       1
+      ],
+      [
+       "dino",
+       676,
+       1
+      ],
+      [
+       "bones",
+       609,
+       1
+      ],
+      [
+       "and",
+       466,
+       1
+      ],
+      [
+       "teach",
+       1837,
+       0
+      ],
+      [
+       "us",
+       367,
+       1
+      ],
+      [
+       "cool",
+       683,
+       1
+      ],
+      [
+       "facts",
+       631,
+       1
+      ],
+      [
+       "each",
+       491,
+       1
+      ],
+      [
+       "year",
+       1923,
+       0
+      ],
+      [
+       "maya",
+       567,
+       1
+      ],
+      [
+       "can",
+       453,
+       1
+      ],
+      [
+       "read",
+       676,
+       1
+      ],
+      [
+       "each",
+       575,
+       1
+      ],
+      [
+       "word",
+       550,
+       1
+      ],
+      [
+       "sea",
+       540,
+       1
+      ],
+      [
+       "team",
+       1689,
+       0
+      ],
+      [
+       "rain",
+       465,
+       1
+      ],
+      [
+       "trail",
+       664,
+       1
+      ],
+      [
+       "boat",
+       688,
+       1
+      ],
+      [
+       "float",
+       1927,
+       0
+      ],
+      [
+       "two",
+       420,
+       1
+      ],
+      [
+       "letters",
+       738,
+       1
+      ],
+      [
+       "one",
+       570,
+       1
+      ],
+      [
+       "sound",
+       585,
+       1
+      ],
+      [
+       "maya",
+       476,
+       1
+      ],
+      [
+       "is",
+       484,
+       1
+      ],
+      [
+       "a",
+       484,
+       1
+      ],
+      [
+       "reading",
+       1576,
+       0
+      ],
+      [
+       "star",
+       481,
+       1
+      ]
+     ]
+    }
+   },
+   "scores": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 1,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 1,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    }
+   },
+   "prompt_tokens": {
+    "transcript": 450,
+    "chapters": 578
+   },
+   "model": {
+    "level": 2,
+    "skills": {
+     "vowel_teams": {
+      "mastery": 0.2,
+      "evidence": [
+       1
+      ],
+      "last_seen": 1
+     }
+    },
+    "misconceptions": [
+     {
+      "what": "reads ea/ai/oa as two separate sounds",
+      "since": 0,
+      "status": "active"
+     }
+    ],
+    "interests": [
+     {
+      "topic": "dinosaurs",
+      "strength": 0.7,
+      "last_signal": 1
+     }
+    ],
+    "what_works": []
+   },
+   "changes": [
+    {
+     "session": 1,
+     "action": "updated",
+     "kind": "skill",
+     "key": "vowel_teams",
+     "value": "0.2",
+     "reason": "Missed team, meat, beans, trail, wail, boat, seal, heat, each/year - vowel teams still slow and wrong",
+     "by": "tutor"
+    },
+    {
+     "session": 1,
+     "action": "updated",
+     "kind": "interest",
+     "key": "dinosaurs",
+     "value": "0.7",
+     "reason": "Only middling enjoyment (3) on dinosaur book",
+     "by": "tutor"
+    }
+   ],
+   "calls": [
+    {
+     "tutor": "transcript",
+     "session": 1,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 450,
+     "completion_tokens": 443,
+     "cost_usd": 0.013325,
+     "latency_ms": 7328
+    },
+    {
+     "tutor": "chapters",
+     "session": 1,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 578,
+     "completion_tokens": 439,
+     "cost_usd": 0.013865,
+     "latency_ms": 8136
+    },
+    {
+     "tutor": "chapters",
+     "session": 1,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 2892,
+     "completion_tokens": 308,
+     "cost_usd": 0.02216,
+     "latency_ms": 4386
+    },
+    {
+     "tutor": "chapters",
+     "session": 1,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 3278,
+     "completion_tokens": 40,
+     "cost_usd": 0.01739,
+     "latency_ms": 2209
+    },
+    {
+     "tutor": "chapters",
+     "session": 1,
+     "purpose": "curate",
+     "model": "ollama:hf.co/LiquidAI/LFM2-1.2B-GGUF:Q4_K_M",
+     "prompt_tokens": 209,
+     "completion_tokens": 49,
+     "cost_usd": 0,
+     "latency_ms": 29360
+    }
+   ],
+   "recalls": []
+  },
+  {
+   "session": 2,
+   "truth": {
+    "session": 2,
+    "level": 2,
+    "interest": "dinosaurs",
+    "weak_skill": "vowel_teams"
+   },
+   "books": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 2,
+     "title": "The Dino Train on Rain Road",
+     "level": 2,
+     "topic": "dinosaurs",
+     "target_skill": "vowel_teams",
+     "text": "Maya reads a fact: scientists still find new dinosaurs each year!\n\nToday Maya plays dino train. Her train goes down Rain Road.\n\nToot! Toot! A dino waits by the road. It has a long tail and big toes.\n\n\"Climb in!\" Maya calls. \"Do not be afraid.\"\n\nThe dino climbs in. Rain falls on the train. The road is wet.\n\nSoon they meet a goat. The goat has a coat of white hair.\n\n\"May I ride?\" says the goat.\n\n\"Wait for us!\" peep three small dinos.\n\nThey all sail down Rain Road. The train goes past a boat. It goes past a beach. It goes past a big oak tree.\n\nAt last the rain stops. The sun is bright.\n\nMaya hands out a meal. Green leaves for the dinos. Oats for the goat. Toast for Maya.\n\n\"This is real fun,\" says Maya.\n\nThe dino gives a loud roar. It means thank you!",
+     "cover_scene": "A girl drives a bright toy-like train down a rainy road with a long-tailed dinosaur, three baby dinosaurs, and a white goat riding along.",
+     "cover": "/covers/semester-2-transcript-02.jpg",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 2,
+     "title": "The Dino Team by the Sea",
+     "level": 2,
+     "topic": "dinosaurs",
+     "target_skill": "vowel_teams",
+     "text": "Maya loves dinosaurs. Today she reads a new book.\n\nA big dino goes down to the sea. Her name is Bea. She eats green leaves all day. Munch, munch!\n\nBea sees a boat. Two small dinos sail on it. They wave at Bea.\n\n\"Come play!\" they squeak. \"We seek a big bone in the sand!\"\n\nBea walks on the beach. Her big feet leave deep tracks. She digs with her snout.\n\nWait! She feels a bone. It is real! The team cheers.\n\n\"That bone is from a dino long ago,\" Maya reads. \"Scientists dig up bones and teach us the facts.\"\n\nBea nods at the sea. The sun is low. It is time to go.\n\nThe three dinos eat leaves and dream of more bones.\n\nMaya shuts her book. She can dig too. She can read too. Dinosaurs are the best!",
+     "cover_scene": "A friendly green dinosaur digging in beach sand beside the sea while two small dinosaurs wave from a little boat at sunset.",
+     "cover": "/covers/semester-2-chapters-02.jpg",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    }
+   },
+   "events": {
+    "transcript": {
+     "session": 2,
+     "tutor": "transcript",
+     "words_attempted": 151,
+     "words_missed": [
+      "still",
+      "rain",
+      "road",
+      "the",
+      "road",
+      "has",
+      "tail",
+      "goat",
+      "the",
+      "goat",
+      "sail",
+      "rain",
+      "the",
+      "beach",
+      "oats",
+      "goat",
+      "toast",
+      "real",
+      "roar"
+     ],
+     "missed_by_skill": {
+      "blends": 1,
+      "vowel_teams": 14,
+      "digraphs": 3
+     },
+     "response_time_ms": 718,
+     "enjoyment": 3,
+     "comment": "I like this one.",
+     "reading_log": [
+      [
+       "maya",
+       467,
+       1
+      ],
+      [
+       "reads",
+       721,
+       1
+      ],
+      [
+       "a",
+       426,
+       1
+      ],
+      [
+       "fact",
+       652,
+       1
+      ],
+      [
+       "scientists",
+       907,
+       1
+      ],
+      [
+       "still",
+       1488,
+       0
+      ],
+      [
+       "find",
+       532,
+       1
+      ],
+      [
+       "new",
+       478,
+       1
+      ],
+      [
+       "dinosaurs",
+       837,
+       1
+      ],
+      [
+       "each",
+       559,
+       1
+      ],
+      [
+       "year",
+       689,
+       1
+      ],
+      [
+       "today",
+       649,
+       1
+      ],
+      [
+       "maya",
+       602,
+       1
+      ],
+      [
+       "plays",
+       672,
+       1
+      ],
+      [
+       "dino",
+       542,
+       1
+      ],
+      [
+       "train",
+       592,
+       1
+      ],
+      [
+       "her",
+       574,
+       1
+      ],
+      [
+       "train",
+       703,
+       1
+      ],
+      [
+       "goes",
+       448,
+       1
+      ],
+      [
+       "down",
+       630,
+       1
+      ],
+      [
+       "rain",
+       1457,
+       0
+      ],
+      [
+       "road",
+       1944,
+       0
+      ],
+      [
+       "toot",
+       532,
+       1
+      ],
+      [
+       "toot",
+       564,
+       1
+      ],
+      [
+       "a",
+       447,
+       1
+      ],
+      [
+       "dino",
+       466,
+       1
+      ],
+      [
+       "waits",
+       670,
+       1
+      ],
+      [
+       "by",
+       509,
+       1
+      ],
+      [
+       "the",
+       1667,
+       0
+      ],
+      [
+       "road",
+       1763,
+       0
+      ],
+      [
+       "it",
+       426,
+       1
+      ],
+      [
+       "has",
+       1986,
+       0
+      ],
+      [
+       "a",
+       443,
+       1
+      ],
+      [
+       "long",
+       611,
+       1
+      ],
+      [
+       "tail",
+       1895,
+       0
+      ],
+      [
+       "and",
+       407,
+       1
+      ],
+      [
+       "big",
+       616,
+       1
+      ],
+      [
+       "toes",
+       440,
+       1
+      ],
+      [
+       "climb",
+       635,
+       1
+      ],
+      [
+       "in",
+       579,
+       1
+      ],
+      [
+       "maya",
+       592,
+       1
+      ],
+      [
+       "calls",
+       661,
+       1
+      ],
+      [
+       "do",
+       591,
+       1
+      ],
+      [
+       "not",
+       630,
+       1
+      ],
+      [
+       "be",
+       467,
+       1
+      ],
+      [
+       "afraid",
+       703,
+       1
+      ],
+      [
+       "the",
+       474,
+       1
+      ],
+      [
+       "dino",
+       543,
+       1
+      ],
+      [
+       "climbs",
+       545,
+       1
+      ],
+      [
+       "in",
+       540,
+       1
+      ],
+      [
+       "rain",
+       656,
+       1
+      ],
+      [
+       "falls",
+       573,
+       1
+      ],
+      [
+       "on",
+       584,
+       1
+      ],
+      [
+       "the",
+       546,
+       1
+      ],
+      [
+       "train",
+       726,
+       1
+      ],
+      [
+       "the",
+       519,
+       1
+      ],
+      [
+       "road",
+       621,
+       1
+      ],
+      [
+       "is",
+       423,
+       1
+      ],
+      [
+       "wet",
+       454,
+       1
+      ],
+      [
+       "soon",
+       482,
+       1
+      ],
+      [
+       "they",
+       522,
+       1
+      ],
+      [
+       "meet",
+       596,
+       1
+      ],
+      [
+       "a",
+       382,
+       1
+      ],
+      [
+       "goat",
+       1789,
+       0
+      ],
+      [
+       "the",
+       2109,
+       0
+      ],
+      [
+       "goat",
+       488,
+       1
+      ],
+      [
+       "has",
+       465,
+       1
+      ],
+      [
+       "a",
+       427,
+       1
+      ],
+      [
+       "coat",
+       509,
+       1
+      ],
+      [
+       "of",
+       549,
+       1
+      ],
+      [
+       "white",
+       608,
+       1
+      ],
+      [
+       "hair",
+       664,
+       1
+      ],
+      [
+       "may",
+       618,
+       1
+      ],
+      [
+       "i",
+       440,
+       1
+      ],
+      [
+       "ride",
+       667,
+       1
+      ],
+      [
+       "says",
+       686,
+       1
+      ],
+      [
+       "the",
+       544,
+       1
+      ],
+      [
+       "goat",
+       1660,
+       0
+      ],
+      [
+       "wait",
+       534,
+       1
+      ],
+      [
+       "for",
+       527,
+       1
+      ],
+      [
+       "us",
+       564,
+       1
+      ],
+      [
+       "peep",
+       624,
+       1
+      ],
+      [
+       "three",
+       627,
+       1
+      ],
+      [
+       "small",
+       630,
+       1
+      ],
+      [
+       "dinos",
+       690,
+       1
+      ],
+      [
+       "they",
+       630,
+       1
+      ],
+      [
+       "all",
+       452,
+       1
+      ],
+      [
+       "sail",
+       2177,
+       0
+      ],
+      [
+       "down",
+       677,
+       1
+      ],
+      [
+       "rain",
+       1423,
+       0
+      ],
+      [
+       "road",
+       471,
+       1
+      ],
+      [
+       "the",
+       2066,
+       0
+      ],
+      [
+       "train",
+       489,
+       1
+      ],
+      [
+       "goes",
+       445,
+       1
+      ],
+      [
+       "past",
+       593,
+       1
+      ],
+      [
+       "a",
+       356,
+       1
+      ],
+      [
+       "boat",
+       677,
+       1
+      ],
+      [
+       "it",
+       446,
+       1
+      ],
+      [
+       "goes",
+       640,
+       1
+      ],
+      [
+       "past",
+       613,
+       1
+      ],
+      [
+       "a",
+       486,
+       1
+      ],
+      [
+       "beach",
+       1748,
+       0
+      ],
+      [
+       "it",
+       411,
+       1
+      ],
+      [
+       "goes",
+       574,
+       1
+      ],
+      [
+       "past",
+       481,
+       1
+      ],
+      [
+       "a",
+       516,
+       1
+      ],
+      [
+       "big",
+       586,
+       1
+      ],
+      [
+       "oak",
+       511,
+       1
+      ],
+      [
+       "tree",
+       677,
+       1
+      ],
+      [
+       "at",
+       507,
+       1
+      ],
+      [
+       "last",
+       671,
+       1
+      ],
+      [
+       "the",
+       467,
+       1
+      ],
+      [
+       "rain",
+       582,
+       1
+      ],
+      [
+       "stops",
+       651,
+       1
+      ],
+      [
+       "the",
+       401,
+       1
+      ],
+      [
+       "sun",
+       444,
+       1
+      ],
+      [
+       "is",
+       494,
+       1
+      ],
+      [
+       "bright",
+       727,
+       1
+      ],
+      [
+       "maya",
+       592,
+       1
+      ],
+      [
+       "hands",
+       577,
+       1
+      ],
+      [
+       "out",
+       603,
+       1
+      ],
+      [
+       "a",
+       402,
+       1
+      ],
+      [
+       "meal",
+       568,
+       1
+      ],
+      [
+       "green",
+       533,
+       1
+      ],
+      [
+       "leaves",
+       639,
+       1
+      ],
+      [
+       "for",
+       405,
+       1
+      ],
+      [
+       "the",
+       550,
+       1
+      ],
+      [
+       "dinos",
+       627,
+       1
+      ],
+      [
+       "oats",
+       2053,
+       0
+      ],
+      [
+       "for",
+       473,
+       1
+      ],
+      [
+       "the",
+       589,
+       1
+      ],
+      [
+       "goat",
+       1980,
+       0
+      ],
+      [
+       "toast",
+       2006,
+       0
+      ],
+      [
+       "for",
+       480,
+       1
+      ],
+      [
+       "maya",
+       601,
+       1
+      ],
+      [
+       "this",
+       514,
+       1
+      ],
+      [
+       "is",
+       485,
+       1
+      ],
+      [
+       "real",
+       2201,
+       0
+      ],
+      [
+       "fun",
+       424,
+       1
+      ],
+      [
+       "says",
+       523,
+       1
+      ],
+      [
+       "maya",
+       478,
+       1
+      ],
+      [
+       "the",
+       413,
+       1
+      ],
+      [
+       "dino",
+       576,
+       1
+      ],
+      [
+       "gives",
+       713,
+       1
+      ],
+      [
+       "a",
+       489,
+       1
+      ],
+      [
+       "loud",
+       498,
+       1
+      ],
+      [
+       "roar",
+       1662,
+       0
+      ],
+      [
+       "it",
+       567,
+       1
+      ],
+      [
+       "means",
+       514,
+       1
+      ],
+      [
+       "thank",
+       727,
+       1
+      ],
+      [
+       "you",
+       463,
+       1
+      ]
+     ]
+    },
+    "chapters": {
+     "session": 2,
+     "tutor": "chapters",
+     "words_attempted": 141,
+     "words_missed": [
+      "eats",
+      "leaves",
+      "bea",
+      "boat",
+      "walks",
+      "leave",
+      "wait",
+      "reads",
+      "teach"
+     ],
+     "missed_by_skill": {
+      "vowel_teams": 8
+     },
+     "response_time_ms": 630,
+     "enjoyment": 5,
+     "comment": "I liked it!",
+     "reading_log": [
+      [
+       "maya",
+       570,
+       1
+      ],
+      [
+       "loves",
+       628,
+       1
+      ],
+      [
+       "dinosaurs",
+       709,
+       1
+      ],
+      [
+       "today",
+       667,
+       1
+      ],
+      [
+       "she",
+       561,
+       1
+      ],
+      [
+       "reads",
+       624,
+       1
+      ],
+      [
+       "a",
+       548,
+       1
+      ],
+      [
+       "new",
+       618,
+       1
+      ],
+      [
+       "book",
+       626,
+       1
+      ],
+      [
+       "a",
+       375,
+       1
+      ],
+      [
+       "big",
+       579,
+       1
+      ],
+      [
+       "dino",
+       474,
+       1
+      ],
+      [
+       "goes",
+       557,
+       1
+      ],
+      [
+       "down",
+       501,
+       1
+      ],
+      [
+       "to",
+       393,
+       1
+      ],
+      [
+       "the",
+       403,
+       1
+      ],
+      [
+       "sea",
+       487,
+       1
+      ],
+      [
+       "her",
+       400,
+       1
+      ],
+      [
+       "name",
+       679,
+       1
+      ],
+      [
+       "is",
+       551,
+       1
+      ],
+      [
+       "bea",
+       418,
+       1
+      ],
+      [
+       "she",
+       612,
+       1
+      ],
+      [
+       "eats",
+       2075,
+       0
+      ],
+      [
+       "green",
+       550,
+       1
+      ],
+      [
+       "leaves",
+       1742,
+       0
+      ],
+      [
+       "all",
+       465,
+       1
+      ],
+      [
+       "day",
+       569,
+       1
+      ],
+      [
+       "munch",
+       652,
+       1
+      ],
+      [
+       "munch",
+       705,
+       1
+      ],
+      [
+       "bea",
+       1982,
+       0
+      ],
+      [
+       "sees",
+       449,
+       1
+      ],
+      [
+       "a",
+       485,
+       1
+      ],
+      [
+       "boat",
+       1962,
+       0
+      ],
+      [
+       "two",
+       603,
+       1
+      ],
+      [
+       "small",
+       623,
+       1
+      ],
+      [
+       "dinos",
+       513,
+       1
+      ],
+      [
+       "sail",
+       528,
+       1
+      ],
+      [
+       "on",
+       513,
+       1
+      ],
+      [
+       "it",
+       457,
+       1
+      ],
+      [
+       "they",
+       483,
+       1
+      ],
+      [
+       "wave",
+       589,
+       1
+      ],
+      [
+       "at",
+       373,
+       1
+      ],
+      [
+       "bea",
+       614,
+       1
+      ],
+      [
+       "come",
+       664,
+       1
+      ],
+      [
+       "play",
+       447,
+       1
+      ],
+      [
+       "they",
+       524,
+       1
+      ],
+      [
+       "squeak",
+       618,
+       1
+      ],
+      [
+       "we",
+       423,
+       1
+      ],
+      [
+       "seek",
+       628,
+       1
+      ],
+      [
+       "a",
+       497,
+       1
+      ],
+      [
+       "big",
+       540,
+       1
+      ],
+      [
+       "bone",
+       583,
+       1
+      ],
+      [
+       "in",
+       444,
+       1
+      ],
+      [
+       "the",
+       473,
+       1
+      ],
+      [
+       "sand",
+       479,
+       1
+      ],
+      [
+       "bea",
+       606,
+       1
+      ],
+      [
+       "walks",
+       1391,
+       0
+      ],
+      [
+       "on",
+       527,
+       1
+      ],
+      [
+       "the",
+       475,
+       1
+      ],
+      [
+       "beach",
+       694,
+       1
+      ],
+      [
+       "her",
+       522,
+       1
+      ],
+      [
+       "big",
+       554,
+       1
+      ],
+      [
+       "feet",
+       570,
+       1
+      ],
+      [
+       "leave",
+       2049,
+       0
+      ],
+      [
+       "deep",
+       475,
+       1
+      ],
+      [
+       "tracks",
+       611,
+       1
+      ],
+      [
+       "she",
+       449,
+       1
+      ],
+      [
+       "digs",
+       539,
+       1
+      ],
+      [
+       "with",
+       678,
+       1
+      ],
+      [
+       "her",
+       599,
+       1
+      ],
+      [
+       "snout",
+       572,
+       1
+      ],
+      [
+       "wait",
+       1722,
+       0
+      ],
+      [
+       "she",
+       610,
+       1
+      ],
+      [
+       "feels",
+       662,
+       1
+      ],
+      [
+       "a",
+       474,
+       1
+      ],
+      [
+       "bone",
+       478,
+       1
+      ],
+      [
+       "it",
+       423,
+       1
+      ],
+      [
+       "is",
+       482,
+       1
+      ],
+      [
+       "real",
+       548,
+       1
+      ],
+      [
+       "the",
+       402,
+       1
+      ],
+      [
+       "team",
+       570,
+       1
+      ],
+      [
+       "cheers",
+       747,
+       1
+      ],
+      [
+       "that",
+       544,
+       1
+      ],
+      [
+       "bone",
+       604,
+       1
+      ],
+      [
+       "is",
+       449,
+       1
+      ],
+      [
+       "from",
+       678,
+       1
+      ],
+      [
+       "a",
+       502,
+       1
+      ],
+      [
+       "dino",
+       651,
+       1
+      ],
+      [
+       "long",
+       502,
+       1
+      ],
+      [
+       "ago",
+       428,
+       1
+      ],
+      [
+       "maya",
+       466,
+       1
+      ],
+      [
+       "reads",
+       1861,
+       0
+      ],
+      [
+       "scientists",
+       950,
+       1
+      ],
+      [
+       "dig",
+       416,
+       1
+      ],
+      [
+       "up",
+       500,
+       1
+      ],
+      [
+       "bones",
+       628,
+       1
+      ],
+      [
+       "and",
+       617,
+       1
+      ],
+      [
+       "teach",
+       1863,
+       0
+      ],
+      [
+       "us",
+       542,
+       1
+      ],
+      [
+       "the",
+       494,
+       1
+      ],
+      [
+       "facts",
+       576,
+       1
+      ],
+      [
+       "bea",
+       568,
+       1
+      ],
+      [
+       "nods",
+       544,
+       1
+      ],
+      [
+       "at",
+       472,
+       1
+      ],
+      [
+       "the",
+       586,
+       1
+      ],
+      [
+       "sea",
+       415,
+       1
+      ],
+      [
+       "the",
+       440,
+       1
+      ],
+      [
+       "sun",
+       477,
+       1
+      ],
+      [
+       "is",
+       375,
+       1
+      ],
+      [
+       "low",
+       596,
+       1
+      ],
+      [
+       "it",
+       588,
+       1
+      ],
+      [
+       "is",
+       356,
+       1
+      ],
+      [
+       "time",
+       504,
+       1
+      ],
+      [
+       "to",
+       549,
+       1
+      ],
+      [
+       "go",
+       442,
+       1
+      ],
+      [
+       "the",
+       467,
+       1
+      ],
+      [
+       "three",
+       531,
+       1
+      ],
+      [
+       "dinos",
+       703,
+       1
+      ],
+      [
+       "eat",
+       417,
+       1
+      ],
+      [
+       "leaves",
+       766,
+       1
+      ],
+      [
+       "and",
+       582,
+       1
+      ],
+      [
+       "dream",
+       727,
+       1
+      ],
+      [
+       "of",
+       458,
+       1
+      ],
+      [
+       "more",
+       523,
+       1
+      ],
+      [
+       "bones",
+       565,
+       1
+      ],
+      [
+       "maya",
+       527,
+       1
+      ],
+      [
+       "shuts",
+       567,
+       1
+      ],
+      [
+       "her",
+       503,
+       1
+      ],
+      [
+       "book",
+       625,
+       1
+      ],
+      [
+       "she",
+       449,
+       1
+      ],
+      [
+       "can",
+       468,
+       1
+      ],
+      [
+       "dig",
+       632,
+       1
+      ],
+      [
+       "too",
+       466,
+       1
+      ],
+      [
+       "she",
+       641,
+       1
+      ],
+      [
+       "can",
+       586,
+       1
+      ],
+      [
+       "read",
+       572,
+       1
+      ],
+      [
+       "too",
+       623,
+       1
+      ],
+      [
+       "dinosaurs",
+       785,
+       1
+      ],
+      [
+       "are",
+       616,
+       1
+      ],
+      [
+       "the",
+       578,
+       1
+      ],
+      [
+       "best",
+       679,
+       1
+      ]
+     ]
+    }
+   },
+   "scores": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 2,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 2,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    }
+   },
+   "prompt_tokens": {
+    "transcript": 2176,
+    "chapters": 584
+   },
+   "model": {
+    "level": 2,
+    "skills": {
+     "vowel_teams": {
+      "mastery": 0.4,
+      "evidence": [
+       1,
+       2
+      ],
+      "last_seen": 2
+     }
+    },
+    "misconceptions": [
+     {
+      "what": "reads ea/ai/oa as two separate sounds",
+      "since": 0,
+      "status": "active"
+     }
+    ],
+    "interests": [
+     {
+      "topic": "dinosaurs",
+      "strength": 0.9,
+      "last_signal": 2
+     }
+    ],
+    "what_works": [
+     "Dino story with repeated vowel-team words boosts accuracy"
+    ]
+   },
+   "changes": [
+    {
+     "session": 2,
+     "action": "updated",
+     "kind": "skill",
+     "key": "vowel_teams",
+     "value": "0.4",
+     "reason": "Missed eats, leaves, boat, leave, wait, teach, reads, but read many others (sea, team, beach, deep) correctly",
+     "by": "tutor"
+    },
+    {
+     "session": 2,
+     "action": "updated",
+     "kind": "interest",
+     "key": "dinosaurs",
+     "value": "0.9",
+     "reason": "Enjoyment 5, \"I liked it!\"",
+     "by": "tutor"
+    },
+    {
+     "session": 2,
+     "action": "added",
+     "kind": "what_works",
+     "key": "Dino story with repeated vowel-team words boosts accuracy",
+     "value": "",
+     "reason": "tutor insight",
+     "by": "tutor"
+    }
+   ],
+   "calls": [
+    {
+     "tutor": "transcript",
+     "session": 2,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 2176,
+     "completion_tokens": 523,
+     "cost_usd": 0.023955,
+     "latency_ms": 8521
+    },
+    {
+     "tutor": "chapters",
+     "session": 2,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 584,
+     "completion_tokens": 422,
+     "cost_usd": 0.01347,
+     "latency_ms": 6991
+    },
+    {
+     "tutor": "chapters",
+     "session": 2,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 2923,
+     "completion_tokens": 423,
+     "cost_usd": 0.02519,
+     "latency_ms": 4923
+    },
+    {
+     "tutor": "chapters",
+     "session": 2,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 3453,
+     "completion_tokens": 63,
+     "cost_usd": 0.01884,
+     "latency_ms": 1948
+    },
+    {
+     "tutor": "chapters",
+     "session": 2,
+     "purpose": "curate",
+     "model": "ollama:hf.co/LiquidAI/LFM2-1.2B-GGUF:Q4_K_M",
+     "prompt_tokens": 223,
+     "completion_tokens": 55,
+     "cost_usd": 0,
+     "latency_ms": 1781
+    }
+   ],
+   "recalls": []
+  },
+  {
+   "session": 3,
+   "truth": {
+    "session": 3,
+    "level": 2,
+    "interest": "dinosaurs",
+    "weak_skill": "vowel_teams"
+   },
+   "books": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 3,
+     "title": "Dino Digs in the Coal Cave",
+     "level": 2,
+     "topic": "dinosaur fossils",
+     "target_skill": "vowel_teams",
+     "text": "Maya is a fossil hunter today. Real hunters dig up dino bones and give them names!\n\nMaya takes her pail and a coat. The trail goes up a hill to a dark cave.\n\n\"Wait,\" says Maya. \"I see something!\"\n\nA big bone sits in the coal. It is as long as an oar.\n\nMaya digs. She digs by the goat trail. She digs in the rain. Her nails get black.\n\nThen — a huge dino skull! It has teeth like nails.\n\n\"I will call it Roar Toe,\" says Maya. She paints the name on a sign.\n\nMaya loads the bones on a cart. The cart rolls down the road. A goat trails her all the way.\n\nAt home, Maya lays each bone on a mat. She soaks them clean.\n\n\"Roar Toe is real,\" Maya says. \"And I found him!\"\n\nThe goat gives a soft bleat. It means: good job, Maya.",
+     "cover_scene": "A girl in a coat holds a pail and a big dinosaur skull at the mouth of a dark cave, with a goat standing on the rocky trail behind her.",
+     "cover": "/covers/semester-2-transcript-03.jpg",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 3,
+     "title": "The Dino Team by the Sea",
+     "level": 2,
+     "topic": "dinosaurs",
+     "target_skill": "vowel_teams",
+     "text": "Meet the dino team!\n\nRain fell on the green trail. A big dino ate leaves. Her name was Bean.\n\nBean had a goal. She had to reach the sea.\n\nHer pal Toad ran on the road. \"Wait for me!\" he said.\n\nThey ran past a tall oak. They ate a snack of seeds. Bean took a deep breath.\n\nSoon they could see the sea! Waves ran up the sand. A boat sailed by.\n\nBean and Toad played all day. They made a big dino road in the sand.\n\nThen they ate a meal of green leaves and beans.\n\n\"This day was neat,\" said Toad.\n\nScientists still read about dinos and find new facts each year. They dig up bones and paint art of dino teams like Bean and Toad.\n\nMaybe you will read a new dino fact today!",
+     "cover_scene": "Two friendly cartoon dinosaurs walking along a sandy beach path beside green leafy trees, with gentle waves and a small sailboat behind them.",
+     "cover": "/covers/semester-2-chapters-03.jpg",
+     "fact_title": "Dinosaurs - National Geographic Kids",
+     "fact_url": "https://kids.nationalgeographic.com/animals/prehistoric"
+    }
+   },
+   "events": {
+    "transcript": {
+     "session": 3,
+     "tutor": "transcript",
+     "words_attempted": 149,
+     "words_missed": [
+      "them",
+      "trail",
+      "the",
+      "goat",
+      "nails",
+      "loads",
+      "each"
+     ],
+     "missed_by_skill": {
+      "digraphs": 2,
+      "vowel_teams": 5
+     },
+     "response_time_ms": 597,
+     "enjoyment": 5,
+     "comment": "I like this one.",
+     "reading_log": [
+      [
+       "maya",
+       441,
+       1
+      ],
+      [
+       "is",
+       428,
+       1
+      ],
+      [
+       "a",
+       446,
+       1
+      ],
+      [
+       "fossil",
+       561,
+       1
+      ],
+      [
+       "hunter",
+       536,
+       1
+      ],
+      [
+       "today",
+       563,
+       1
+      ],
+      [
+       "real",
+       469,
+       1
+      ],
+      [
+       "hunters",
+       822,
+       1
+      ],
+      [
+       "dig",
+       524,
+       1
+      ],
+      [
+       "up",
+       555,
+       1
+      ],
+      [
+       "dino",
+       478,
+       1
+      ],
+      [
+       "bones",
+       527,
+       1
+      ],
+      [
+       "and",
+       642,
+       1
+      ],
+      [
+       "give",
+       597,
+       1
+      ],
+      [
+       "them",
+       1773,
+       0
+      ],
+      [
+       "names",
+       573,
+       1
+      ],
+      [
+       "maya",
+       449,
+       1
+      ],
+      [
+       "takes",
+       619,
+       1
+      ],
+      [
+       "her",
+       508,
+       1
+      ],
+      [
+       "pail",
+       501,
+       1
+      ],
+      [
+       "and",
+       509,
+       1
+      ],
+      [
+       "a",
+       348,
+       1
+      ],
+      [
+       "coat",
+       635,
+       1
+      ],
+      [
+       "the",
+       466,
+       1
+      ],
+      [
+       "trail",
+       1585,
+       0
+      ],
+      [
+       "goes",
+       615,
+       1
+      ],
+      [
+       "up",
+       591,
+       1
+      ],
+      [
+       "a",
+       419,
+       1
+      ],
+      [
+       "hill",
+       561,
+       1
+      ],
+      [
+       "to",
+       593,
+       1
+      ],
+      [
+       "a",
+       392,
+       1
+      ],
+      [
+       "dark",
+       687,
+       1
+      ],
+      [
+       "cave",
+       659,
+       1
+      ],
+      [
+       "wait",
+       466,
+       1
+      ],
+      [
+       "says",
+       526,
+       1
+      ],
+      [
+       "maya",
+       667,
+       1
+      ],
+      [
+       "i",
+       499,
+       1
+      ],
+      [
+       "see",
+       431,
+       1
+      ],
+      [
+       "something",
+       740,
+       1
+      ],
+      [
+       "a",
+       494,
+       1
+      ],
+      [
+       "big",
+       452,
+       1
+      ],
+      [
+       "bone",
+       678,
+       1
+      ],
+      [
+       "sits",
+       664,
+       1
+      ],
+      [
+       "in",
+       404,
+       1
+      ],
+      [
+       "the",
+       1758,
+       0
+      ],
+      [
+       "coal",
+       481,
+       1
+      ],
+      [
+       "it",
+       530,
+       1
+      ],
+      [
+       "is",
+       536,
+       1
+      ],
+      [
+       "as",
+       425,
+       1
+      ],
+      [
+       "long",
+       602,
+       1
+      ],
+      [
+       "as",
+       371,
+       1
+      ],
+      [
+       "an",
+       382,
+       1
+      ],
+      [
+       "oar",
+       549,
+       1
+      ],
+      [
+       "maya",
+       673,
+       1
+      ],
+      [
+       "digs",
+       499,
+       1
+      ],
+      [
+       "she",
+       412,
+       1
+      ],
+      [
+       "digs",
+       601,
+       1
+      ],
+      [
+       "by",
+       426,
+       1
+      ],
+      [
+       "the",
+       636,
+       1
+      ],
+      [
+       "goat",
+       1875,
+       0
+      ],
+      [
+       "trail",
+       676,
+       1
+      ],
+      [
+       "she",
+       526,
+       1
+      ],
+      [
+       "digs",
+       494,
+       1
+      ],
+      [
+       "in",
+       355,
+       1
+      ],
+      [
+       "the",
+       609,
+       1
+      ],
+      [
+       "rain",
+       630,
+       1
+      ],
+      [
+       "her",
+       402,
+       1
+      ],
+      [
+       "nails",
+       524,
+       1
+      ],
+      [
+       "get",
+       535,
+       1
+      ],
+      [
+       "black",
+       701,
+       1
+      ],
+      [
+       "then",
+       507,
+       1
+      ],
+      [
+       "a",
+       539,
+       1
+      ],
+      [
+       "huge",
+       446,
+       1
+      ],
+      [
+       "dino",
+       585,
+       1
+      ],
+      [
+       "skull",
+       673,
+       1
+      ],
+      [
+       "it",
+       456,
+       1
+      ],
+      [
+       "has",
+       469,
+       1
+      ],
+      [
+       "teeth",
+       521,
+       1
+      ],
+      [
+       "like",
+       664,
+       1
+      ],
+      [
+       "nails",
+       1738,
+       0
+      ],
+      [
+       "i",
+       429,
+       1
+      ],
+      [
+       "will",
+       468,
+       1
+      ],
+      [
+       "call",
+       658,
+       1
+      ],
+      [
+       "it",
+       447,
+       1
+      ],
+      [
+       "roar",
+       489,
+       1
+      ],
+      [
+       "toe",
+       420,
+       1
+      ],
+      [
+       "says",
+       607,
+       1
+      ],
+      [
+       "maya",
+       631,
+       1
+      ],
+      [
+       "she",
+       605,
+       1
+      ],
+      [
+       "paints",
+       746,
+       1
+      ],
+      [
+       "the",
+       588,
+       1
+      ],
+      [
+       "name",
+       684,
+       1
+      ],
+      [
+       "on",
+       572,
+       1
+      ],
+      [
+       "a",
+       552,
+       1
+      ],
+      [
+       "sign",
+       470,
+       1
+      ],
+      [
+       "maya",
+       628,
+       1
+      ],
+      [
+       "loads",
+       1655,
+       0
+      ],
+      [
+       "the",
+       431,
+       1
+      ],
+      [
+       "bones",
+       510,
+       1
+      ],
+      [
+       "on",
+       481,
+       1
+      ],
+      [
+       "a",
+       401,
+       1
+      ],
+      [
+       "cart",
+       581,
+       1
+      ],
+      [
+       "the",
+       500,
+       1
+      ],
+      [
+       "cart",
+       653,
+       1
+      ],
+      [
+       "rolls",
+       713,
+       1
+      ],
+      [
+       "down",
+       528,
+       1
+      ],
+      [
+       "the",
+       645,
+       1
+      ],
+      [
+       "road",
+       599,
+       1
+      ],
+      [
+       "a",
+       368,
+       1
+      ],
+      [
+       "goat",
+       500,
+       1
+      ],
+      [
+       "trails",
+       709,
+       1
+      ],
+      [
+       "her",
+       445,
+       1
+      ],
+      [
+       "all",
+       455,
+       1
+      ],
+      [
+       "the",
+       520,
+       1
+      ],
+      [
+       "way",
+       531,
+       1
+      ],
+      [
+       "at",
+       455,
+       1
+      ],
+      [
+       "home",
+       602,
+       1
+      ],
+      [
+       "maya",
+       579,
+       1
+      ],
+      [
+       "lays",
+       678,
+       1
+      ],
+      [
+       "each",
+       2067,
+       0
+      ],
+      [
+       "bone",
+       563,
+       1
+      ],
+      [
+       "on",
+       395,
+       1
+      ],
+      [
+       "a",
+       536,
+       1
+      ],
+      [
+       "mat",
+       571,
+       1
+      ],
+      [
+       "she",
+       551,
+       1
+      ],
+      [
+       "soaks",
+       544,
+       1
+      ],
+      [
+       "them",
+       624,
+       1
+      ],
+      [
+       "clean",
+       572,
+       1
+      ],
+      [
+       "roar",
+       483,
+       1
+      ],
+      [
+       "toe",
+       470,
+       1
+      ],
+      [
+       "is",
+       371,
+       1
+      ],
+      [
+       "real",
+       577,
+       1
+      ],
+      [
+       "maya",
+       613,
+       1
+      ],
+      [
+       "says",
+       687,
+       1
+      ],
+      [
+       "and",
+       608,
+       1
+      ],
+      [
+       "i",
+       359,
+       1
+      ],
+      [
+       "found",
+       638,
+       1
+      ],
+      [
+       "him",
+       628,
+       1
+      ],
+      [
+       "the",
+       544,
+       1
+      ],
+      [
+       "goat",
+       499,
+       1
+      ],
+      [
+       "gives",
+       557,
+       1
+      ],
+      [
+       "a",
+       432,
+       1
+      ],
+      [
+       "soft",
+       500,
+       1
+      ],
+      [
+       "bleat",
+       531,
+       1
+      ],
+      [
+       "it",
+       375,
+       1
+      ],
+      [
+       "means",
+       545,
+       1
+      ],
+      [
+       "good",
+       619,
+       1
+      ],
+      [
+       "job",
+       458,
+       1
+      ],
+      [
+       "maya",
+       622,
+       1
+      ]
+     ]
+    },
+    "chapters": {
+     "session": 3,
+     "tutor": "chapters",
+     "words_attempted": 138,
+     "words_missed": [
+      "trail",
+      "bean",
+      "goal",
+      "sea",
+      "said",
+      "bean",
+      "sea",
+      "sailed",
+      "road",
+      "they",
+      "leaves",
+      "beans",
+      "toad",
+      "bean"
+     ],
+     "missed_by_skill": {
+      "vowel_teams": 13,
+      "digraphs": 1
+     },
+     "response_time_ms": 670,
+     "enjoyment": 3,
+     "comment": "Can I read it again?",
+     "reading_log": [
+      [
+       "meet",
+       608,
+       1
+      ],
+      [
+       "the",
+       635,
+       1
+      ],
+      [
+       "dino",
+       596,
+       1
+      ],
+      [
+       "team",
+       443,
+       1
+      ],
+      [
+       "rain",
+       602,
+       1
+      ],
+      [
+       "fell",
+       562,
+       1
+      ],
+      [
+       "on",
+       540,
+       1
+      ],
+      [
+       "the",
+       408,
+       1
+      ],
+      [
+       "green",
+       591,
+       1
+      ],
+      [
+       "trail",
+       1445,
+       0
+      ],
+      [
+       "a",
+       434,
+       1
+      ],
+      [
+       "big",
+       460,
+       1
+      ],
+      [
+       "dino",
+       495,
+       1
+      ],
+      [
+       "ate",
+       524,
+       1
+      ],
+      [
+       "leaves",
+       777,
+       1
+      ],
+      [
+       "her",
+       549,
+       1
+      ],
+      [
+       "name",
+       594,
+       1
+      ],
+      [
+       "was",
+       615,
+       1
+      ],
+      [
+       "bean",
+       633,
+       1
+      ],
+      [
+       "bean",
+       2108,
+       0
+      ],
+      [
+       "had",
+       570,
+       1
+      ],
+      [
+       "a",
+       442,
+       1
+      ],
+      [
+       "goal",
+       1543,
+       0
+      ],
+      [
+       "she",
+       493,
+       1
+      ],
+      [
+       "had",
+       407,
+       1
+      ],
+      [
+       "to",
+       510,
+       1
+      ],
+      [
+       "reach",
+       670,
+       1
+      ],
+      [
+       "the",
+       395,
+       1
+      ],
+      [
+       "sea",
+       1405,
+       0
+      ],
+      [
+       "her",
+       565,
+       1
+      ],
+      [
+       "pal",
+       506,
+       1
+      ],
+      [
+       "toad",
+       635,
+       1
+      ],
+      [
+       "ran",
+       556,
+       1
+      ],
+      [
+       "on",
+       454,
+       1
+      ],
+      [
+       "the",
+       443,
+       1
+      ],
+      [
+       "road",
+       561,
+       1
+      ],
+      [
+       "wait",
+       673,
+       1
+      ],
+      [
+       "for",
+       631,
+       1
+      ],
+      [
+       "me",
+       533,
+       1
+      ],
+      [
+       "he",
+       531,
+       1
+      ],
+      [
+       "said",
+       1871,
+       0
+      ],
+      [
+       "they",
+       490,
+       1
+      ],
+      [
+       "ran",
+       507,
+       1
+      ],
+      [
+       "past",
+       512,
+       1
+      ],
+      [
+       "a",
+       503,
+       1
+      ],
+      [
+       "tall",
+       680,
+       1
+      ],
+      [
+       "oak",
+       479,
+       1
+      ],
+      [
+       "they",
+       662,
+       1
+      ],
+      [
+       "ate",
+       508,
+       1
+      ],
+      [
+       "a",
+       548,
+       1
+      ],
+      [
+       "snack",
+       600,
+       1
+      ],
+      [
+       "of",
+       525,
+       1
+      ],
+      [
+       "seeds",
+       537,
+       1
+      ],
+      [
+       "bean",
+       1634,
+       0
+      ],
+      [
+       "took",
+       524,
+       1
+      ],
+      [
+       "a",
+       494,
+       1
+      ],
+      [
+       "deep",
+       622,
+       1
+      ],
+      [
+       "breath",
+       719,
+       1
+      ],
+      [
+       "soon",
+       564,
+       1
+      ],
+      [
+       "they",
+       509,
+       1
+      ],
+      [
+       "could",
+       583,
+       1
+      ],
+      [
+       "see",
+       440,
+       1
+      ],
+      [
+       "the",
+       398,
+       1
+      ],
+      [
+       "sea",
+       2161,
+       0
+      ],
+      [
+       "waves",
+       651,
+       1
+      ],
+      [
+       "ran",
+       499,
+       1
+      ],
+      [
+       "up",
+       580,
+       1
+      ],
+      [
+       "the",
+       606,
+       1
+      ],
+      [
+       "sand",
+       648,
+       1
+      ],
+      [
+       "a",
+       394,
+       1
+      ],
+      [
+       "boat",
+       690,
+       1
+      ],
+      [
+       "sailed",
+       1996,
+       0
+      ],
+      [
+       "by",
+       496,
+       1
+      ],
+      [
+       "bean",
+       680,
+       1
+      ],
+      [
+       "and",
+       602,
+       1
+      ],
+      [
+       "toad",
+       477,
+       1
+      ],
+      [
+       "played",
+       677,
+       1
+      ],
+      [
+       "all",
+       458,
+       1
+      ],
+      [
+       "day",
+       538,
+       1
+      ],
+      [
+       "they",
+       446,
+       1
+      ],
+      [
+       "made",
+       451,
+       1
+      ],
+      [
+       "a",
+       381,
+       1
+      ],
+      [
+       "big",
+       585,
+       1
+      ],
+      [
+       "dino",
+       492,
+       1
+      ],
+      [
+       "road",
+       1420,
+       0
+      ],
+      [
+       "in",
+       461,
+       1
+      ],
+      [
+       "the",
+       618,
+       1
+      ],
+      [
+       "sand",
+       554,
+       1
+      ],
+      [
+       "then",
+       573,
+       1
+      ],
+      [
+       "they",
+       1512,
+       0
+      ],
+      [
+       "ate",
+       496,
+       1
+      ],
+      [
+       "a",
+       339,
+       1
+      ],
+      [
+       "meal",
+       577,
+       1
+      ],
+      [
+       "of",
+       504,
+       1
+      ],
+      [
+       "green",
+       723,
+       1
+      ],
+      [
+       "leaves",
+       1965,
+       0
+      ],
+      [
+       "and",
+       625,
+       1
+      ],
+      [
+       "beans",
+       1729,
+       0
+      ],
+      [
+       "this",
+       456,
+       1
+      ],
+      [
+       "day",
+       526,
+       1
+      ],
+      [
+       "was",
+       634,
+       1
+      ],
+      [
+       "neat",
+       689,
+       1
+      ],
+      [
+       "said",
+       612,
+       1
+      ],
+      [
+       "toad",
+       1833,
+       0
+      ],
+      [
+       "scientists",
+       934,
+       1
+      ],
+      [
+       "still",
+       673,
+       1
+      ],
+      [
+       "read",
+       519,
+       1
+      ],
+      [
+       "about",
+       721,
+       1
+      ],
+      [
+       "dinos",
+       496,
+       1
+      ],
+      [
+       "and",
+       488,
+       1
+      ],
+      [
+       "find",
+       685,
+       1
+      ],
+      [
+       "new",
+       536,
+       1
+      ],
+      [
+       "facts",
+       731,
+       1
+      ],
+      [
+       "each",
+       603,
+       1
+      ],
+      [
+       "year",
+       457,
+       1
+      ],
+      [
+       "they",
+       524,
+       1
+      ],
+      [
+       "dig",
+       523,
+       1
+      ],
+      [
+       "up",
+       569,
+       1
+      ],
+      [
+       "bones",
+       728,
+       1
+      ],
+      [
+       "and",
+       466,
+       1
+      ],
+      [
+       "paint",
+       591,
+       1
+      ],
+      [
+       "art",
+       450,
+       1
+      ],
+      [
+       "of",
+       484,
+       1
+      ],
+      [
+       "dino",
+       533,
+       1
+      ],
+      [
+       "teams",
+       570,
+       1
+      ],
+      [
+       "like",
+       536,
+       1
+      ],
+      [
+       "bean",
+       1402,
+       0
+      ],
+      [
+       "and",
+       400,
+       1
+      ],
+      [
+       "toad",
+       537,
+       1
+      ],
+      [
+       "maybe",
+       664,
+       1
+      ],
+      [
+       "you",
+       396,
+       1
+      ],
+      [
+       "will",
+       556,
+       1
+      ],
+      [
+       "read",
+       606,
+       1
+      ],
+      [
+       "a",
+       367,
+       1
+      ],
+      [
+       "new",
+       462,
+       1
+      ],
+      [
+       "dino",
+       597,
+       1
+      ],
+      [
+       "fact",
+       678,
+       1
+      ],
+      [
+       "today",
+       607,
+       1
+      ]
+     ]
+    }
+   },
+   "scores": {
+    "transcript": {
+     "tutor": "transcript",
+     "session": 3,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    },
+    "chapters": {
+     "tutor": "chapters",
+     "session": 3,
+     "level_fit": 1,
+     "topic_fit": 1,
+     "skill_fit": 1,
+     "accuracy": 1,
+     "stale_reason": ""
+    }
+   },
+   "prompt_tokens": {
+    "transcript": 3969,
+    "chapters": 617
+   },
+   "model": {
+    "level": 2,
+    "skills": {
+     "vowel_teams": {
+      "mastery": 0.35,
+      "evidence": [
+       1,
+       2,
+       3
+      ],
+      "last_seen": 3
+     }
+    },
+    "misconceptions": [
+     {
+      "what": "reads ea/ai/oa as two separate sounds",
+      "since": 0,
+      "status": "active"
+     },
+     {
+      "what": "same vowel-team word read right once, missed later (bean, sea, toad)",
+      "since": 3,
+      "status": "active"
+     }
+    ],
+    "interests": [
+     {
+      "topic": "dinosaurs",
+      "strength": 0.8,
+      "last_signal": 3
+     }
+    ],
+    "what_works": [
+     "Dino story with repeated vowel-team words boosts accuracy",
+     "Rereading favorite dino story builds vowel-team consistency"
+    ]
+   },
+   "changes": [
+    {
+     "session": 3,
+     "action": "updated",
+     "kind": "skill",
+     "key": "vowel_teams",
+     "value": "0.35",
+     "reason": "14 misses nearly all vowel-team words (trail, bean, goal, sea, sailed, road, leaves, toad), often slow and inconsistent on repeats",
+     "by": "tutor"
+    },
+    {
+     "session": 3,
+     "action": "updated",
+     "kind": "interest",
+     "key": "dinosaurs",
+     "value": "0.8",
+     "reason": "Enjoyment only 3, though asked to reread",
+     "by": "tutor"
+    },
+    {
+     "session": 3,
+     "action": "added",
+     "kind": "misconception",
+     "key": "same vowel-team word read right once, missed later (bean, sea, toad)",
+     "value": "active",
+     "reason": "Repeated words alternated correct/incorrect with long pauses",
+     "by": "tutor"
+    },
+    {
+     "session": 3,
+     "action": "added",
+     "kind": "what_works",
+     "key": "Rereading favorite dino story builds vowel-team consistency",
+     "value": "",
+     "reason": "tutor insight",
+     "by": "tutor"
+    }
+   ],
+   "calls": [
+    {
+     "tutor": "transcript",
+     "session": 3,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 3969,
+     "completion_tokens": 517,
+     "cost_usd": 0.03277,
+     "latency_ms": 8317
+    },
+    {
+     "tutor": "chapters",
+     "session": 3,
+     "purpose": "write_book",
+     "model": "claude-opus-5",
+     "prompt_tokens": 617,
+     "completion_tokens": 404,
+     "cost_usd": 0.013185,
+     "latency_ms": 7946
+    },
+    {
+     "tutor": "chapters",
+     "session": 3,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 2929,
+     "completion_tokens": 597,
+     "cost_usd": 0.02957,
+     "latency_ms": 6943
+    },
+    {
+     "tutor": "chapters",
+     "session": 3,
+     "purpose": "update_model",
+     "model": "claude-opus-5",
+     "prompt_tokens": 3662,
+     "completion_tokens": 61,
+     "cost_usd": 0.019835,
+     "latency_ms": 6868
+    },
+    {
+     "tutor": "chapters",
+     "session": 3,
+     "purpose": "curate",
+     "model": "ollama:hf.co/LiquidAI/LFM2-1.2B-GGUF:Q4_K_M",
+     "prompt_tokens": 268,
+     "completion_tokens": 138,
+     "cost_usd": 0,
+     "latency_ms": 2227
+    }
+   ],
+   "recalls": []
+  }
+ ]
+}
