@@ -56,3 +56,24 @@ BadRequestError: 400 {"type":"error","error":{"type":"invalid_request_error","me
   },
   type: 'invalid_request_error'
 }
+◇ injected env (16) from .env.local
+▶ run "semester-8": 12/30 done, covers off
+✔ session 13 | transcript "The Octopus and the Dino Tracks" (octopus dinosaur, L2) acc 0.33 20099 tok | chapters "Chip the Shy Octopus" (octopus, L2) acc 0.33 1279 tok | 9 changes, 0 recalls, 9 tools | 33s
+✔ session 14 | transcript "Deep Sea Monsters?" (octopus facts, L2) acc 0.33 21767 tok | chapters "Nell the Sea Turtle Meets the Deep Team" (sea turtle, L2) acc 0.33 1130 tok | 8 changes, 0 recalls, 8 tools, janitor 0 archived/0 flagged | 48s
+✔ session 15 | transcript "The Tide Pool Hunt" (tide pools, L3) acc 0.67 23407 tok | chapters "Bree and the Great Grass Reef" (coral reef, L3) acc 1 1136 tok | 8 changes, 0 recalls, 8 tools | 37s
+✔ session 16 | transcript "Fifteen Things in a Tide Pool" (tide pools, L3) acc 0.67 25121 tok | chapters "Crab Trick and the Tiny Snailfish" (reef crab, L3) acc 1 1167 tok | 8 changes, 0 recalls, 8 tools, janitor 0 archived/0 flagged (fallback) | 34s
+✔ session 17 | transcript "The Tide Pool Club" (tide pool club, L3) acc 0.33 26808 tok | chapters "Trina and the Swift Green Submarine" (deep sea, L3) acc 0.33 1193 tok | 9 changes, 0 recalls, 9 tools | 30s
+✔ session 18 | transcript "Louder Than Thunder" (rockets, L3) acc 0.67 28523 tok | chapters "Nadia and the Bubble-Powered Rocket" (rockets, L3) acc 0.67 1301 tok | 9 changes, 0 recalls, 9 tools, janitor 0 archived/0 flagged | 43s
+✔ session 19 | transcript "The Bubble-Powered Rocket" (rocket science, L3) acc 0.67 30262 tok | chapters "Maya and the Mars Notebook" (Mars rover, L3) acc 0.33 1195 tok | 9 changes, 0 recalls, 9 tools | 44s
+✔ session 20 | transcript "Maya Wants to Be an Astronaut" (astronaut, L2) acc 1 32086 tok | chapters "Maya and the White Space Station" (space station, L3) acc 0.67 1261 tok | 10 changes, 0 recalls, 9 tools, janitor 0 archived/1 flagged | 36s
+✔ session 21 | transcript "Planets Like Cotton Candy" (space news, L2) acc 1 33712 tok | chapters "Maya and the Moon Base Lights" (moon base, L3) acc 0.67 1306 tok | 10 changes, 0 recalls, 10 tools | 33s
+✔ session 22 | transcript "The Red Moon Night" (lunar eclipse, L2) acc 0.33 35360 tok | chapters "Maya and the Bubble Rocket Race" (rockets, L3) acc 0.33 1254 tok | 8 changes, 0 recalls, 7 tools, janitor 0 archived/1 flagged | 35s
+✔ session 23 | transcript "Why the Moon Turns Red" (lunar eclipse, L2) acc 0 37004 tok | chapters "Maya and the Spinning Launch Pad" (rockets, L3) acc 0.33 1204 tok | 8 changes, 0 recalls, 8 tools | 30s
+✔ session 24 | transcript "Grandpa and the Bone Hall" (dinosaur museum, L2) acc 0.33 38677 tok | chapters "Maya and the Great Sea Dragon Bones" (dinosaur museum, L3) acc 1 1292 tok | 10 changes, 0 recalls, 9 tools, janitor 0 archived/1 flagged | 43s
+✔ session 25 | transcript "Maya Builds a Skeleton" (fossil puzzle, L3) acc 1 40293 tok | chapters "Maya and the Dinosaur Footprint Trail" (dinosaur tracks, L3) acc 1 1413 tok | 11 changes, 0 recalls, 11 tools | 33s
+✔ session 26 | transcript "The Fossil Word Hunt" (fossil words, L3) acc 1 42062 tok | chapters "Maya and the Museum Night Crew" (dinosaur museum, L3) acc 1 1306 tok | 10 changes, 0 recalls, 10 tools, janitor 0 archived/0 flagged | 43s
+✔ session 27 | transcript "Fossil Words" (fossil words, L3) acc 0.67 43813 tok | chapters "Maya and the Dinosaur Fact Hunt" (dinosaur museum, L3) acc 0.67 1127 tok | 7 changes, 0 recalls, 7 tools | 28s
+✔ session 28 | transcript "The Science Journal" (paleontology reading, L3) acc 0.33 45484 tok | chapters "Maya and the Dinosaur Art Studio" (dinosaur museum, L3) acc 1 1029 tok | 6 changes, 1 recalls, 7 tools, janitor 0 archived/0 flagged | 33s
+✔ session 29 | transcript "How to Draw a Dinosaur" (dinosaur drawing, L3) acc 0.67 47183 tok | chapters "Maya and the Stone Egg Case" (dinosaur museum, L3) acc 1 1215 tok | 8 changes, 0 recalls, 8 tools | 35s
+✔ session 30 | transcript "The Paleoart Show" (dinosaur art, L3) acc 0.67 48929 tok | chapters "Maya and the Bone Shape Puzzle" (dinosaur museum, L3) acc 1 1085 tok | 8 changes, 0 recalls, 8 tools, janitor 0 archived/0 flagged | 32s
+■ done
