@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import type { Book, Score } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Cover } from "./Cover";
+import { SponsorTag } from "./SponsorTag";
 import { useReadAloud } from "./useReadAloud";
 
 const SKILL_LABEL: Record<string, string> = {
@@ -80,8 +81,9 @@ function BookBody({ book, score }: { book: Book; score?: Score }) {
         </p>
 
         {book.fact_title && (
-          <div className="mt-auto pt-6 text-xs text-[var(--ink-soft)]">
-            Real-world fact via Nimble:{" "}
+          <div className="mt-auto flex items-center gap-2 pt-6 text-xs text-[var(--ink-soft)]">
+            <SponsorTag tool="nimble" note="Nimble searched the live web for a real, current fact about the tutor's believed topic, wove into the story below." />
+            Real-world fact:{" "}
             <a href={book.fact_url} target="_blank" rel="noreferrer" className="underline decoration-[var(--line)] underline-offset-2 hover:text-[var(--ink)]">
               {book.fact_title}
             </a>

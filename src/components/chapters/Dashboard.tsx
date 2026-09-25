@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { SemesterData, TutorName } from "@/lib/types";
 import { BookModal } from "./BookModal";
+import { DemoCaptions } from "./DemoCaptions";
 import { Charts } from "./Charts";
 import { Gauges } from "./Gauges";
 import { Hud, MilestoneBanner } from "./Hud";
@@ -129,6 +130,7 @@ export function Dashboard({ data, initialSession = 1, askSlot }: { data: Semeste
       </footer>
 
       <BookModal book={open ? cur.books[open] : null} score={open ? cur.scores[open] : undefined} onClose={() => setOpen(null)} />
+      <DemoCaptions />
     </main>
   );
 }

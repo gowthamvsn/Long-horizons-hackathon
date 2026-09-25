@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Archive, ChevronDown } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { LearnerModel, SessionView, StateChange } from "@/lib/types";
+import { SponsorTag } from "./SponsorTag";
 
 // "The tutor's mind": Chapters' hot learner model as cards; archived facts drop into the RawTree drawer.
 
@@ -109,8 +110,9 @@ export function Mind({ sessions, idx }: { sessions: SessionView[]; idx: number }
 
       <EditLog edits={edits} />
       {jan && (
-        <motion.div key={jan.session} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mt-2 rounded-lg border border-dashed border-[var(--line)] px-3 py-1.5 text-[11px] text-[var(--ink-soft)]">
-          🧹 <b className="text-[var(--ink)]">Janitor</b> (Liquid LFM2, local, {(jan.latency_ms / 1000).toFixed(1)}s) scored {jan.scores.length} facts ·{" "}
+        <motion.div key={jan.session} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mt-2 flex items-center gap-2 rounded-lg border border-dashed border-[var(--line)] px-3 py-1.5 text-[11px] text-[var(--ink-soft)]">
+          <SponsorTag tool="liquid" note="Liquid AI's LFM2 (1.2B) runs locally in Ollama every 2 sessions. It scores each fact for staleness and relevance and flags contradictions — its scores decide what gets archived." />
+          🧹 <b className="text-[var(--ink)]">Janitor</b> ({(jan.latency_ms / 1000).toFixed(1)}s) scored {jan.scores.length} facts ·{" "}
           {jan.scores.filter((x) => x.decision === "archive").length} archived · {jan.scores.filter((x) => x.decision === "flag").length} flagged
         </motion.div>
       )}

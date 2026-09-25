@@ -2,6 +2,7 @@
 
 import type { Book } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { SponsorTag } from "./SponsorTag";
 
 // FLUX cover when we have one; otherwise a painted-paper placeholder in the same spirit.
 
@@ -32,6 +33,11 @@ export function Cover({ book, className }: { book: Book; className?: string }) {
       )}
       {/* spine */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/20 to-transparent" />
+      {book.cover && (
+        <div className="absolute top-2 right-2">
+          <SponsorTag tool="flux" note="This cover was generated live by Black Forest Labs FLUX, one image per session in a consistent watercolor style." />
+        </div>
+      )}
     </div>
   );
 }

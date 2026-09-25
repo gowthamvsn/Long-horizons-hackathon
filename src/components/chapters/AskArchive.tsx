@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Loader2, Search } from "lucide-react";
 import { useState } from "react";
+import { SponsorTag } from "./SponsorTag";
 
 const EXAMPLES = ["When did she last miss 'ea' words?", "What topics has she enjoyed most?", "Which facts were archived and why?"];
 
@@ -35,7 +36,10 @@ export function AskArchive() {
   return (
     <section className="paper-card rounded-2xl p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h2 className="font-display text-xl font-medium">Ask the archive</h2>
+        <h2 className="flex items-center gap-2 font-display text-xl font-medium">
+          Ask the archive
+          <SponsorTag tool="rawtree" note="RawTree (Tinybird) stores every raw event and archived fact. This box turns your question into SQL, runs it live, and shows both." />
+        </h2>
         <p className="text-xs text-[var(--ink-soft)]">Everything Chapters let go of is still in RawTree, one SQL query away.</p>
       </div>
       <form
