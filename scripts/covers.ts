@@ -14,7 +14,7 @@ const flag = (name: string, dflt: string) => {
   const i = args.indexOf(`--${name}`);
   return i >= 0 ? args[i + 1] : dflt;
 };
-const RUN = flag("run", "semester-3");
+const RUN = flag("run", "semester-4");
 const CONCURRENCY = Number(flag("concurrency", "6"));
 
 export function coverPath(run: string, tutor: string, session: number) {

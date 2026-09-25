@@ -78,8 +78,14 @@ export function topicMatches(topic: string, interest: string): boolean {
   return (TOPIC_WORDS[interest] ?? new RegExp(interest, "i")).test(topic);
 }
 
+// High-frequency sight words she reads by memory, whatever their spelling pattern.
+const SIGHT = new Set(
+  "the that this with they them then there these those what when where which who why she he we me be see said was were have give live are one two there's that's it's".split(" "),
+);
+
 export function skillOf(word: string): Skill | null {
   const w = word.toLowerCase();
+  if (SIGHT.has(w)) return null;
   if (/(ea|ai|oa)/.test(w)) return "vowel_teams";
   if (/^[a-z]*[^aeiou][aeiou][^aeiouwxy]e$/.test(w)) return "silent_e";
   if (/(sh|ch|th|wh)/.test(w)) return "digraphs";

@@ -32,6 +32,7 @@ const WRITER_SYSTEM = `You are a warm, expert reading tutor who writes short pic
 Each book: a title, about 150 words of story at the child's reading level (level 2 = short sentences, mostly one/two-syllable words; level 3 = longer sentences, richer vocabulary), about the child's current interest, deliberately practicing the one phonics skill they most need (use many words with that pattern).
 If a real current fact is provided, weave it into the story naturally in kid-friendly words.
 Every book must be new: never reuse a title or storyline the child has already read.
+Target the phonics skill the child is struggling with right now. Do not keep practicing a skill they have already mastered.
 Reply with JSON only:
 {"title": string, "level": 2|3, "topic": string (1-3 words), "target_skill": "vowel_teams"|"silent_e"|"digraphs"|"blends"|"none", "text": string, "cover_scene": string (one sentence describing the cover illustration, no text in image)}`;
 
@@ -177,7 +178,7 @@ const TOOLS: Anthropic.Tool[] = [
   {
     name: "recall",
     description:
-      "Run a read-only ClickHouse SQL query against the archive of past sessions. Tables: events(run_id, session, tutor, words_attempted, words_missed JSON string, missed_by_skill JSON string, enjoyment, comment), books(run_id, session, tutor, title, level, topic, target_skill), state_changes(run_id, session, action, kind, key, value, reason, by). Always filter tutor = 'chapters' and run_id = the given run id. Use LIMIT.",
+      "Run a read-only ClickHouse SQL query against the archive of past sessions. Tables: events(run_id, session, tutor, words_attempted, words_missed JSON array string, enjoyment, comment), books(run_id, session, tutor, title, level, topic, target_skill), state_changes(run_id, session, action, kind, key, value, reason, by). Always filter tutor = 'chapters' and run_id = the given run id. Select only the columns you need and use LIMIT.",
     input_schema: {
       type: "object",
       properties: { sql: { type: "string" } },
@@ -187,12 +188,13 @@ const TOOLS: Anthropic.Tool[] = [
 ];
 
 const UPDATER_SYSTEM = `You maintain a compact learner model for one child. After each reading session, update it with the tools so the next book fits the child exactly as they are NOW.
-The reading log lists every word as [word, milliseconds, correct 1/0]. Work out which phonics patterns the missed and slow words share: vowel_teams (ea, ai, oa), silent_e (cake, bone, kite), digraphs (sh, ch, th, wh), blends (st, tr, bl...).
-Children change and regress. Things to watch every session:
-- a skill that looks solid now (few misses on its words) -> raise mastery, resolve related misconceptions
-- a skill that was mastered but whose words are being missed again -> lower mastery; use recall to check its history in the archive
-- level: many misses and "hard" remarks -> lower level; almost no misses and "easy" remarks -> raise level
-- interests: remarks about a new topic -> add it strongly; low enjoyment on the current topic -> lower its strength
+The reading log lists every word as [word, milliseconds, correct 1/0]. Work out which phonics patterns the missed and slow words share: vowel_teams (ea, ai, oa), silent_e (cake, bone, kite), digraphs (sh, ch, th, wh as in ship, chip, whale, teeth), blends (st, tr, bl...). Common sight words (the, said, was) are not phonics evidence.
+Keep a skill entry for every pattern that shows up in the misses, with mastery 0 (can't read these words) to 1 (reads them fluently).
+Children change and regress. Every session, check:
+- a skill whose words are now read fluently -> raise mastery, resolve its misconceptions
+- a skill that was mastered but whose words are missed again -> lower mastery; call recall to see when it was last a problem
+- level: change it only when this session AND the previous one point the same way ("easy" remarks + almost no misses -> up; "hard" remarks + many misses -> down). Use recall to check the previous session. If the last level change made reading clearly too hard or too easy, revert it.
+- interests: a remark about a new topic -> add it strongly (0.9) and lower the others; one low-enjoyment session alone is not a lost interest
 Update only what the evidence supports, and keep the model small. When done, reply with one short sentence summarizing what changed.`;
 
 function applyTool(
@@ -278,6 +280,8 @@ export async function chaptersUpdate(model: LearnerModel, book: Book, ev: Readin
       try {
         if (u.name === "recall") {
           const sql = assertReadOnly(String(input.sql));
+          // A tutor only knows what it observed: no ground truth, no scores.
+          if (/\b(sessions|scores|llm_calls)\b/i.test(sql)) throw new Error("recall can only read events, books and state_changes");
           recalls.push(sql);
           const rows = await query(sql);
           results.push({ type: "tool_result", tool_use_id: u.id, content: JSON.stringify(rows.slice(0, 30)) });

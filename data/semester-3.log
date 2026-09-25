@@ -1,0 +1,12 @@
+◇ injected env (16) from .env.local
+▶ run "semester-3": 0/30 done, covers off
+✔ session  1 | transcript "The Dino Team by the Sea" (dinosaurs, L2) acc 1 474 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 1 602 tok | 3 changes, 0 recalls | 21s
+✔ session  2 | transcript "Coal the Dino Digs a Trail" (dinosaur dig, L2) acc 1 2150 tok | chapters "Rain on the Dino Trail" (dinosaurs, L2) acc 1 662 tok | 3 changes, 0 recalls | 25s
+✔ session  3 | transcript "Rain Makes a Fossil Trail" (fossils, L2) acc 1 3873 tok | chapters "The Dino Boat on the Lake" (dinosaurs, L2) acc 1 706 tok | 2 changes, 0 recalls | 22s
+✔ session  4 | transcript "Fern Goes to the Museum" (dinosaur museum, L2) acc 1 5540 tok | chapters "The Dino Snail Race" (dinosaurs, L2) acc 1 746 tok | 2 changes, 0 recalls | 30s
+✔ session  5 | transcript "Maya Draws a Dino" (drawing dinosaurs, L2) acc 1 7213 tok | chapters "The Dino Team Eats a Feast" (dinosaurs, L2) acc 1 766 tok | 3 changes, 0 recalls | 23s
+✔ session  6 | transcript "The Dino with the Big Sail" (spinosaurus, L2) acc 1 8940 tok | chapters "The Dino Trail by the Sea" (dinosaurs, L2) acc 1 769 tok | 3 changes, 0 recalls | 26s
+✔ session  7 | transcript "Spiney Swims in the Stream" (spinosaurus, L2) acc 0.67 10565 tok | chapters "Dino Rain on the Road" (dinosaurs, L2) acc 0.67 774 tok | 7 changes, 0 recalls | 20s
+✔ session  8 | transcript "Maya's Trip to Long Ago" (time travel, L2) acc 0.33 12227 tok | chapters "Neel the Dino Reads the News" (dinosaurs, L3) acc 0.33 785 tok | 4 changes, 0 recalls | 24s
+✔ session  9 | transcript "The Baby Dino in the Reeds" (baby dinosaur, L2) acc 0.67 13886 tok | chapters "They Said the Dino Did Not Dig" (dinosaurs, L3) acc 0.33 792 tok | 5 changes, 0 recalls | 34s
+✔ session 10 | transcript "Rain's Big Morning" (baby dinos, L2) acc 0.33 15536 tok | chapters "The Dino Who Said Yes" (dinosaurs, L2) acc 0.33 799 tok | 6 changes, 0 recalls | 22s

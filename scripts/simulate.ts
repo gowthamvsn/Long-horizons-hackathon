@@ -29,7 +29,7 @@ const flag = (name: string, dflt: string) => {
   const i = args.indexOf(`--${name}`);
   return i >= 0 ? args[i + 1] : dflt;
 };
-const RUN = flag("run", "semester-3");
+const RUN = flag("run", "semester-4");
 const UNTIL = Number(flag("sessions", String(SESSIONS)));
 const COVERS = !args.includes("--no-covers");
 
@@ -130,7 +130,13 @@ async function archive(rec: SessionRecord) {
     ),
   );
   await insert("books", both.map((t) => tag({ ...rec.books[t] })));
-  await insert("events", both.map((t) => tag({ ...rec.events[t], words_missed: JSON.stringify(rec.events[t].words_missed), missed_by_skill: JSON.stringify(rec.events[t].missed_by_skill) })));
+  await insert(
+    "events",
+    both.map((t) => {
+      const { missed_by_skill: _labels, ...ev } = rec.events[t]; // simulator's skill labels stay out of the archive
+      return tag({ ...ev, words_missed: JSON.stringify(ev.words_missed), reading_log: JSON.stringify(ev.reading_log ?? []) });
+    }),
+  );
   await insert("scores", both.map((t) => tag({ ...rec.scores[t] })));
   await insert("llm_calls", rec.calls.map((c) => tag({ ...c })));
   await insert("state_changes", rec.changes.map((c) => tag({ tutor: "chapters", ...c })));
