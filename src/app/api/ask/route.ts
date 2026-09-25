@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { llm, parseJson } from "@/lib/llm";
-import { RUN } from "@/lib/load";
+import { RUN as DEFAULT_RUN } from "@/lib/load";
 import { assertReadOnly, query } from "@/lib/rawtree";
 
 // "Ask the archive": question -> LLM writes read-only ClickHouse SQL -> RawTree -> LLM answers from rows.
@@ -14,13 +14,17 @@ const SCHEMA = `ClickHouse tables (every row has run_id String, batch String, ts
 - scores(session, tutor, level_fit, topic_fit, skill_fit, accuracy, stale_reason)
 - state_changes(session, tutor, action added|updated|resolved|archived, kind level|skill|misconception|interest|what_works, key, value, reason, by tutor|curator)
 - llm_calls(session, tutor, purpose, model, prompt_tokens, completion_tokens, cost_usd, latency_ms)
-tutor is 'transcript' or 'chapters'. The student is Maya. Numbers may be stored as strings: wrap with toFloat64OrZero() when doing math.
-To test for a word in words_missed use: arrayExists(w -> w LIKE '%ea%', JSONExtract(words_missed, 'Array(String)')).`;
+tutor is 'transcript' or 'chapters'. The student is Maya.
+Every column is stored as ClickHouse Dynamic type (schema-on-read), so a raw column can't be passed straight into JOIN keys, JSONExtract, or math — always cast first:
+- Numbers: toFloat64OrZero(toString(col))
+- JOIN keys: cast BOTH sides, e.g. ON toString(a.session) = toString(b.session) AND toString(a.tutor) = toString(b.tutor)
+- JSON columns (words_missed, missed_by_skill, learner_model): toString(col) before JSONExtract, e.g. to test for a word in words_missed use arrayExists(w -> w LIKE '%ea%', JSONExtract(toString(words_missed), 'Array(String)')).
+Never alias an aggregate (sum/avg/count/etc.) with the same name as a raw source column (e.g. don't write "sum(toFloat64OrZero(toString(prompt_tokens))) AS prompt_tokens") — ClickHouse substitutes the alias back in and throws ILLEGAL_AGGREGATION if that name is reused elsewhere in the SELECT list. Use a distinct name instead, e.g. AS total_prompt_tokens.`;
 
 export async function POST(req: Request) {
-  const { question } = (await req.json()) as { question?: string };
+  const { question, run: requestedRun } = (await req.json()) as { question?: string; run?: string };
   if (!question?.trim()) return NextResponse.json({ error: "Ask a question" }, { status: 400 });
-  const run = RUN.replace(/'/g, "''");
+  const run = (requestedRun || DEFAULT_RUN).replace(/'/g, "''");
 
   try {
     const plan = await llm({

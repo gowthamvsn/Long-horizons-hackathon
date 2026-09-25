@@ -5,7 +5,12 @@ import { Loader2, Search } from "lucide-react";
 import { useState } from "react";
 import { SponsorTag } from "./SponsorTag";
 
-const EXAMPLES = ["When did she last miss 'ea' words?", "What topics has she enjoyed most?", "Which facts were archived and why?"];
+const EXAMPLES = [
+  "When did she last miss 'ea' words?",
+  "What topics has she enjoyed most?",
+  "Which facts were archived and why?",
+  "How did token cost compare between the two tutors?",
+];
 
 interface Result {
   answer?: string;
@@ -14,7 +19,7 @@ interface Result {
   error?: string;
 }
 
-export function AskArchive() {
+export function AskArchive({ run }: { run: string }) {
   const [q, setQ] = useState("");
   const [busy, setBusy] = useState(false);
   const [res, setRes] = useState<Result | null>(null);
@@ -24,7 +29,7 @@ export function AskArchive() {
     setBusy(true);
     setRes(null);
     try {
-      const r = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question }) });
+      const r = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question, run }) });
       setRes(await r.json());
     } catch (e) {
       setRes({ error: (e as Error).message });
