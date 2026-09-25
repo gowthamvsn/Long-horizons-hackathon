@@ -8,6 +8,7 @@ import { Charts } from "./Charts";
 import { Gauges } from "./Gauges";
 import { Hud, MilestoneBanner } from "./Hud";
 import { KeyMoments } from "./KeyMoments";
+import { SponsorTag } from "./SponsorTag";
 import { Mind } from "./Mind";
 import { Scrubber } from "./Scrubber";
 import { Shelf } from "./Shelf";
@@ -55,9 +56,18 @@ export function Dashboard({ data, initialSession = 1, askSlot }: { data: Semeste
   return (
     <main className="mx-auto flex max-w-[1500px] flex-col gap-4 px-6 py-5">
       <header className="flex items-end justify-between gap-4">
-        <div className="flex items-baseline gap-4">
-          <h1 className="font-display text-5xl font-semibold tracking-tight">Chapters</h1>
-          <p className="font-display text-lg text-[var(--ink-soft)] italic">A tutor that grows with the kid</p>
+        <div className="flex flex-col gap-1.5">
+          <div className="flex items-baseline gap-4">
+            <h1 className="font-display text-5xl font-semibold tracking-tight">Chapters</h1>
+            <p className="font-display text-lg text-[var(--ink-soft)] italic">A tutor that grows with the kid</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] tracking-wider text-[var(--ink-soft)] uppercase">Built with</span>
+            <SponsorTag tool="rawtree" note="RawTree (Tinybird) is the archive and every number on this page — sessions, books, scores, the tutor's raw memory log." />
+            <SponsorTag tool="nimble" note="Nimble fetches a real, current web fact for every book." />
+            <SponsorTag tool="flux" note="Black Forest Labs FLUX paints every book cover — 60 images, one consistent style." />
+            <SponsorTag tool="liquid" note="Liquid AI's LFM2 runs locally (Ollama) as the memory janitor, scoring staleness and flagging contradictions." />
+          </div>
         </div>
         <div className="flex items-center gap-3">
           <div className="text-right">
