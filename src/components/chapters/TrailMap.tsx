@@ -54,7 +54,7 @@ export function TrailMap({
   const cur = sessions[idx];
   const here = pts[idx];
   const maxTok = Math.max(...sessions.map((s) => s.tokens.transcript), 1);
-  const packScale = 0.55 + (cur.tokens.transcript / maxTok) * 1.6;
+  const packScale = 0.6 + (cur.tokens.transcript / maxTok) * 0.9;
   const packHot = cur.tokens.transcript / maxTok > 0.55;
   const archived = sessions.slice(0, idx + 1).flatMap((s) => s.changes.filter((c) => c.action === "archived"));
   const freshLeaves = cur.changes.filter((c) => c.action === "archived").length;
@@ -119,8 +119,8 @@ export function TrailMap({
                   key={`${a.session}-${a.key}`}
                   cx={Math.cos(ang) * r}
                   cy={22 + Math.sin(ang) * r * 0.75}
-                  rx={7}
-                  ry={4}
+                  rx={10}
+                  ry={6}
                   transform={`rotate(${(i * 47) % 180})`}
                   fill={i % 2 ? "#e8b54a" : "#d9793f"}
                   initial={{ opacity: 0, x: -500, y: -60, scale: 0.4 }}
@@ -189,12 +189,12 @@ export function TrailMap({
         })}
 
         {/* current stone glow */}
-        <motion.circle r={34} fill="url(#glow)" animate={{ cx: here.x, cy: here.y }} transition={{ type: "spring", stiffness: 160, damping: 20 }} />
+        <motion.circle r={34} fill="url(#glow)" initial={false} cx={here.x} cy={here.y} animate={{ cx: here.x, cy: here.y }} transition={{ type: "spring", stiffness: 160, damping: 20 }} />
 
         {/* the travelling party: Owl (behind), Maya, Fox (ahead) */}
         <motion.g animate={{ x: here.x, y: here.y }} transition={{ type: "spring", stiffness: 140, damping: 18 }}>
           {/* Owl + backpack */}
-          <g transform="translate(-58, -30)">
+          <g transform="translate(-46, -62)">
             <motion.g animate={{ scale: packScale }} transition={{ type: "spring", stiffness: 120, damping: 14 }} style={{ originX: "50%", originY: "100%" }}>
               <rect x={-30} y={-26} width={26} height={30} rx={7} fill={packHot ? "#b3372b" : "#b8603f"} stroke="#fffdf7" strokeWidth={1.5} />
               <text x={-17} y={-6} textAnchor="middle" fontSize="12">
@@ -204,28 +204,28 @@ export function TrailMap({
             <text textAnchor="middle" fontSize="30" y={8}>
               🦉
             </text>
-            <text textAnchor="middle" y={26} fontSize="10" fill={packHot ? "#b3372b" : "#6f655b"} fontWeight={600} className="tabular-nums">
+            <text textAnchor="middle" y={-30} fontSize="11" fill={packHot ? "#b3372b" : "#6f655b"} fontWeight={600} className="tabular-nums">
               {(cur.tokens.transcript / 1000).toFixed(1)}k
             </text>
           </g>
 
           {/* Maya hops */}
           <motion.g key={idx} initial={{ y: -26 }} animate={{ y: 0 }} transition={{ type: "spring", stiffness: 500, damping: 12 }}>
-            <circle cy={-30} r={17} fill="#e2a24f" stroke="#fffdf7" strokeWidth={3} />
-            <text textAnchor="middle" y={-24} fontSize="16" fill="#fff" className="font-display">
+            <circle cy={-34} r={17} fill="#e2a24f" stroke="#fffdf7" strokeWidth={3} />
+            <text textAnchor="middle" y={-28} fontSize="16" fill="#fff" className="font-display">
               M
             </text>
           </motion.g>
 
           {/* Fox + notebook */}
-          <g transform="translate(56, -30)">
+          <g transform="translate(46, -62)">
             <text textAnchor="middle" fontSize="30" y={8}>
               🦊
             </text>
             <text x={22} y={-8} fontSize="14">
               📓
             </text>
-            <text textAnchor="middle" y={26} fontSize="10" fill="#4f7a68" fontWeight={600} className="tabular-nums">
+            <text textAnchor="middle" y={-30} fontSize="11" fill="#4f7a68" fontWeight={600} className="tabular-nums">
               {(cur.tokens.chapters / 1000).toFixed(1)}k
             </text>
             {/* stale pages flutter off toward the RawTree */}

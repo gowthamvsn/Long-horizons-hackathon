@@ -1,0 +1,25 @@
+◇ injected env (16) from .env.local
+▶ run "semester-1": 0/30 done, covers off
+✔ session  1 | transcript "The Dino Team by the Sea" (dinosaurs, L2) acc 1 450 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 1 578 tok | 4 changes, 0 recalls | 21s
+✔ session  2 | transcript "Rain the Dino Eats a Meal" (baby dinosaur, L2) acc 1 1160 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 1 649 tok | 4 changes, 0 recalls | 20s
+✔ session  3 | transcript "A Day with Baby Dinos" (baby dinosaurs, L2) acc 1 1954 tok | chapters "The Dino Boat on the Coast" (dinosaurs, L2) acc 1 722 tok | 4 changes, 0 recalls | 19s
+✔ session  4 | transcript "The Baby Dino Can Eat" (baby dinosaurs, L2) acc 1 2721 tok | chapters "The Dino Who Loved to Eat" (dinosaurs, L2) acc 1 802 tok | 4 changes, 0 recalls | 29s
+✔ session  5 | transcript "Dino Sneak!" (sneaky dinosaur, L2) acc 1 3513 tok | chapters "The Dino Who Loved to Eat" (dinosaurs, L2) acc 1 871 tok | 5 changes, 0 recalls | 22s
+✔ session  6 | transcript "Two Monkeys and the Baby Dino" (sneaky monkeys, L2) acc 0.67 4255 tok | chapters "The Dino Who Loves to Eat" (dinosaurs, L2) acc 1 925 tok | 5 changes, 0 recalls | 22s
+✔ session  7 | transcript "The Dino Goat Race" (dino race, L2) acc 1 5075 tok | chapters "The Dino Who Loves to Eat" (dinosaurs, L2) acc 1 977 tok | 6 changes, 0 recalls | 25s
+✔ session  8 | transcript "Toad the Dino Wins" (dino race, L2) acc 0.67 5767 tok | chapters "Spike the Dino Makes a Cake" (dinosaurs, L2) acc 1 978 tok | 4 changes, 0 recalls | 30s
+✔ session  9 | transcript "The Big Dino Team Race" (dino race, L2) acc 0.67 6482 tok | chapters "Dino Cave Games" (dinosaurs, L2) acc 1 1030 tok | 4 changes, 0 recalls | 26s
+✔ session 10 | transcript "Toad and the Big Dino Race Day" (obstacle race, L2) acc 0.33 7145 tok | chapters "Dex Eats a Green Leaf" (dinosaurs, L2) acc 0.67 1029 tok | 11 changes, 0 recalls | 24s
+✔ session 11 | transcript "Maya and Toad Race the Course" (kids race, L2) acc 0.67 7869 tok | chapters "The Dino Boat on the Sea" (dinosaurs, L2) acc 0.67 893 tok | 6 changes, 0 recalls | 21s
+✔ session 12 | transcript "Dino Pit Crew" (race cars, L2) acc 0.67 8535 tok | chapters "The Dino Team by the Sea" (dinosaurs, L3) acc 0.33 844 tok | 6 changes, 0 recalls | 26s
+✔ session 13 | transcript "Toad Finds a Dino Egg" (dinosaur egg, L2) acc 0.67 9210 tok | chapters "Chip the Dino Checks the Path" (dinosaurs, L2) acc 1 934 tok | 5 changes, 0 recalls | 24s
+✔ session 14 | transcript "Ten Dino Eggs" (dinosaur eggs, L2) acc 0.67 9972 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 0.67 980 tok | 7 changes, 0 recalls | 22s
+✔ session 15 | transcript "The Dino Egg Hunt" (egg hunt, L2) acc 0.33 10719 tok | chapters "The Dino Team by the Sea" (dinosaurs, L3) acc 0.33 941 tok | 6 changes, 0 recalls | 31s
+✔ session 16 | transcript "The Dino Night Hunt" (night hunt, L2) acc 0.67 11432 tok | chapters "Chip the Dino Digs" (dinosaurs, L2) acc 0.67 1017 tok | 6 changes, 0 recalls | 23s
+✔ session 17 | transcript "Dino News Time" (dino news, L2) acc 1 12109 tok | chapters "Rex and the Big Stone" (dinosaurs, L2) acc 1 1071 tok | 5 changes, 0 recalls | 74s
+✔ session 18 | transcript "Dave the Dino and the Cave" (dino cave, L2) acc 1 12806 tok | chapters "Jake the Dino Makes a Cake" (dinosaurs, L2) acc 1 1136 tok | 6 changes, 0 recalls | 23s
+✔ session 19 | transcript "Dino Rocket to the Cave Moon" (dino rocket, L2) acc 1 13558 tok | chapters "Dino Made a Cake" (dinosaurs, L2) acc 1 1227 tok | 5 changes, 0 recalls | 33s
+✔ session 20 | transcript "Dave Makes a Space Game" (dino space, L2) acc 1 14363 tok | chapters "Jake and the Rocket Shake" (rockets, L2) acc 1 1253 tok | 5 changes, 0 recalls | 36s
+✔ session 21 | transcript "The Moon Turns Red" (space moon, L2) acc 1 15159 tok | chapters "Maya and the Bubble Rocket" (rockets, L2) acc 1 1405 tok | 4 changes, 0 recalls | 21s
+✔ session 22 | transcript "Dave Rides to Space" (space ride, L2) acc 1 15872 tok | chapters "Jake and the Bubble Rocket" (rockets, L2) acc 1 1406 tok | 5 changes, 0 recalls | 27s
+✔ session 23 | transcript "The Puff Planet" (space planets, L2) acc 1 16638 tok | chapters "Nine, Eight, Ride!" (rockets, L2) acc 1 1358 tok | 5 changes, 0 recalls | 24s

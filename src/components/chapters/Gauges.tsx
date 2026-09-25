@@ -21,6 +21,7 @@ function Gauge({ label, value, max, color }: { label: string; value: number; max
           strokeWidth="10"
           strokeLinecap="round"
           strokeDasharray={arc}
+          initial={{ strokeDashoffset: arc }}
           animate={{ strokeDashoffset: arc * (1 - frac), stroke }}
           transition={{ type: "spring", stiffness: 120, damping: 22 }}
         />

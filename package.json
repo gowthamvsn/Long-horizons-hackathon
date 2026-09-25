@@ -10,7 +10,8 @@
     "smoke": "tsx scripts/smoke.ts",
     "simulate": "tsx scripts/simulate.ts",
     "typecheck": "tsc --noEmit",
-    "backfill": "tsx scripts/simulate.ts --backfill"
+    "backfill": "tsx scripts/simulate.ts --backfill",
+    "covers": "tsx scripts/covers.ts"
   },
   "dependencies": {
     "@anthropic-ai/bedrock-sdk": "^0.33.8",

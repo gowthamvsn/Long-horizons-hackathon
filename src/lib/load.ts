@@ -119,16 +119,27 @@ function fromLocal(run: string): SemesterData | null {
   return { run, source: "local", student: STUDENT, milestones: MILESTONES, sessions };
 }
 
+/** Covers are painted separately (npm run covers); pick up any that exist on disk. */
+function withCovers(data: SemesterData): SemesterData {
+  for (const s of data.sessions)
+    for (const b of Object.values(s.books)) {
+      if (b.cover) continue;
+      const rel = `/covers/${data.run}-${b.tutor}-${String(s.session).padStart(2, "0")}.jpg`;
+      if (fs.existsSync(path.join(process.cwd(), "public", rel))) b.cover = rel;
+    }
+  return data;
+}
+
 export async function loadSemester(run = RUN): Promise<SemesterData> {
   if (run !== "mock") {
     try {
       const rt = await fromRawTree(run);
-      if (rt) return rt;
+      if (rt) return withCovers(rt);
     } catch (e) {
       console.warn("[semester] RawTree unavailable, falling back:", (e as Error).message);
     }
     const local = fromLocal(run);
-    if (local) return local;
+    if (local) return withCovers(local);
   }
   return mockSemester();
 }
