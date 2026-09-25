@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import type { Book, Score, TutorName } from "@/lib/types";
 import { Cover } from "./Cover";
+import { SponsorTag } from "./SponsorTag";
 
 const META: Record<TutorName, { name: string; sub: string; color: string }> = {
   transcript: { name: "🦉 Transcript Owl", sub: "Remembers everything, verbatim", color: "var(--clay)" },
@@ -25,21 +26,30 @@ export function Shelf({ tutor, book, score, onOpen }: { tutor: TutorName; book: 
       </header>
 
       <div className="grid flex-1 grid-cols-[minmax(0,230px)_1fr] items-start gap-5">
-        <AnimatePresence mode="popLayout" initial={false}>
-          <motion.button
-            key={`${tutor}-${book.session}`}
-            onClick={onOpen}
-            initial={{ opacity: 0, rotateY: -25, x: -20 }}
-            animate={{ opacity: 1, rotateY: 0, x: 0 }}
-            exit={{ opacity: 0, rotateY: 20, x: 20 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="relative block w-full text-left [perspective:800px]"
-            whileHover={{ y: -4 }}
-          >
-            <Cover book={book} />
-            {stale && tutor === "transcript" && <Ribbon />}
-          </motion.button>
-        </AnimatePresence>
+        <div className="relative">
+          <AnimatePresence mode="popLayout" initial={false}>
+            <motion.button
+              key={`${tutor}-${book.session}`}
+              onClick={onOpen}
+              initial={{ opacity: 0, rotateY: -25, x: -20 }}
+              animate={{ opacity: 1, rotateY: 0, x: 0 }}
+              exit={{ opacity: 0, rotateY: 20, x: 20 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              className="relative block w-full text-left [perspective:800px]"
+              whileHover={{ y: -4 }}
+            >
+              <Cover book={book} />
+              {stale && tutor === "transcript" && <Ribbon />}
+            </motion.button>
+          </AnimatePresence>
+          {book.cover && (
+            <div className="pointer-events-none absolute top-2 right-2 z-10">
+              <div className="pointer-events-auto">
+                <SponsorTag tool="flux" note="This cover was generated live by Black Forest Labs FLUX, one image per session in a consistent watercolor style." />
+              </div>
+            </div>
+          )}
+        </div>
 
         <div className="flex min-w-0 flex-col">
           <AnimatePresence mode="wait" initial={false}>

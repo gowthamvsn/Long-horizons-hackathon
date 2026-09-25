@@ -24,16 +24,41 @@ const esc = (s: string) => s.replace(/'/g, "''");
 
 async function fromRawTree(run: string): Promise<SemesterData | null> {
   if (!process.env.RAWTREE_API_KEY) return null;
-  const where = `run_id = '${esc(run)}' AND batch IN (SELECT argMax(batch, ts) FROM sessions WHERE run_id = '${esc(run)}' GROUP BY session)`;
-  const [sessions, books, events, scores, calls, changes] = await Promise.all([
-    query<Row>(`SELECT * FROM sessions WHERE ${where} ORDER BY session`),
-    query<Row>(`SELECT * FROM books WHERE ${where}`),
-    query<Row>(`SELECT * FROM events WHERE ${where}`),
-    query<Row>(`SELECT * FROM scores WHERE ${where}`),
-    query<Row>(`SELECT session, tutor, sum(cost_usd) AS cost FROM llm_calls WHERE ${where} GROUP BY session, tutor`),
-    query<Row>(`SELECT * FROM state_changes WHERE ${where} ORDER BY ts`),
+  // Dedup "latest batch per session" in JS, not SQL: RawTree's schema-on-read can infer `batch`/`ts`
+  // as a Dynamic/Variant column once a table has absorbed many differently-shaped inserts across runs,
+  // and ClickHouse's argMax rejects Dynamic arguments. Plain SELECTs on small per-run result sets are cheap.
+  const rid = `run_id = '${esc(run)}'`;
+  const [sessionsRaw, booksRaw, eventsRaw, scoresRaw, callsRaw, changesRaw] = await Promise.all([
+    query<Row>(`SELECT * FROM sessions WHERE ${rid} ORDER BY session`),
+    query<Row>(`SELECT * FROM books WHERE ${rid}`),
+    query<Row>(`SELECT * FROM events WHERE ${rid}`),
+    query<Row>(`SELECT * FROM scores WHERE ${rid}`),
+    query<Row>(`SELECT session, tutor, batch, cost_usd FROM llm_calls WHERE ${rid}`),
+    query<Row>(`SELECT * FROM state_changes WHERE ${rid} ORDER BY ts`),
   ]);
-  if (sessions.length === 0) return null;
+  if (sessionsRaw.length === 0) return null;
+
+  const latestBatch = new Map<number, string>();
+  const latestTs = new Map<number, string>();
+  for (const r of sessionsRaw) {
+    const s = num(r.session);
+    const ts = String(r.ts ?? "");
+    if (!latestTs.has(s) || ts > latestTs.get(s)!) {
+      latestTs.set(s, ts);
+      latestBatch.set(s, String(r.batch));
+    }
+  }
+  const keep = (r: Row) => latestBatch.get(num(r.session)) === String(r.batch);
+  const sessions = sessionsRaw.filter(keep);
+  const books = booksRaw.filter(keep);
+  const events = eventsRaw.filter(keep);
+  const scores = scoresRaw.filter(keep);
+  const changes = changesRaw.filter(keep);
+  const costOf = new Map<string, number>();
+  for (const c of callsRaw.filter(keep)) {
+    const k = `${num(c.session)}:${c.tutor}`;
+    costOf.set(k, (costOf.get(k) ?? 0) + Number(c.cost_usd ?? 0));
+  }
 
   const pick = (rows: Row[], s: number, t: TutorName) => rows.find((r) => num(r.session) === s && r.tutor === t) ?? {};
   const bySession = new Map<number, SessionView>();
@@ -78,7 +103,7 @@ async function fromRawTree(run: string): Promise<SemesterData | null> {
         accuracy: num(sc.accuracy),
         stale_reason: String(sc.stale_reason ?? ""),
       };
-      v.cost[t] = num(pick(calls, v.session, t).cost);
+      v.cost[t] = costOf.get(`${v.session}:${t}`) ?? 0;
     }
     v.changes = changes.filter((c) => num(c.session) === v.session).map((c) => ({ ...(c as unknown as StateChange), session: v.session }));
   }

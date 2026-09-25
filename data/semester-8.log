@@ -1,0 +1,58 @@
+◇ injected env (16) from .env.local
+▶ run "semester-8": 0/30 done, covers off
+✔ session  1 | transcript "The Dino Team by the Sea" (dinosaurs, L2) acc 1 511 tok | chapters "The Dino Trail" (dinosaurs, L2) acc 1 709 tok | 6 changes, 0 recalls, 6 tools | 26s
+✔ session  2 | transcript "Dino Eggs in the Oak Woods" (dinosaur eggs, L2) acc 1 2217 tok | chapters "Dino Rain Day" (dinosaurs, L2) acc 1 877 tok | 7 changes, 0 recalls, 7 tools, janitor 0 archived/0 flagged | 50s
+✔ session  3 | transcript "Ten Surprise Eggs" (dinosaur eggs, L2) acc 1 3901 tok | chapters "The Dino Boat Team" (dinosaurs, L2) acc 1 983 tok | 7 changes, 0 recalls, 7 tools | 31s
+✔ session  4 | transcript "The Dino Boat Race" (dinosaur race, L2) acc 1 5618 tok | chapters "Dino Seed Snack" (dinosaurs, L2) acc 1 1016 tok | 7 changes, 0 recalls, 7 tools, janitor 0 archived/0 flagged | 28s
+✔ session  5 | transcript "The Big Dino Run" (dinosaur race, L2) acc 1 7259 tok | chapters "Dino Trail and the Green Coast" (dinosaurs, L2) acc 1 1045 tok | 7 changes, 0 recalls, 7 tools | 29s
+✔ session  6 | transcript "Dino Camp by the Lake" (dinosaur camp, L2) acc 1 8833 tok | chapters "Dino Rain on the Oak Road" (dinosaurs, L2) acc 1 1029 tok | 7 changes, 0 recalls, 7 tools, janitor 0 archived/0 flagged | 32s
+✔ session  7 | transcript "The Fossil Dig" (fossil dig, L2) acc 0.67 10435 tok | chapters "The Dino Boat Race" (dinosaurs, L2) acc 0.67 1146 tok | 6 changes, 0 recalls, 6 tools | 24s
+✔ session  8 | transcript "Maya at the Museum" (dinosaur museum, L2) acc 0.67 12049 tok | chapters "Stomp and the Shiny Shell" (dinosaurs, L2) acc 0.67 1034 tok | 7 changes, 0 recalls, 7 tools, janitor 0 archived/0 flagged | 34s
+✔ session  9 | transcript "Maya-saurus Wakes Up" (dinosaur dream, L2) acc 0.67 13638 tok | chapters "Chip the Dino Chef" (dinosaurs, L2) acc 1 1098 tok | 7 changes, 0 recalls, 7 tools | 32s
+✔ session 10 | transcript "Lilani and the Dino Cave" (dinosaur dreams, L2) acc 0.33 15261 tok | chapters "Chomp Finds a Chunk" (dinosaurs, L2) acc 0.67 1324 tok | 12 changes, 0 recalls, 11 tools, janitor 0 archived/1 flagged | 41s
+✔ session 11 | transcript "The Dino at the Aquarium" (aquarium dinosaur, L2) acc 0.67 16817 tok | chapters "Chet the Deep-Sea Fish" (ocean fish, L2) acc 1 1425 tok | 7 changes, 0 recalls, 7 tools | 33s
+✔ session 12 | transcript "The Giant with the Heavy Tail" (giant dinosaur, L2) acc 0 18485 tok | chapters "Chan and the Pink Snailfish" (ocean snailfish, L2) acc 0.67 1386 tok | 10 changes, 0 recalls, 10 tools, janitor 0 archived/0 flagged | 38s
+  ↻ transcript write failed (400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anth), retry 1
+  ↻ transcript write failed (400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anth), retry 2
+BadRequestError: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CfQpFNfobYgC3kNZnZzK9"}
+    at Function.generate (D:\hackathon_sep25\node_modules\@anthropic-ai\sdk\src\core\error.ts:75:14)
+    at Anthropic.makeStatusError (D:\hackathon_sep25\node_modules\@anthropic-ai\sdk\src\client.ts:976:28)
+    at Anthropic.makeRequest (D:\hackathon_sep25\node_modules\@anthropic-ai\sdk\src\client.ts:1280:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async llm (D:\hackathon_sep25\src\lib\llm.ts:74:16)
+    at async transcriptWrite (D:\hackathon_sep25\scripts\tutors.ts:81:13)
+    at async retry (D:\hackathon_sep25\scripts\simulate.ts:62:14)
+    at async Promise.all (index 0)
+    at async main (D:\hackathon_sep25\scripts\simulate.ts:180:22) {
+  status: 400,
+  headers: Headers {
+    date: 'Fri, 25 Sep 2026 20:48:41 GMT',
+    'content-type': 'application/json',
+    'transfer-encoding': 'chunked',
+    connection: 'keep-alive',
+    'x-should-retry': 'false',
+    server: 'cloudflare',
+    'request-id': 'req_011CfQpFNfobYgC3kNZnZzK9',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'anthropic-organization-id': '412df8c3-c0bd-4276-8c79-94d8eb4ebd5e',
+    'anthropic-workspace-id': 'wrkspc_017QuRT1BG9Pg1cdaUxw8psS',
+    traceresponse: '00-043744ae96f52c018f9e6559b7ebcbea-cf3b226682afa632-01',
+    vary: 'Accept-Encoding',
+    'content-encoding': 'br',
+    'x-robots-tag': 'none',
+    'content-security-policy': "default-src 'none'; frame-ancestors 'none'",
+    'cf-cache-status': 'DYNAMIC',
+    'cf-ray': 'a40ce41f6a1d64b6-SJC'
+  },
+  requestID: 'req_011CfQpFNfobYgC3kNZnZzK9',
+  workspaceID: 'wrkspc_017QuRT1BG9Pg1cdaUxw8psS',
+  error: {
+    type: 'error',
+    error: {
+      type: 'invalid_request_error',
+      message: 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'
+    },
+    request_id: 'req_011CfQpFNfobYgC3kNZnZzK9'
+  },
+  type: 'invalid_request_error'
+}

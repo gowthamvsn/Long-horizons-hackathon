@@ -31,7 +31,14 @@ function BookBody({ book, score }: { book: Book; score?: Score }) {
   return (
     <div className="grid gap-8 p-8 md:grid-cols-[240px_1fr]">
       <div className="space-y-4">
-        <Cover book={book} />
+        <div className="relative">
+          <Cover book={book} />
+          {book.cover && (
+            <div className="absolute top-2 right-2">
+              <SponsorTag tool="flux" note="This cover was generated live by Black Forest Labs FLUX, one image per session in a consistent watercolor style." />
+            </div>
+          )}
+        </div>
         <div className="space-y-1 text-xs text-[var(--ink-soft)]">
           <div>
             Session {book.session} · Level {book.level} · {book.topic}

@@ -13,11 +13,16 @@ const W = 1400;
 const H = 380;
 const N = 30;
 
+// Math.sin/cos can differ in their last bit between the server's V8 (Node) and the browser's,
+// which is enough to make SSR and hydration text mismatch. Rounding kills that without any
+// visible effect at this scale (a 1400x380 viewBox).
+const r3 = (n: number) => Math.round(n * 1000) / 1000;
+
 function stonePos(i: number, n: number) {
   const t = n <= 1 ? 0 : i / (n - 1);
   const x = 90 + t * (W - 330);
   const y = 200 + Math.sin(t * Math.PI * 3.2 + 0.4) * 95;
-  return { x, y };
+  return { x: r3(x), y: r3(y) };
 }
 
 // Landscape follows what Maya is into: jungle -> ocean -> space -> jungle again.
@@ -166,8 +171,8 @@ export function TrailMap({
               return (
                 <motion.ellipse
                   key={`${a.session}-${a.key}`}
-                  cx={Math.cos(ang) * r}
-                  cy={22 + Math.sin(ang) * r * 0.75}
+                  cx={r3(Math.cos(ang) * r)}
+                  cy={r3(22 + Math.sin(ang) * r * 0.75)}
                   rx={10}
                   ry={6}
                   transform={`rotate(${(i * 47) % 180})`}
