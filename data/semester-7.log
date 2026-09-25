@@ -1,2 +1,17 @@
 ◇ injected env (16) from .env.local
 ▶ run "semester-7": 0/30 done, covers off
+✔ session  1 | transcript "The Dino Team by the Sea" (dinosaurs, L2) acc 1 511 tok | chapters "The Dinosaur on the Trail" (dinosaurs, L2) acc 1 709 tok | 5 changes, 0 recalls, 5 tools | 28s
+✔ session  2 | transcript "Rain on the Dino Trail" (dinosaurs, L2) acc 1 2133 tok | chapters "Rain Day for the Green Dinosaur" (dinosaurs, L2) acc 1 822 tok | 6 changes, 0 recalls, 6 tools, janitor 0 archived/0 flagged | 32s
+✔ session  3 | transcript "The Dino Egg in the Oak Tree" (dinosaurs, L2) acc 1 3816 tok | chapters "The Oak Tree Snack Team" (dinosaurs, L2) acc 1 952 tok | 6 changes, 0 recalls, 6 tools | 24s
+✔ session  4 | transcript "Oat and the Boat Race" (dinosaurs, L2) acc 1 5510 tok | chapters "Sea Beach Dino Feast" (dinosaurs, L2) acc 1 1068 tok | 7 changes, 0 recalls, 7 tools, janitor 0 archived/0 flagged | 34s
+✔ session  5 | transcript "Oat Paints the Dino Road" (dinosaurs, L2) acc 1 7176 tok | chapters "Dino Reads the Big Leaf Map" (dinosaurs, L2) acc 1 972 tok | 7 changes, 0 recalls, 7 tools | 26s
+✔ session  6 | transcript "Oat and the Deep Cave" (dinosaurs, L2) acc 1 8807 tok | chapters "Two Letters, One Sound: Dino's ea Rule" (dinosaurs, L2) acc 1 992 tok | 7 changes, 0 recalls, 7 tools, janitor 0 archived/0 flagged | 33s
+✔ session  7 | transcript "The Dino Fair on Main Street" (dinosaurs, L2) acc 0.67 10439 tok | chapters "Dino Says It Slow" (dinosaurs, L2) acc 0.67 1024 tok | 7 changes, 0 recalls, 7 tools | 31s
+✔ session  8 | transcript "Oat and the Night Sky Dino" (dinosaurs, L2) acc 0.67 12056 tok | chapters "Dino and the Great Track Trail" (dinosaurs, L2) acc 0.67 1048 tok | 7 changes, 0 recalls, 7 tools, janitor 0 archived/0 flagged | 46s
+  ↻ transcript write failed (Expected ',' or '}' after property value in JSON at position 521 (line 1 column 522)), retry 1
+✔ session  9 | transcript "Oat and the Shell Shop" (dinosaurs, L2) acc 1 13701 tok | chapters "Stella and the Stone Stump" (dinosaurs, L3) acc 0.33 1050 tok | 7 changes, 0 recalls, 7 tools | 43s
+✔ session 10 | transcript "Oat and the Chomp Champ" (dinosaurs, L2) acc 0.67 15322 tok | chapters "Stego on Stone Street" (dinosaurs, L3) acc 0 1047 tok | 8 changes, 0 recalls, 7 tools, janitor 0 archived/1 flagged | 43s
+✔ session 11 | transcript "Oat Meets the Octopus" (sea dinosaurs, L2) acc 1 16987 tok | chapters "Stripe the Shore Octopus" (octopus, L3) acc 0.33 1247 tok | 8 changes, 0 recalls, 8 tools | 36s
+✔ session 12 | transcript "Five Sea Giants" (sea dinosaurs, L2) acc 0.33 18709 tok | chapters "Strong Streak the Sea Turtle" (sea turtle, L3) acc 0.67 1302 tok | 9 changes, 0 recalls, 9 tools, janitor 0 archived/0 flagged | 44s
+✔ session 13 | transcript "Dr. Scott and the Sea Reptiles" (marine reptiles, L2) acc 0 20294 tok | chapters "Shelly the Shy Shark" (shark friends, L3) acc 0.67 1215 tok | 9 changes, 0 recalls, 9 tools | 37s
+✔ session 14 | transcript "Oat and the Sea Animal Team" (sea animals, L2) acc 0.33 22042 tok | chapters "Swift the Frilly Seahorse" (sea animals, L3) acc 1 1092 tok | 9 changes, 0 recalls, 9 tools, janitor 0 archived/0 flagged | 39s

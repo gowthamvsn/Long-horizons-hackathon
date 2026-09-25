@@ -6,6 +6,7 @@ import { BookModal } from "./BookModal";
 import { Charts } from "./Charts";
 import { Gauges } from "./Gauges";
 import { Hud, MilestoneBanner } from "./Hud";
+import { KeyMoments } from "./KeyMoments";
 import { Mind } from "./Mind";
 import { Scrubber } from "./Scrubber";
 import { Shelf } from "./Shelf";
@@ -82,6 +83,14 @@ export function Dashboard({ data, initialSession = 1, askSlot }: { data: Semeste
           }}
         />
       </div>
+
+      <KeyMoments
+        sessions={data.sessions}
+        onPick={(v) => {
+          setPlaying(false);
+          setSession(v);
+        }}
+      />
 
       <div className="paper-card rounded-2xl px-5 py-2">
         <Scrubber
