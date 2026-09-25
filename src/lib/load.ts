@@ -7,7 +7,8 @@ import type { Book, CallLog, LearnerModel, ReadingEvents, Score, SemesterData, S
 
 // Where the UI's data comes from, in order: RawTree -> local checkpoint -> mock.
 
-export const RUN = process.env.RUN_ID || "semester-5";
+// semester-8 is the official demo run (see STATUS.md) — beats semester-7 on every measure.
+export const RUN = process.env.RUN_ID || "semester-8";
 type Row = Record<string, unknown>;
 const TUTORS: TutorName[] = ["transcript", "chapters"];
 
@@ -144,13 +145,18 @@ function fromLocal(run: string): SemesterData | null {
   return { run, source: "local", student: STUDENT, milestones: MILESTONES, sessions };
 }
 
-/** Covers are painted separately (npm run covers); pick up any that exist on disk. */
+/**
+ * Covers are painted separately (npm run covers) into public/covers/<run>-<tutor>-<nn>.jpg.
+ * Set the deterministic path unconditionally — don't check fs.existsSync here: on Vercel the
+ * public/ folder is served by the CDN and isn't present in the serverless function's filesystem,
+ * so that check always fails there even though the file is served fine. The <img> itself falls
+ * back to a placeholder on a real 404 (see Cover.tsx).
+ */
 function withCovers(data: SemesterData): SemesterData {
   for (const s of data.sessions)
     for (const b of Object.values(s.books)) {
       if (b.cover) continue;
-      const rel = `/covers/${data.run}-${b.tutor}-${String(s.session).padStart(2, "0")}.jpg`;
-      if (fs.existsSync(path.join(process.cwd(), "public", rel))) b.cover = rel;
+      b.cover = `/covers/${data.run}-${b.tutor}-${String(s.session).padStart(2, "0")}.jpg`;
     }
   return data;
 }

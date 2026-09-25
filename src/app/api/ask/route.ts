@@ -19,7 +19,8 @@ Every column is stored as ClickHouse Dynamic type (schema-on-read), so a raw col
 - Numbers: toFloat64OrZero(toString(col))
 - JOIN keys: cast BOTH sides, e.g. ON toString(a.session) = toString(b.session) AND toString(a.tutor) = toString(b.tutor)
 - JSON columns (words_missed, missed_by_skill, learner_model): toString(col) before JSONExtract, e.g. to test for a word in words_missed use arrayExists(w -> w LIKE '%ea%', JSONExtract(toString(words_missed), 'Array(String)')).
-Never alias an aggregate (sum/avg/count/etc.) with the same name as a raw source column (e.g. don't write "sum(toFloat64OrZero(toString(prompt_tokens))) AS prompt_tokens") — ClickHouse substitutes the alias back in and throws ILLEGAL_AGGREGATION if that name is reused elsewhere in the SELECT list. Use a distinct name instead, e.g. AS total_prompt_tokens.`;
+Never alias an aggregate (sum/avg/count/etc.) with the same name as a raw source column (e.g. don't write "sum(toFloat64OrZero(toString(prompt_tokens))) AS prompt_tokens") — ClickHouse substitutes the alias back in and throws ILLEGAL_AGGREGATION if that name is reused elsewhere in the SELECT list. Use a distinct name instead, e.g. AS total_prompt_tokens.
+Every table has run_id, tutor, session, ts, batch, so once a query JOINs more than one table, EVERY column reference — in SELECT, WHERE, GROUP BY, and ORDER BY, not just the JOIN's ON clause — must be qualified with its table alias (e.g. a.run_id, b.tutor), or ClickHouse throws "ambiguous identifier". Never write a bare column name once a JOIN is present.`;
 
 export async function POST(req: Request) {
   const { question, run: requestedRun } = (await req.json()) as { question?: string; run?: string };
@@ -28,7 +29,7 @@ export async function POST(req: Request) {
 
   try {
     const plan = await llm({
-      system: `You write one read-only ClickHouse SELECT query to answer questions about a reading tutor's archive.\n${SCHEMA}\nAlways filter run_id = '${run}'. Prefer tutor = 'chapters' unless the question is about comparing tutors. Add LIMIT 50. Reply with JSON only: {"sql": string}`,
+      system: `You write one read-only ClickHouse SELECT query to answer questions about a reading tutor's archive.\n${SCHEMA}\nAlways filter to run_id = '${run}' (qualify with a table alias if the query joins more than one table). Prefer tutor = 'chapters' unless the question is about comparing tutors. Add LIMIT 50. Reply with JSON only: {"sql": string}`,
       messages: [{ role: "user", content: question }],
       maxTokens: 2000,
     });

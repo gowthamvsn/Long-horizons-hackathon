@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import type { Book } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -18,11 +19,12 @@ function wash(topic: string) {
 }
 
 export function Cover({ book, className }: { book: Book; className?: string }) {
+  const [failed, setFailed] = useState(false);
   return (
     <div className={cn("relative aspect-[3/4] overflow-hidden rounded-r-md rounded-l-sm book-shadow", className)}>
-      {book.cover ? (
+      {book.cover && !failed ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={book.cover} alt={book.title} className="absolute inset-0 h-full w-full object-cover" />
+        <img src={book.cover} alt={book.title} className="absolute inset-0 h-full w-full object-cover" onError={() => setFailed(true)} />
       ) : (
         <div className="absolute inset-0" style={{ background: wash(book.topic) }}>
           <div className="absolute inset-x-4 bottom-5 font-display text-lg leading-tight text-white/95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]">
