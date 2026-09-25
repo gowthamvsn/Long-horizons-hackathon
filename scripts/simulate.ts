@@ -136,7 +136,18 @@ async function archive(rec: SessionRecord) {
   await insert("state_changes", rec.changes.map((c) => tag({ tutor: "chapters", ...c })));
 }
 
+/** Push every locally checkpointed session to RawTree (for runs made before RawTree was available). */
+async function backfill() {
+  const cp = load<Checkpoint | null>(RUN_FILE, null);
+  if (!cp) throw new Error(`no local run ${RUN_FILE}`);
+  for (const rec of cp.sessions) {
+    await retry(`backfill ${rec.session}`, () => archive(rec));
+    console.log(`✔ backfilled session ${rec.session}`);
+  }
+}
+
 async function main() {
+  if (args.includes("--backfill")) return backfill();
   const cp = load<Checkpoint>(RUN_FILE, {
     run: RUN,
     done: 0,
@@ -191,7 +202,8 @@ async function main() {
       recalls: upd.recalls,
     };
 
-    await retry("rawtree insert", () => archive(rec));
+    if (process.env.RAWTREE_API_KEY) await retry("rawtree insert", () => archive(rec));
+    else if (session === cp.done + 1) console.log("  ! RAWTREE_API_KEY not set: saving locally only; run `npm run backfill` later");
 
     cp.transcript = transcript;
     cp.model = model;
