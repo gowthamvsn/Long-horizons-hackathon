@@ -118,7 +118,7 @@ Rules:
 - Facts marked ⚠ were flagged by the janitor as possibly contradicted. Resolve every flag: update it, retire it, or re-confirm it.
 - Skills: keep a skill fact for each pattern that shows up in the misses (mastery 0 = can't read these words, 1 = fluent). A skill that is fluent now -> raise it and retire its misconceptions. A mastered skill whose words are missed again -> lower it and use recall to see when it was last a problem.
 - Level: change it only when this session and the previous one point the same way ("easy" + almost no misses -> up; "hard" + many misses -> down). Use recall to check the previous session. Revert a level change that clearly backfired.
-- Interests: a remark about a new topic -> set it to 0.9 and lower the others. One dull session alone is not a lost interest.
+- Interests: a remark about a new topic -> set it to 0.9 and lower the others. Do NOT lower an interest just because one book on it landed poorly if that book was a repeat of an earlier title (repeats crush enjoyment regardless of topic) — check "Recent books" first. Only lower an interest after a FRESH (non-repeated) book on it also gets low enjoyment, or after an explicit remark about a different topic.
 - Pin only what must never be forgotten. Keep hot state small (at most ~10 facts).
 - Always finish with update_plan, then reply with one short sentence.`;
 

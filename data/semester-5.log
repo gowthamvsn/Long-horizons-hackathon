@@ -1,0 +1,33 @@
+◇ injected env (16) from .env.local
+▶ run "semester-5": 0/30 done, covers off
+✔ session  1 | transcript "The Dino Team by the Sea" (dinosaurs, L2) acc 1 511 tok | chapters "The Dinosaur Team" (dinosaurs, L2) acc 1 709 tok | 5 changes, 0 recalls, 5 tools | 29s
+✔ session  2 | transcript "Dino Eggs in the Oak Tree Trail" (dinosaur eggs, L2) acc 1 2134 tok | chapters "The Dinosaur on the Boat" (dinosaurs, L2) acc 1 829 tok | 6 changes, 0 recalls, 6 tools, janitor 0 archived/0 flagged | 49s
+✔ session  3 | transcript "Ten Dino Eggs Roll Down the Road" (dinosaur eggs, L2) acc 1 3838 tok | chapters "The Dinosaur Beach Feast" (dinosaurs, L2) acc 1 941 tok | 6 changes, 0 recalls, 6 tools | 29s
+✔ session  4 | transcript "The Dino Boat Race" (dinosaur boats, L2) acc 1 5565 tok | chapters "The Dinosaur Coal Road" (dinosaurs, L2) acc 1 957 tok | 6 changes, 0 recalls, 6 tools, janitor 0 archived/0 flagged | 31s
+✔ session  5 | transcript "Dino Patrol on the Deep Sea" (dino rescue, L2) acc 1 7345 tok | chapters "The Dinosaur Team and the Big Road" (dinosaurs, L2) acc 1 966 tok | 7 changes, 0 recalls, 7 tools | 30s
+✔ session  6 | transcript "Dino and the Snow Day" (dino friends, L2) acc 1 9043 tok | chapters "The Dinosaur Leaf Treat" (dinosaurs, L2) acc 1 1075 tok | 8 changes, 0 recalls, 8 tools, janitor 0 archived/0 flagged | 47s
+✔ session  7 | transcript "Dino and Friends Bake a Cake" (dino baking, L2) acc 0.67 10701 tok | chapters "Rex Learns the Two-Letter Trick" (dinosaurs, L2) acc 0.67 1081 tok | 7 changes, 0 recalls, 7 tools | 30s
+✔ session  8 | transcript "Dino Paints the Cave" (dino colors, L2) acc 0.67 12369 tok | chapters "Which Shell Will Hatch?" (dinosaur eggs, L2) acc 1 1147 tok | 9 changes, 0 recalls, 9 tools, janitor 0 archived/0 flagged | 38s
+✔ session  9 | transcript "Dino and the Rainbow Kite" (dino kite, L2) acc 0.67 13958 tok | chapters "The Chick in the Big Shell" (dinosaur eggs, L2) acc 1 1161 tok | 8 changes, 0 recalls, 8 tools | 36s
+✔ session 10 | transcript "The Dino-Powered Kite Test" (kite test, L2) acc 0.33 15516 tok | chapters "Chip the Dino Helps a Chick" (dinosaurs, L2) acc 0.67 1238 tok | 9 changes, 0 recalls, 9 tools, janitor 0 archived/0 flagged | 47s
+✔ session 11 | transcript "Maya Meets the Octopus" (aquarium octopus, L2) acc 0.67 17101 tok | chapters "Shell, Fish, and One Big Splash" (aquarium animals, L2) acc 0.67 1320 tok | 11 changes, 0 recalls, 11 tools | 37s
+✔ session 12 | transcript "Eight Arms Help Out" (octopus helper, L2) acc 0.33 18746 tok | chapters "Dash the Dolphin and the Big Catch" (dolphins, L2) acc 0.67 1421 tok | 10 changes, 0 recalls, 10 tools, janitor 0 archived/0 flagged | 37s
+✔ session 13 | transcript "Three Hearts in the Shallow Sea" (octopus facts, L2) acc 0.33 20262 tok | chapters "Shy Octopus Has Three Hearts" (octopus, L2) acc 0.33 1497 tok | 7 changes, 0 recalls, 7 tools | 31s
+✔ session 14 | transcript "Dino's Deep Sea Ship" (sea adventure, L2) acc 0.33 21861 tok | chapters "Blink the Octopus Packs a Snack" (octopus snacks, L2) acc 0.67 1465 tok | 10 changes, 0 recalls, 11 tools, janitor 0 archived/0 flagged | 48s
+✔ session 15 | transcript "The Island of Floating Stones" (sea treasure, L3) acc 0.67 23545 tok | chapters "Crab Kid and the Tide Pool Crew" (tide pool, L2) acc 0.33 1336 tok | 8 changes, 1 recalls, 10 tools | 43s
+✔ session 16 | transcript "The Deep Blue Alphabet Hunt" (ocean hunt, L3) acc 0.67 25240 tok | chapters "Green Dino and the Gray Truck" (dinosaurs, L2) acc 0 1330 tok | 8 changes, 0 recalls, 8 tools, janitor 0 archived/0 flagged | 35s
+✔ session 17 | transcript "Thirty New Creatures Under the Ice" (ocean discovery, L3) acc 0.33 26916 tok | chapters "Stella and the Space Truck" (space trucks, L2) acc 0.33 1228 tok | 8 changes, 1 recalls, 9 tools | 36s
+✔ session 18 | transcript "Dino's Loud Rocket Launch" (rocket launch, L3) acc 0.67 28663 tok | chapters "The Night Gate Rocket" (rocket launch, L3) acc 1 1264 tok | 10 changes, 0 recalls, 10 tools, janitor 0 archived/0 flagged | 41s
+✔ session 19 | transcript "Countdown Club" (space launch, L3) acc 0.33 30358 tok | chapters "Jake and the Bubble Rocket" (bubble rocket, L3) acc 0.67 1255 tok | 10 changes, 0 recalls, 10 tools | 47s
+✔ session 20 | transcript "Maya Trains to Be an Astronaut" (astronaut training, L2) acc 0.67 32091 tok | chapters "Nicole Mann and the Floating Lime" (space station, L3) acc 0.67 1227 tok | 11 changes, 1 recalls, 11 tools, janitor 0 archived/1 flagged | 52s
+✔ session 21 | transcript "Space School for Dino" (astronaut school, L2) acc 0.67 33715 tok | chapters "Five Space Tubes" (space station, L3) acc 0.67 1260 tok | 9 changes, 1 recalls, 10 tools | 36s
+✔ session 22 | transcript "The Cotton Candy Planet" (space planets, L2) acc 0.67 35327 tok | chapters "The Moon Turns Red" (moon, L2) acc 0.67 1280 tok | 9 changes, 0 recalls, 9 tools, janitor 0 archived/1 flagged | 40s
+✔ session 23 | transcript "Dino and the Giant Space Telescope" (space telescope, L3) acc 0.33 36981 tok | chapters "The Soft Puff Planet" (puff planets, L2) acc 0.33 1291 tok | 12 changes, 0 recalls, 12 tools | 43s
+✔ session 24 | transcript "Grandpa and the Museum Bones" (dinosaur museum, L3) acc 0.67 38686 tok | chapters "The Real Dinosaur Team" (dinosaur museum, L3) acc 1 1363 tok | 12 changes, 0 recalls, 12 tools, janitor 0 archived/0 flagged | 42s
+✔ session 25 | transcript "Maya the Museum Guide" (fossil hunt, L3) acc 0.67 40421 tok | chapters "Maya's Dinosaur Tail Dig" (dinosaur dig, L3) acc 1 1365 tok | 10 changes, 0 recalls, 10 tools | 35s
+✔ session 26 | transcript "The Backyard Fossil Hunt" (fossil hunting, L3) acc 0.67 42169 tok | chapters "Maya and the Great Beach Bone" (dinosaur dig, L3) acc 1 1329 tok | 11 changes, 0 recalls, 11 tools, janitor 0 archived/0 flagged | 40s
+✔ session 27 | transcript "Maya's Bedroom Museum" (fossil museum, L3) acc 0.67 43899 tok | chapters "Maya's Museum Dream Day" (dinosaur museum, L3) acc 0.67 1256 tok | 10 changes, 0 recalls, 10 tools | 31s
+✔ session 28 | transcript "Draw a Dinosaur" (dinosaur drawing, L3) acc 0.67 45584 tok | chapters "Maya and the Curved Claw Puzzle" (dinosaur fossils, L3) acc 0.67 1118 tok | 10 changes, 1 recalls, 10 tools, janitor 1 archived/0 flagged | 46s
+✔ session 29 | transcript "The Dinosaur Art Contest" (art contest, L3) acc 0.33 47302 tok | chapters "Maya and the Stone Egg Nest" (dinosaur fossils, L3) acc 1 1117 tok | 9 changes, 0 recalls, 9 tools | 33s
+✔ session 30 | transcript "Socks the Dinosaur" (silly dinosaur, L3) acc 0.67 49012 tok | chapters "Maya and the Egg That Came Home" (dinosaur eggs, L3) acc 1 1317 tok | 9 changes, 0 recalls, 9 tools, janitor 0 archived/0 flagged | 41s
+■ done

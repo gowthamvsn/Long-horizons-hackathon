@@ -71,7 +71,8 @@ function rng(seed: number) {
 const TOPIC_WORDS: Record<string, RegExp> = {
   dinosaurs: /dino|saur|fossil|t-?rex|raptor|jurassic|triceratops|prehistoric/i,
   space: /space|rocket|planet|star|moon|astronaut|galaxy|comet|mars|orbit|solar/i,
-  ocean: /ocean|sea\b|shark|whale|fish|octopus|coral|reef|dolphin|underwater|turtle|crab|jellyfish/i,
+  ocean:
+    /ocean|sea\b|shark|whale|fish|octopus|coral|reef|dolphin|underwater|turtle|crab|jellyfish|tide|tidal|shore|beach|starfish|seashell|clam|snail|kelp|wave|splash|aquarium|dive|diving/i,
 };
 
 export function topicMatches(topic: string, interest: string): boolean {

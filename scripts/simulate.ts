@@ -17,7 +17,7 @@ const flag = (name: string, dflt: string) => {
   const i = args.indexOf(`--${name}`);
   return i >= 0 ? args[i + 1] : dflt;
 };
-const RUN = flag("run", "semester-5");
+const RUN = flag("run", "semester-6");
 const UNTIL = Number(flag("sessions", String(SESSIONS)));
 const COVERS = !args.includes("--no-covers");
 
