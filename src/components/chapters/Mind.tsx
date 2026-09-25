@@ -25,6 +25,7 @@ function facts(m: LearnerModel): Fact[] {
   for (const x of m.misconceptions ?? [])
     out.push({ id: `misconception:${x.what}`, kind: x.status === "resolved" ? "Resolved confusion" : "Confusion", title: x.what, detail: `since session ${x.since}`, tone: "clay" });
   for (const w of m.what_works ?? []) out.push({ id: `what_works:${w}`, kind: "What works", title: w, detail: "", tone: "sage" });
+  if (m.recent_books?.length) out.push({ id: "recent", kind: "Recent books", title: m.recent_books.join(" · "), detail: "so stories never repeat", tone: "sky" });
   return out;
 }
 

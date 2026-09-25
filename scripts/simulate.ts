@@ -29,7 +29,7 @@ const flag = (name: string, dflt: string) => {
   const i = args.indexOf(`--${name}`);
   return i >= 0 ? args[i + 1] : dflt;
 };
-const RUN = flag("run", "semester-2");
+const RUN = flag("run", "semester-3");
 const UNTIL = Number(flag("sessions", String(SESSIONS)));
 const COVERS = !args.includes("--no-covers");
 
@@ -177,7 +177,13 @@ async function main() {
     const books = { transcript: tw.book, chapters: cw.book };
     [books.transcript.cover, books.chapters.cover] = await Promise.all([cover(books.transcript), cover(books.chapters)]);
 
-    const events = { transcript: read(books.transcript, "transcript"), chapters: read(books.chapters, "chapters") };
+    const seen = (t: "transcript" | "chapters") => cp.sessions.map((r) => r.books[t].title);
+    const events = {
+      transcript: read(books.transcript, "transcript", seen("transcript")),
+      chapters: read(books.chapters, "chapters", seen("chapters")),
+    };
+    // Bookkeeping, not memory of the child: the Fox's working context lists its last 3 titles.
+    model.recent_books = [...(model.recent_books ?? []), books.chapters.title].slice(-3);
 
     transcriptObserve(transcript, events.transcript);
     const upd = await retry("chapters update", () => {

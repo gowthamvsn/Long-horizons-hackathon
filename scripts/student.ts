@@ -100,7 +100,7 @@ const NEW_INTEREST_REMARKS: Record<number, string> = {
 const HAPPY = ["I liked it!", "Can I read it again?", "", "That was fun.", "", "I like this one."];
 
 /** Maya reads a book. Pure function of (book, session, tutor). */
-export function read(book: Book, tutor: TutorName): ReadingEvents {
+export function read(book: Book, tutor: TutorName, previousTitles: string[] = []): ReadingEvents {
   const tr = truth(book.session);
   const done = mastered(book.session);
   const rand = rng(book.session * 7919 + (tutor === "chapters" ? 1 : 2));
@@ -125,11 +125,16 @@ export function read(book: Book, tutor: TutorName): ReadingEvents {
     }
   }
 
+  const norm = (t: string) => t.toLowerCase().replace(/[^a-z]/g, "");
+  const repeat = previousTitles.some((t) => norm(t) === norm(book.title));
+
   const onTopic = topicMatches(book.topic, tr.interest);
   let enjoyment = 2 + (onTopic ? 2 : 0) + (levelGap === 0 ? 1 : 0) - (missed.length > 12 ? 1 : 0);
+  if (repeat) enjoyment -= 2;
   enjoyment = Math.max(1, Math.min(5, enjoyment + (rand() < 0.2 ? -1 : 0)));
 
   let comment = NEW_INTEREST_REMARKS[book.session] ?? "";
+  if (!comment && repeat) comment = "We read this one already!";
   if (!comment) {
     if (levelGap < 0 && rand() < 0.6) comment = "That was easy.";
     else if (levelGap > 0 && rand() < 0.6) comment = "That was hard...";

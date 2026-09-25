@@ -6,3 +6,6 @@
 ✔ session  3 | transcript "Dino Digs in the Coal Cave" (dinosaur fossils, L2) acc 1 3969 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 1 617 tok | 4 changes, 0 recalls | 41s
 ◇ injected env (16) from .env.local
 ▶ run "semester-2": 3/30 done, covers off
+✔ session  4 | transcript "Maya Draws a Dinosaur" (dinosaur drawing, L2) acc 1 5756 tok | chapters "The Dino Team by the Sea" (dinosaurs, L2) acc 1 698 tok | 4 changes, 0 recalls | 24s
+✔ session  5 | transcript "The Dino Chase on Green Beach" (dinosaur chase, L2) acc 1 7535 tok | chapters "Toad the Dino Meets the Sea" (dinosaurs, L2) acc 1 774 tok | 4 changes, 0 recalls | 27s
+✔ session  6 | transcript "The Great Dino Run" (dinosaur game, L2) acc 1 9222 tok | chapters "Dino Team by the Sea" (dinosaurs, L2) acc 1 745 tok | 4 changes, 0 recalls | 23s

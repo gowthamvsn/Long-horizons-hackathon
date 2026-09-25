@@ -27,6 +27,7 @@ export interface LearnerModel {
   misconceptions: Misconception[];
   interests: Interest[];
   what_works: string[];
+  recent_books?: string[]; // last 3 titles, so stories don't repeat
 }
 
 /** Ground truth about the kid at a given session (known only to the simulator and scorer). */
